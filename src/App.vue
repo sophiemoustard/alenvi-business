@@ -1,6 +1,6 @@
 <template>
   <!-- Don't drop "q-app" class -->
-  <div id="q-app">
+  <div id="alenvi-app">
     <router-view />
   </div>
 </template>
