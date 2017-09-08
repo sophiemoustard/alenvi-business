@@ -28,7 +28,7 @@ import 'quasar-extras/material-icons'
 Quasar.start(() => {
   /* eslint-disable no-new */
   new Vue({
-    el: '#q-app',
+    el: '#alenvi-app',
     router,
     render: h => h(require('./App'))
   })
