@@ -23,6 +23,7 @@ export default new VueRouter({
   mode: 'history',
   routes: [
     { path: '/', component: load('Hello') },
+    { path: '/test', component: load('test') },
 
     // Always leave this last one
     { path: '*', component: load('Error404') } // Not found
