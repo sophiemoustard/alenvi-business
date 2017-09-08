@@ -23,12 +23,8 @@ export default new VueRouter({
   mode: 'history',
   routes: [
     { path: '/', component: load('Hello') },
-<<<<<<< HEAD
-    { path: '/test', component: load('test') },
-
-=======
-    { path: '/home', component: load('Home/Home') },
->>>>>>> cfd909b53ff33a45bf209266a4c2ec4cb47609ab
+    { path: '/home', name: 'home', title: 'Accueil', component: load('Home/Home') },
+    { path: '/test', name: 'test', title: 'Test', component: load('Layout/Test') },
     // Always leave this last one
     { path: '*', component: load('Error404') } // Not found
   ]
