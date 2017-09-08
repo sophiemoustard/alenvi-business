@@ -22,7 +22,7 @@ export default new VueRouter({
    */
   mode: 'history',
   routes: [
-    { path: '/', component: load('Hello') },
+    { path: '/', component: load('Home/Home') },
     { path: '/home', name: 'home', title: 'Accueil', component: load('Home/Home') },
     { path: '/test', name: 'test', title: 'Test', component: load('Layout/Test') },
     // Always leave this last one
