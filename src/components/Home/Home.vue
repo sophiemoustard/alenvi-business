@@ -11,38 +11,38 @@
       </div>
       <div class="col-md-7">
         <q-gallery-carousel class="gallery-cropper" infinite autoplay :src="gallery"></q-gallery-carousel>
-        <!-- <div class="half-background"></div> -->
+        <div class="half-background"></div>
       </div>
     </section>
     <!-- features -->
-    <section id="features" class="row layout-padding section-margin">
-      <div class="col-sm-4">
-        <div class="align-center">
+    <section id="features" class="row layout-padding section-margin z-absolute">
+      <div id="test" class="col-sm-4 feature-padding">
+        <div class="text-center">
           <img class="main-picto" src="statics/picto.png" alt="">
           <h5>Aide à domicile</h5>
         </div>
         <p class="feature-text">Nous assistons votre proche pour les tâches de la vie quotidienne et passons de bons moments ensemble.</p>
-        <div class="align-center">
+        <div class="text-center">
           <a href="#">En savoir plus</a>
         </div>
       </div>
-      <div class="col-sm-4">
-        <div class="align-center">
+      <div class="col-sm-4 feature-background feature-padding">
+        <div class="text-center">
           <img class="main-picto" src="statics/picto.png" alt="">
           <h5>Compagnie & stimulation</h5>
         </div>
         <p class="feature-text">Formés en continu sur les troubles cognitifs, nous sommes là pour aider votre proche à garder des activités : promenades, jeux...</p>
-        <div class="align-center">
+        <div class="text-center">
           <a href="#">En savoir plus</a>
         </div>
       </div>
-      <div class="col-sm-4">
-        <div class="align-center">
+      <div class="col-sm-4 feature-padding">
+        <div class="text-center ">
           <img class="main-picto" src="statics/picto.png" alt="">
           <h5>Sortie d'hospitalisation</h5>
         </div>
         <p class="feature-text">Nous aidons votre proche à retrouver son autonomie lorsqu’il regagne son domiciille après un passage à l’hôpital.</p>
-        <div class="align-center">
+        <div class="text-center">
           <a href="#">En savoir plus</a>
         </div>
       </div>
@@ -97,28 +97,29 @@ export default {
 }
 
 .gallery-cropper {
-  /*width: 100%;
-  height: auto;
-  max-width: 90vw;*/
   width: 100%;
   height: auto;
   max-height: 500px;
+  border-radius: 145px 0 0 0;
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 .half-background {
-  /*z-index: -1;
+  /*z-index: 0;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   margin-left: -50%;
-  margin-top: -15%;
-  webkit-transform: rotate(8deg);
-  ms-transform: rotate(8deg);
-  transform: rotate(8deg);
+  margin-top: -5%;
+  webkit-transform: rotate(-9deg);
+  ms-transform: rotate(-9deg);
+  transform: rotate(-9deg);
   display: block;
   position: absolute;
   background-color: #faf9f8;*/
+
 }
 
 .section-margin {
@@ -138,6 +139,19 @@ export default {
   text-align: justify;
   padding-left: 10%;
   padding-right: 10%;
+}
+
+.feature-background {
+  background-color: #FAF9F8;
+}
+
+.feature-padding {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.q-btn {
+  font-weight: bold;
 }
 
 </style>

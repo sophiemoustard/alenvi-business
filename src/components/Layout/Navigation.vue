@@ -140,6 +140,7 @@ export default {
   .btn-call {
     color: $white
     padding: 0 10px 0 10px
+    font-weight: bold
   }
 
   .btn-call:hover {
