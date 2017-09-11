@@ -2,16 +2,12 @@
   <!-- Configure "view" prop for QLayout -->
   <q-layout ref="layout" view="hHh lpr fff">
     <q-toolbar color="white" slot="header" class="justify-end">
-      <!-- opens drawer below -->
-      <q-btn color="primary" class="lt-md hide-on-drawer-visible" @click="$refs.layout.toggleLeft()" flat big>
-        <q-icon name="menu" />
-      </q-btn>
 
       <q-toolbar-title class="justify-start">
-          <router-link :to="'home'" active-class="active">
-            <img src="statics/alenvi_logo_50x50.png" alt="Logo Alenvi">
-          </router-link>
-        </q-toolbar-title>
+        <router-link :to="'home'" active-class="active">
+          <img src="statics/alenvi_logo_complet_183x50.png" alt="Logo Alenvi">
+        </router-link>
+      </q-toolbar-title>
 
       <nav class="gt-sm mobile-hide">
         <router-link :to="'home'">Accueil</router-link>
@@ -21,7 +17,11 @@
         <router-link :to="'home'">Magazine</router-link>
       </nav>
 
-      <q-btn class="gt-sm mobile-hide" color="primary"><a class="btn-call" href="tel:+33179755475">Appeler 01 79 75 54 75</a></q-btn>
+      <q-btn class="gt-sm mobile-hide" color="primary"><a class="btn-call" href="tel:+33179755475">Appeler le 01 79 75 54 75</a></q-btn>
+
+      <q-btn color="primary" class="lt-md hide-on-drawer-visible" @click="$refs.layout.toggleLeft()" flat big>
+        <q-icon name="menu" />
+      </q-btn>
 
     </q-toolbar>
 
@@ -88,6 +88,7 @@ import {
   QBtn,
   QIcon,
   QSideLink,
+  QItem,
   QItemMain,
   QItemSide,
   QTabs,
@@ -102,6 +103,7 @@ export default {
     QBtn,
     QIcon,
     QSideLink,
+    QItem,
     QItemMain,
     QItemSide,
     QTabs,
@@ -157,4 +159,9 @@ export default {
     text-decoration: underline
     color: $white
   }
+
+  // .sidebar-link {
+  //   margin-left: 10px
+  //   color: #0c0c0c
+  // }
 </style>
