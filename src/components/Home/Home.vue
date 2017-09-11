@@ -101,7 +101,7 @@ export default {
   height: auto;
   max-height: 500px;
   border-radius: 145px 0 0 0;
-  -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
   clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
