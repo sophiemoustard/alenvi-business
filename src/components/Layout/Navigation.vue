@@ -14,19 +14,20 @@
         </q-toolbar-title>
 
       <nav class="gt-sm mobile-hide">
-        <router-link :to="'home'" active-class="active">Accueil</router-link>
-        <router-link :to="'home'" active-class="active">Vision</router-link>
-        <router-link :to="'home'" active-class="active">Equipe</router-link>
-        <router-link :to="'home'" active-class="active">Recrutement</router-link>
-        <router-link :to="'home'" active-class="active">Magazine</router-link>
-        <q-btn color="primary">Appeler 01 79 75 54 75</q-btn>
+        <router-link :to="'home'">Accueil</router-link>
+        <router-link :to="'home'">Vision</router-link>
+        <router-link :to="'home'">Equipe</router-link>
+        <router-link :to="'home'">Recrutement</router-link>
+        <router-link :to="'home'">Magazine</router-link>
       </nav>
+
+      <q-btn class="gt-sm mobile-hide" color="primary"><a class="btn-call" href="tel:+33179755475">Appeler 01 79 75 54 75</a></q-btn>
 
     </q-toolbar>
 
     <div class="lt-md" slot="left">
       <q-item-side right>
-        <q-btn @click="$refs.layout.hideCurrentSide" class="justify-end" color="tertiary" flat big>
+        <q-btn @click="$refs.layout.hideCurrentSide()" class="justify-end" color="tertiary" flat big>
           <q-icon name="close" />
         </q-btn>
       </q-item-side>
@@ -57,7 +58,13 @@
 
     <!-- Footer -->
     <q-toolbar slot="footer">
-      Footer
+      <ul>
+        <li><router-link :to="'home'" class="footer-links">Accueil</router-link></li>
+        <li><router-link :to="'home'" class="footer-links">Vision</router-link></li>
+        <li><router-link :to="'home'" class="footer-links">Equipe</router-link></li>
+        <li><router-link :to="'home'" class="footer-links">Recrutement</router-link></li>
+        <li><router-link :to="'home'" class="footer-links">Magazine</router-link></li>
+      </ul>
     </q-toolbar>
 
   </q-layout>
@@ -108,5 +115,28 @@ export default {
     font-weight: bold
     padding: 0px 20px
     line-height: 50px
+  }
+
+  .btn-call {
+    color: $white
+    padding: 0 10px 0 10px
+  }
+
+  .btn-call:hover {
+    color: $white
+  }
+
+  footer ul {
+    list-style: none
+  }
+
+  footer ul li a {
+    color: $white
+    line-height: 30px
+  }
+
+  .footer-links:hover {
+    text-decoration: underline
+    color: $white
   }
 </style>

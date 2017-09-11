@@ -9,7 +9,8 @@
 /*
  * Root component
  */
-export default {}
+export default {
+}
 </script>
 
 <style></style>
