@@ -25,7 +25,7 @@
 
     </q-toolbar>
 
-    <div class="lt-md" slot="left">
+    <div slot="left">
       <q-item-side right>
         <q-btn @click="$refs.layout.hideCurrentSide()" class="justify-end" color="tertiary" flat big>
           <q-icon name="close" />
@@ -58,15 +58,27 @@
 
     <!-- Footer -->
     <q-toolbar slot="footer">
-      <ul>
-        <li><router-link :to="'home'" class="footer-links">Accueil</router-link></li>
-        <li><router-link :to="'home'" class="footer-links">Vision</router-link></li>
-        <li><router-link :to="'home'" class="footer-links">Equipe</router-link></li>
-        <li><router-link :to="'home'" class="footer-links">Recrutement</router-link></li>
-        <li><router-link :to="'home'" class="footer-links">Magazine</router-link></li>
-      </ul>
+      <div class="row justify-between">
+        <div class="col-xs-12 col-md-4">
+          <ul>
+            <li><router-link :to="'home'" class="footer-links">Accueil</router-link></li>
+            <li><router-link :to="'home'" class="footer-links">Vision</router-link></li>
+            <li><router-link :to="'home'" class="footer-links">Equipe</router-link></li>
+            <li><router-link :to="'home'" class="footer-links">Recrutement</router-link></li>
+            <li><router-link :to="'home'" class="footer-links">Magazine</router-link></li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <ul>
+            <li><router-link :to="'home'" class="footer-links">Accueil</router-link></li>
+            <li><router-link :to="'home'" class="footer-links">Vision</router-link></li>
+            <li><router-link :to="'home'" class="footer-links">Equipe</router-link></li>
+            <li><router-link :to="'home'" class="footer-links">Recrutement</router-link></li>
+            <li><router-link :to="'home'" class="footer-links">Magazine</router-link></li>
+          </ul>
+        </div>
+      </div>
     </q-toolbar>
-
   </q-layout>
 </template>
 
@@ -101,6 +113,14 @@ export default {
   data () {
     return {}
   },
+  mounted() {
+    this.$refs.layout.hideLeft();
+  },
+  methods: {
+    onResize(size) {
+      console.log(size)
+    }
+  }
 }
 </script>
 
