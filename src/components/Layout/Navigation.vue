@@ -58,8 +58,8 @@
 
     <!-- Footer -->
     <q-toolbar slot="footer">
-      <div class="row justify-between">
-        <div class="col-xs-12 col-md-4">
+      <div class="row sm-gutter justify-between">
+        <div class="col-auto">
           <ul>
             <li><router-link :to="'home'" class="footer-links">Accueil</router-link></li>
             <li><router-link :to="'home'" class="footer-links">Vision</router-link></li>
@@ -68,13 +68,11 @@
             <li><router-link :to="'home'" class="footer-links">Magazine</router-link></li>
           </ul>
         </div>
-        <div class="col-xs-12 col-md-4">
+        <div class="col-auto">
           <ul>
-            <li><router-link :to="'home'" class="footer-links">Accueil</router-link></li>
-            <li><router-link :to="'home'" class="footer-links">Vision</router-link></li>
-            <li><router-link :to="'home'" class="footer-links">Equipe</router-link></li>
-            <li><router-link :to="'home'" class="footer-links">Recrutement</router-link></li>
-            <li><router-link :to="'home'" class="footer-links">Magazine</router-link></li>
+            <li><router-link :to="'home'" class="footer-links">Aide à domicile</router-link></li>
+            <li><router-link :to="'home'" class="footer-links">Stimulation et compagnie</router-link></li>
+            <li><router-link :to="'home'" class="footer-links">Sortie d'hospitalisation</router-link></li>
           </ul>
         </div>
       </div>
