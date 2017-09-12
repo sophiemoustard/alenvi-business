@@ -1,25 +1,48 @@
 <template>
   <!-- Configure "view" prop for QLayout -->
   <q-layout ref="layout" view="hHh lpr fff">
-    <q-toolbar color="white" slot="header" class="justify-end">
+    <q-toolbar color="white" slot="header" class="justify-between">
 
-      <q-toolbar-title class="justify-start">
+      <div class="col-1">
         <router-link :to="'home'" active-class="active">
           <img src="statics/alenvi_logo_complet_183x50.png" alt="Logo Alenvi">
         </router-link>
-      </q-toolbar-title>
+      </div>
 
-      <nav class="gt-sm mobile-hide">
-        <router-link :to="'home'">Accueil</router-link>
-        <router-link :to="'home'">Vision</router-link>
-        <router-link :to="'home'">Equipe</router-link>
-        <router-link :to="'home'">Recrutement</router-link>
-        <router-link :to="'home'">Magazine</router-link>
+      <nav class="gt-md mobile-hide col-8">
+        <div class="row justify-start">
+          <ul class="nav">
+            <li>
+              <router-link :to="'home'">Accueil</router-link>
+            </li>
+            <li>
+              <router-link :to="'home'">Vision</router-link>
+            </li>
+            <li>
+              <router-link :to="'home'">Equipe</router-link>
+            </li>
+            <li>
+              <router-link :to="'home'">Recrutement</router-link>
+            </li>
+            <li @mouseleave="$refs.popover1.close()">
+              <router-link @mouseover.native="$refs.popover1.open()" :to="'home'">
+                Magazine<q-icon name="arrow drop down" />
+                <q-popover ref="popover1">
+                  <q-list @mouseli link separator>
+                    <q-item @click.native="$refs.popover1.close()" :to="'test'">Rubrique 1</q-item>
+                    <q-item @click.native="$refs.popover1.close()":to="'test'">Rubrique 2</q-item>
+                    <q-item @click.native="$refs.popover1.close()":to="'test'">Rubrique 3</q-item>
+                  </q-list>
+                </q-popover>
+              </router-link>
+            </li>
+          </ul>
+        </div>
       </nav>
 
-      <q-btn class="gt-sm mobile-hide" color="primary"><a class="btn-call" href="tel:+33179755475">Appeler le 01 79 75 54 75</a></q-btn>
+      <q-btn id="btn-call-header" class="gt-md mobile-hide col-auto" color="primary"><a class="btn-call" href="tel:+33179755475">Appeler le 01 79 75 54 75</a></q-btn>
 
-      <q-btn color="primary" class="lt-md hide-on-drawer-visible" @click="$refs.layout.toggleLeft()" flat big>
+      <q-btn color="primary" class="lt-lg hide-on-drawer-visible" @click="$refs.layout.toggleLeft()" flat big>
         <q-icon name="menu" />
       </q-btn>
 
@@ -93,7 +116,10 @@ import {
   QItemSide,
   QTabs,
   QTab,
-  QListHeader } from 'quasar'
+  QListHeader,
+  QPopover,
+  QList,
+  QTooltip } from 'quasar'
 
 export default {
   components: {
@@ -108,18 +134,28 @@ export default {
     QItemSide,
     QTabs,
     QTab,
-    QListHeader
+    QListHeader,
+    QPopover,
+    QList,
+    QTooltip
   },
   data () {
-    return {}
-  },
-  mounted() {
-    this.$refs.layout.hideLeft();
-  },
-  methods: {
-    onResize(size) {
-      console.log(size)
+    return {
+      anchorOrigin: {vertical: 'bottom', horizontal: 'left'},
+      selfOrigin: {vertical: 'top', horizontal: 'left'},
+      active: false
     }
+  },
+  computed: {
+    anchor () {
+      return `${this.anchorOrigin.vertical} ${this.anchorOrigin.horizontal}`;
+    },
+    self () {
+      return `${this.selfOrigin.vertical} ${this.selfOrigin.horizontal}`;
+    }
+  },
+  mounted () {
+    this.$refs.layout.hideLeft();
   }
 }
 </script>
@@ -127,39 +163,48 @@ export default {
 <style lang="stylus">
   @import '~variables'
 
-  #header a
-    color $primary
-
-  nav a {
+  nav a
     color: $tertiary
     font-weight: bold
     padding: 0px 20px
-    line-height: 50px
-  }
+    line-height: 20px
 
-  .btn-call {
+  .nav li
+    float: left
+
+  .q-toolbar
+    min-height: 50px
+
+  #popover-nav
+    top: 70px
+
+
+  .btn-call
     color: $white
     padding: 0 10px 0 10px
     font-weight: bold
-  }
 
-  .btn-call:hover {
+
+  .btn-call:hover
     color: $white
-  }
 
-  footer ul {
+
+  #btn-call-header
+    margin: 0 -15px
+
+  footer ul
     list-style: none
-  }
 
-  footer ul li a {
+
+  footer ul li a
     color: $white
     line-height: 30px
-  }
 
-  .footer-links:hover {
+
+  .footer-links:hover
     text-decoration: underline
     color: $white
-  }
+
 
   // .sidebar-link {
   //   margin-left: 10px
