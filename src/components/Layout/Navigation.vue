@@ -10,6 +10,17 @@
       </div>
 
       <nav class="gt-md mobile-hide col-8">
+        <router-link :to="'home'">Accueil</router-link>
+        <router-link :to="'home'">Vision</router-link>
+        <router-link :to="'home'">Equipe</router-link>
+        <router-link :to="'home'">Recrutement</router-link>
+        <router-link :to="'home'">
+          <span @mouseover="isActive">Magazine<q-icon name="arrow drop down" /></span>
+        </router-link>
+      </nav>
+
+
+      <!-- <nav class="gt-md mobile-hide col-8">
         <div class="row justify-start">
           <ul class="nav">
             <li>
@@ -24,29 +35,36 @@
             <li>
               <router-link :to="'home'">Recrutement</router-link>
             </li>
-            <li @mouseleave="$refs.popover1.close()">
-              <router-link @mouseover.native="$refs.popover1.open()" :to="'home'">
+            <li @mouseover="$refs.popover1.open()" @mouseleave="closePopover()">
+              <router-link :to="'home'">
                 Magazine<q-icon name="arrow drop down" />
-                <q-popover ref="popover1">
-                  <q-list @mouseli link separator>
-                    <q-item @click.native="$refs.popover1.close()" :to="'test'">Rubrique 1</q-item>
-                    <q-item @click.native="$refs.popover1.close()":to="'test'">Rubrique 2</q-item>
-                    <q-item @click.native="$refs.popover1.close()":to="'test'">Rubrique 3</q-item>
-                  </q-list>
-                </q-popover>
               </router-link>
+              <q-popover ref="popover1" style="top: 70px;">
+                <q-list @mouseover="isActive()" link separator>
+                  <q-item @click.native="$refs.popover1.close()" :to="'test'">Rubrique 1</q-item>
+                  <q-item @click.native="$refs.popover1.close()":to="'test'">Rubrique 2</q-item>
+                  <q-item @click.native="$refs.popover1.close()":to="'test'">Rubrique 3</q-item>
+                </q-list>
+              </q-popover>
             </li>
           </ul>
         </div>
-      </nav>
+      </nav> -->
 
-      <q-btn id="btn-call-header" class="gt-md mobile-hide col-auto" color="primary"><a class="btn-call" href="tel:+33179755475">Appeler le 01 79 75 54 75</a></q-btn>
+      <q-btn id="btn-call-header" class="gt-md mobile-hide col-auto" color="primary" no-caps><a class="btn-call" href="tel:+33179755475">Appeler le <b>01 79 75 54 75</b></a></q-btn>
 
       <q-btn color="primary" class="lt-lg hide-on-drawer-visible" @click="$refs.layout.toggleLeft()" flat big>
         <q-icon name="menu" />
       </q-btn>
 
     </q-toolbar>
+
+
+    <q-tabs slot="navigation" color="white" v-if="active" @mouseleave.native="isActive" class="shadow-2" align="center">
+      <q-route-tab @click="active = false" to="home" slot="title" label="Rubrique 1" />
+      <q-route-tab @click="active = false" to="home" slot="title" label="Rubrique 2" />
+      <q-route-tab @click="active = false" to="home" slot="title" label="Rubrique 3" />
+    </q-tabs>
 
     <div slot="left">
       <q-item-side right>
@@ -116,6 +134,7 @@ import {
   QItemSide,
   QTabs,
   QTab,
+  QRouteTab,
   QListHeader,
   QPopover,
   QList,
@@ -134,6 +153,7 @@ export default {
     QItemSide,
     QTabs,
     QTab,
+    QRouteTab,
     QListHeader,
     QPopover,
     QList,
@@ -141,21 +161,23 @@ export default {
   },
   data () {
     return {
-      anchorOrigin: {vertical: 'bottom', horizontal: 'left'},
-      selfOrigin: {vertical: 'top', horizontal: 'left'},
       active: false
-    }
-  },
-  computed: {
-    anchor () {
-      return `${this.anchorOrigin.vertical} ${this.anchorOrigin.horizontal}`;
-    },
-    self () {
-      return `${this.selfOrigin.vertical} ${this.selfOrigin.horizontal}`;
     }
   },
   mounted () {
     this.$refs.layout.hideLeft();
+  },
+  methods: {
+    isActive () {
+      this.active = !this.active;
+    }
+    // closePopover () {
+    //   if (!this.active) {
+    //     this.$refs.popover1.close();
+    //   } else {
+    //     return;
+    //   }
+    // }
   }
 }
 </script>
@@ -169,21 +191,27 @@ export default {
     padding: 0px 20px
     line-height: 20px
 
-  .nav li
-    float: left
+  // .nav
+  //   list-style: none
+  //
+  // .nav li
+  //   float: left
 
   .q-toolbar
-    min-height: 50px
+    min-height: 70px
 
-  #popover-nav
-    top: 70px
+  .q-tab-label
+    color: $tertiary
 
+  .q-tab-label:hover
+    color: $primary
 
   .btn-call
     color: $white
     padding: 0 10px 0 10px
-    font-weight: bold
 
+  button a b
+    font-weight: bold
 
   .btn-call:hover
     color: $white
