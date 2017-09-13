@@ -35,6 +35,10 @@ export default new VueRouter({
           name: 'home',
           title: 'Accueil',
           component: load('Home/Home')
+        },
+        {
+          path: 'test',
+          component: load('CarouselPress/CarouselPress')
         }
       ]
     },
