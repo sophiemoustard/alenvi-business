@@ -2,20 +2,23 @@
   <main class="">
     <!-- main presentation -->
     <section id="main-presentation" class="row section-margin">
-      <div id="main-text-and-call" class="self-center col-md-5">
+      <div id="main-text-and-call" class="col-md-5">
         <h1 class="main-section-title">Accompagner le quotidien, stimuler les envies.</h1>
         <h2 class="main-section-subtitle">Nous sommes des professionnels passionnés par notre métier. Nous créons des liens sur le long terme avec les personnes âgées.</h2>
         <q-btn color="primary" big>
           <a class="btn-call" href="tel:+33179755475">Appeler le 01 79 75 54 75</a>
         </q-btn>
       </div>
-      <div class="col-md-7">
+      <div class="col-md-7 img-overlay">
         <q-gallery-carousel class="gallery-cropper" infinite autoplay :src="gallery"></q-gallery-carousel>
+        <svg viewBox="25 0 592 398">
+          <path d="M27,71.5a71.43,71.43,0,0,0,2.48,18.73L105,399H-71V0H98.5A71.5,71.5,0,0,0,27,71.5Z" fill="#FFFFFF"/>
+        </svg>
       </div>
     </section>
     <!-- features -->
     <section id="features" class="row layout-padding section-margin">
-      <div v-for="feature in features" id="test" class="col-sm-4 feature-padding" :style="{ backgroundColor: feature.backgroundColor }">
+      <div v-for="feature in features" class="col-sm-4 feature-padding" :style="{ backgroundColor: feature.backgroundColor }">
         <div class="text-center">
           <img class="main-picto" :src="feature.image" alt="">
           <h5>{{feature.title}}</h5>
@@ -26,15 +29,14 @@
         </div>
       </div>
     </section>
-
     <!-- auxiliaries -->
     <section id="auxiliaries" class="row section-margin">
-      <div v-for="auxiliary in auxiliaries" class="col-sm-3 test-container">
+      <div v-for="auxiliary in auxiliaries" class="col-sm-3 auxiliaries-container">
         <img src="statics/Maud.jpg" alt="splash" width="100%" height="100%"/>
         <div class="auxiliaries-filter" :style="{ backgroundColor: auxiliary.backgroundColor }"></div>
       </div>
-      <!-- <q-video src="https://www.youtube.com/embed/jvC2ywimFY0?wmode=opaque" style="width: 100%; height: 315px" /> -->
     </section>
+    <!-- <q-video src="https://www.youtube.com/embed/jvC2ywimFY0?wmode=opaque" style="width: 100%; height: 315px" /> -->
   </main>
 </template>
 
@@ -150,20 +152,44 @@ export default {
 <style lang="css" scoped>
 
 #main-presentation {
-  background-color: #FAF9F8;
+  /*background-color: #FAF9F8;*/
+  /*max-height: 500px;*/
 }
 
 #main-text-and-call {
+  background: linear-gradient(to right, #DFE0E2, white);
   padding-left: 5%;
   padding-right: 5%;
 }
 
-.test-container {
+.gallery-cropper {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+}
+
+.img-overlay {
+  position: relative;
+}
+.img-overlay svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.img-overlay q-gallery-carousel {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+
+.auxiliaries-container {
   position: relative;
   /*height: 100%;*/
 }
 
-.test-container:hover:before {
+.auxiliaries-container:hover:before {
   content:'';
   position:absolute;
   top: 42%;
@@ -198,15 +224,6 @@ export default {
   font-size: 1.5em;
 }
 
-.gallery-cropper {
-  width: 100%;
-  height: auto;
-  max-height: 500px;
-  /*border-radius: 145px 0 0 0;*/
-  -webkit-clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
-  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
-}
-
 .section-margin {
   margin-bottom: 3%;
 }
@@ -223,7 +240,8 @@ export default {
 }
 
 .feature-background {
-  background-color: #FAF9F8;
+  background-color: #FFFFFF;
+  /*background-color: #FAF9F8;*/
 }
 
 .feature-padding {
@@ -233,10 +251,6 @@ export default {
 
 .q-btn {
   font-weight: bold;
-}
-
-.align-center {
-  text-align: center;
 }
 
 </style>
