@@ -110,7 +110,7 @@ export default {
     color: $tertiary
     font-weight: 100
 
-  @media (max-width: 1024px)
-    padding: 0px 0px 10px 15px
+    @media (max-width: 1024px)
+      padding: 0px 0px 10px 15px
 
 </style>
