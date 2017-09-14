@@ -9,12 +9,12 @@
           <a class="btn-call" href="tel:+33179755475">Appeler le 01 79 75 54 75</a>
         </q-btn>
       </div>
-      <div class="col-md-7 test-holder"> <!-- img-overlay -->
-        <img src="statics/home_care_1.jpg" alt="">
-        <!-- <q-gallery-carousel class="gallery-cropper" infinite autoplay :src="gallery"></q-gallery-carousel> -->
-        <!-- <svg viewBox="25 0 592 398">
+      <div class="col-md-7 img-overlay"> <!-- test-holder -->
+        <!-- <img src="statics/home_care_1.jpg" alt=""> -->
+        <q-gallery-carousel class="gallery-cropper" infinite autoplay :src="gallery"></q-gallery-carousel>
+        <svg viewBox="25 0 592 398">
           <path d="M27,71.5a71.43,71.43,0,0,0,2.48,18.73L105,399H-71V0H98.5A71.5,71.5,0,0,0,27,71.5Z" fill="#FFFFFF"/>
-        </svg> -->
+        </svg>
       </div>
     </section>
     <!-- features -->
@@ -168,7 +168,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-  @import '~variables'
 
   #main-presentation
     // background-color: #FAF9F8
@@ -199,18 +198,18 @@ export default {
     display: block
     height: auto
 
-  .test-holder
-    border-top-left-radius: 70px
-    transform-origin: left top
-    transform: skewX(12deg)
-    overflow: hidden
-
-  .test-holder img
-    transform-origin: left top
-    transform: skewX(-12deg)
-    display: block
-    height: auto
-    width: 100%
+  // .test-holder
+  //   border-top-left-radius: 70px
+  //   transform-origin: left top
+  //   transform: skewX(12deg)
+  //   overflow: hidden
+  //
+  // .test-holder q-gallery-carousel
+  //   transform-origin: left top
+  //   transform: skewX(-12deg)
+  //   display: block
+  //   height: auto
+  //   width: 100%
 
   .auxiliaries-container
     position: relative
