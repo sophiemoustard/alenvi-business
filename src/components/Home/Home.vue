@@ -9,11 +9,12 @@
           <a class="btn-call" href="tel:+33179755475">Appeler le 01 79 75 54 75</a>
         </q-btn>
       </div>
-      <div class="col-md-7 img-overlay">
-        <q-gallery-carousel class="gallery-cropper" infinite autoplay :src="gallery"></q-gallery-carousel>
-        <svg viewBox="25 0 592 398">
+      <div class="col-md-7 test-holder"> <!-- img-overlay -->
+        <img src="statics/home_care_1.jpg" alt="">
+        <!-- <q-gallery-carousel class="gallery-cropper" infinite autoplay :src="gallery"></q-gallery-carousel> -->
+        <!-- <svg viewBox="25 0 592 398">
           <path d="M27,71.5a71.43,71.43,0,0,0,2.48,18.73L105,399H-71V0H98.5A71.5,71.5,0,0,0,27,71.5Z" fill="#FFFFFF"/>
-        </svg>
+        </svg> -->
       </div>
     </section>
     <!-- features -->
@@ -37,6 +38,12 @@
       </div>
     </section>
     <!-- <q-video src="https://www.youtube.com/embed/jvC2ywimFY0?wmode=opaque" style="width: 100%; height: 315px" /> -->
+
+    <!-- Carousel Media -->
+    <section id="media">
+      <carousel-media></carousel-media>
+    </section>
+
   </main>
 </template>
 
@@ -45,15 +52,26 @@ import {
   QGalleryCarousel,
   QBtn,
   QIcon,
-  QVideo
+  QVideo,
+  QCarousel,
+  QCard,
+  QCardTitle,
+  QCardMain
 } from 'quasar'
+
+import CarouselMedia from '../CarouselMedia/CarouselMedia.vue'
 
 export default {
   components: {
     QGalleryCarousel,
     QBtn,
     QIcon,
-    QVideo
+    QVideo,
+    QCarousel,
+    QCard,
+    QCardTitle,
+    QCardMain,
+    CarouselMedia
   },
   data() {
     return {
@@ -149,108 +167,107 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="stylus" scoped>
+  @import '~variables'
 
-#main-presentation {
-  /*background-color: #FAF9F8;*/
-  /*max-height: 500px;*/
-}
-
-#main-text-and-call {
-  background: linear-gradient(to right, #DFE0E2, white);
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-.gallery-cropper {
-  width: 100%;
-  height: auto;
-  max-height: 500px;
-}
-
-.img-overlay {
-  position: relative;
-}
-.img-overlay svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-}
-.img-overlay q-gallery-carousel {
-  width: 100%;
-  display: block;
-  height: auto;
-}
+  #main-presentation
+    // background-color: #FAF9F8
+    // max-height: 500px
 
 
-.auxiliaries-container {
-  position: relative;
-  /*height: 100%;*/
-}
+  #main-text-and-call
+    background: linear-gradient(to right, #FAF9F8, white)
+    padding-left: 5%
+    padding-right: 5%
 
-.auxiliaries-container:hover:before {
-  content:'';
-  position:absolute;
-  top: 42%;
-  left:48%;
-  display:inline-block;
-  width: 0;
-  height: 0;
-  border-top: 35px solid transparent;
-  border-left: 40px solid rgba(255, 255, 255, .5);
-  border-bottom: 35px solid transparent;
-}
+  .gallery-cropper
+    width: 100%
+    height: auto
+    max-height: 500px
 
-.auxiliaries-filter {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0.7;
-  /*background-color: pink;*/
-}
+  .img-overlay
+    position: relative
 
-.auxiliaries-filter:hover {
-  opacity: 0;
-}
+  .img-overlay svg
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
 
-.main-section-title {
-  font-size: 2.8em;
-}
+  .img-overlay q-gallery-carousel
+    width: 100%
+    display: block
+    height: auto
 
-.main-section-subtitle {
-  font-size: 1.5em;
-}
+  .test-holder
+    border-top-left-radius: 70px
+    transform-origin: left top
+    transform: skewX(12deg)
+    overflow: hidden
 
-.section-margin {
-  margin-bottom: 3%;
-}
+  .test-holder img
+    transform-origin: left top
+    transform: skewX(-12deg)
+    display: block
+    height: auto
+    width: 100%
 
-.main-picto {
-  width: 100px;
-  height: 100px;
-}
+  .auxiliaries-container
+    position: relative
+    // height: 100%
 
-.feature-text {
-  text-align: justify;
-  padding-left: 10%;
-  padding-right: 10%;
-}
+  .auxiliaries-container:hover:before
+    content: ''
+    position: absolute
+    top: 42%
+    left:48%
+    display: inline-block
+    width: 0
+    height: 0
+    border-top: 35px solid transparent
+    border-left: 40px solid rgba(255, 255, 255, .5)
+    border-bottom: 35px solid transparent
 
-.feature-background {
-  background-color: #FFFFFF;
-  /*background-color: #FAF9F8;*/
-}
+  .auxiliaries-filter
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    opacity: 0.7
+    // background-color: pink
 
-.feature-padding {
-  padding-top: 2%;
-  padding-bottom: 2%;
-}
+  .auxiliaries-filter:hover
+    opacity: 0
 
-.q-btn {
-  font-weight: bold;
-}
+
+  .main-section-title
+    font-size: 2.8em
+
+  .main-section-subtitle
+    font-size: 1.5em
+
+  .section-margin
+    margin-bottom: 3%
+
+  .main-picto
+    width: 100px
+    height: 100px
+
+  .feature-text
+    text-align: justify
+    padding-left: 10%
+    padding-right: 10%
+
+  .feature-background
+    background-color: #FFFFFF
+    // background-color: #FAF9F8
+
+  .feature-padding
+    padding-top: 2%
+    padding-bottom: 2%
+
+  .q-btn
+    font-weight: bold
 
 </style>
