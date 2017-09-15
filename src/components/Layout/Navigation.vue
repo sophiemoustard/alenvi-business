@@ -9,7 +9,7 @@
         </router-link>
       </div>
 
-      <nav class="gt-md mobile-hide col-8">
+      <nav class="gt-mld col-8">
         <router-link :to="'home'">Accueil</router-link>
         <router-link :to="'home'">Vision</router-link>
         <router-link :to="'home'">Equipe</router-link>
@@ -51,9 +51,9 @@
         </div>
       </nav> -->
 
-      <q-btn id="btn-call-header" class="gt-md mobile-hide col-auto" color="primary" no-caps><a class="btn-call" href="tel:+33179755475">Appeler le <b>01 79 75 54 75</b></a></q-btn>
+      <q-btn id="btn-call-header" class="gt-mld col-auto" color="primary" no-caps><a class="btn-call" href="tel:+33179755475">Appeler le <b>01 79 75 54 75</b></a></q-btn>
 
-      <q-btn color="primary" class="lt-lg hide-on-drawer-visible" @click="$refs.layout.toggleLeft()" flat big>
+      <q-btn color="primary" class="lt-lgx hide-on-drawer-visible" @click="$refs.layout.toggleLeft()" flat big>
         <q-icon name="menu" />
       </q-btn>
 
@@ -196,9 +196,14 @@ export default {
 <style lang="stylus">
   @import '~variables'
 
-  @media (max-width: 1199px) and (min-width: 768px)
+  @media (max-width: 1024px) and (min-width: 768px)
     .gt-mld
-      display: none !important;
+      display: none !important
+
+
+  @media (min-width: 1199px)
+    .lt-lgx
+      display: none !important
 
   nav a
     color: $tertiary
