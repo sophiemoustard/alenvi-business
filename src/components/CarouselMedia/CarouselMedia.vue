@@ -6,7 +6,7 @@
           <div v-for="content in slide" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
             <a :href="content.link">
               <q-card color="white" class="shadow-1">
-                <div class="carousel-card row items-center content-between">
+                <div :class="carouselCardClassesObj">
                   <div class="col-xs-12 col-sm-12 col-md-4 img-carousel">
                     <div class="row justify-center">
                       <img :src="content.img" :alt="content.imgAlt">
@@ -78,7 +78,26 @@ export default {
             link: 'https://www.leparisien.fr'
           }
         ]
-      ]
+      ],
+      carouselCardClasses: {
+        'carousel-card': true,
+        row: true,
+        'items-center': true,
+        'content-between': true
+      }
+    }
+  },
+  computed: {
+    carouselCardClassesObj() {
+      if (this.$q.platform.is.mozilla) {
+        return {
+        'carousel-card': true,
+        row: true,
+        'items-center': true,
+        'content-between': false
+        }
+        return this.carouselCardClasses
+      }
     }
   }
 }
