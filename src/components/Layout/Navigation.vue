@@ -1,7 +1,7 @@
 <template>
   <!-- Configure "view" prop for QLayout -->
   <q-layout ref="layout" view="hHh lpr fff">
-    <q-toolbar color="white" slot="header" class="justify-between">
+    <q-toolbar color="white" slot="header" class="justify-between items-start">
 
       <div class="col-2">
         <router-link :to="'home'" active-class="active">
@@ -9,13 +9,13 @@
         </router-link>
       </div>
 
-      <nav class="gt-mld col-8">
+      <nav class="gt-mld col-8 row items-center">
         <router-link :to="'home'">Accueil</router-link>
         <router-link :to="'home'">Vision</router-link>
         <router-link :to="'home'">Equipe</router-link>
         <router-link :to="'home'">Recrutement</router-link>
         <router-link :to="'home'">
-          <div ref="dropdown" @mouseover="isActive(), getElementLeftPos()">Magazine<q-icon name="arrow drop down" /></div>
+          <div class="dropdown-item row justify-center" ref="dropdown" @mouseover="isActive(), getElementLeftPos()">Magazine<q-icon name="arrow drop down" /></div>
         </router-link>
       </nav>
 
@@ -60,7 +60,7 @@
     </q-toolbar>
 
     <div v-if="active" class="row justify-center" slot="navigation">
-      <div @mouseleave="active = false" :style="dropdownPos">
+      <div @mouseleave="isActive" :style="dropdownPos">
       <q-tabs id="tabs-nav" color="white" class="shadow-2" align="center">
         <q-route-tab @click="active = false" to="home" slot="title" label="Rubrique 1" />
         <q-route-tab @click="active = false" to="home" slot="title" label="Rubrique 2" />
@@ -205,7 +205,7 @@ export default {
 <style lang="stylus">
   @import '~variables'
 
-  @media (max-width: 1024px) and (min-width: 768px)
+  @media (max-width: 1024px) and (min-width: 320px)
     .gt-mld
       display: none !important
 
@@ -220,8 +220,8 @@ export default {
     padding: 0px 20px
     line-height: 20px
 
-  nav a div
-    display: inline-block;
+  // nav a div
+  //   display: inline-block;
   // .q-tabs-scroller
   //   flex-wrap: wrap;
 
@@ -230,6 +230,12 @@ export default {
   //
   // .nav li
   //   float: left
+
+  .dropdown-item
+    display: inline-block
+    height: 60px
+    padding-top: 20px
+
 
   .q-toolbar
     min-height: 70px
