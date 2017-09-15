@@ -3,7 +3,7 @@
   <q-layout ref="layout" view="hHh lpr fff">
     <q-toolbar color="white" slot="header" class="justify-between">
 
-      <div class="col-1">
+      <div class="col-2">
         <router-link :to="'home'" active-class="active">
           <img src="statics/alenvi_logo_complet_183x50.png" alt="Logo Alenvi">
         </router-link>
@@ -15,7 +15,7 @@
         <router-link :to="'home'">Equipe</router-link>
         <router-link :to="'home'">Recrutement</router-link>
         <router-link :to="'home'">
-          <span @mouseover="isActive">Magazine<q-icon name="arrow drop down" /></span>
+          <div ref="dropdown" @mouseover="isActive(), getElementLeftPos()">Magazine<q-icon name="arrow drop down" /></div>
         </router-link>
       </nav>
 
@@ -59,12 +59,16 @@
 
     </q-toolbar>
 
+    <div v-if="active" class="row justify-center" slot="navigation">
+      <div @mouseleave="active = false" :style="dropdownPos">
+      <q-tabs id="tabs-nav" color="white" class="shadow-2" align="center">
+        <q-route-tab @click="active = false" to="home" slot="title" label="Rubrique 1" />
+        <q-route-tab @click="active = false" to="home" slot="title" label="Rubrique 2" />
+        <q-route-tab @click="active = false" to="home" slot="title" label="Rubrique 3" />
+      </q-tabs>
+      </div>
+    </div>
 
-    <q-tabs slot="navigation" color="white" v-if="active" @mouseleave.native="isActive" class="shadow-2" align="center">
-      <q-route-tab @click="active = false" to="home" slot="title" label="Rubrique 1" />
-      <q-route-tab @click="active = false" to="home" slot="title" label="Rubrique 2" />
-      <q-route-tab @click="active = false" to="home" slot="title" label="Rubrique 3" />
-    </q-tabs>
 
     <div slot="left">
       <q-item-side right>
@@ -161,7 +165,11 @@ export default {
   },
   data () {
     return {
-      active: false
+      active: false,
+      dropdownPos: {
+        position: 'absolute',
+        left: ''
+      }
     }
   },
   mounted () {
@@ -170,6 +178,9 @@ export default {
   methods: {
     isActive () {
       this.active = !this.active;
+    },
+    getElementLeftPos() {
+      return this.dropdownPos.left = this.$refs.dropdown.getBoundingClientRect().left + 'px';
     }
     // closePopover () {
     //   if (!this.active) {
@@ -185,11 +196,20 @@ export default {
 <style lang="stylus">
   @import '~variables'
 
+  @media (max-width: 1199px) and (min-width: 768px)
+    .gt-mld
+      display: none !important;
+
   nav a
     color: $tertiary
     font-weight: bold
     padding: 0px 20px
     line-height: 20px
+
+  nav a div
+    display: inline-block;
+  // .q-tabs-scroller
+  //   flex-wrap: wrap;
 
   // .nav
   //   list-style: none

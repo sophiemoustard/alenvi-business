@@ -38,7 +38,7 @@ export default new VueRouter({
         },
         {
           path: 'test',
-          component: load('CarouselPress/CarouselPress')
+          component: load('CarouselMedia/CarouselMedia')
         }
       ]
     },
