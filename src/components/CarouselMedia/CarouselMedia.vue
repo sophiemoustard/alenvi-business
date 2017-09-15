@@ -96,8 +96,8 @@ export default {
         'items-center': true,
         'content-between': false
         }
-        return this.carouselCardClasses
       }
+      return this.carouselCardClasses;
     }
   }
 }
