@@ -93,10 +93,17 @@
         <q-item-side icon="assignment ind" />
         <q-item-main label="Recrutement" />
       </q-side-link>
-      <q-side-link item to="/home">
-        <q-item-side icon="book" />
-        <q-item-main label="Magazine" />
-      </q-side-link>
+      <q-collapsible icon="book" label="Magazine">
+        <q-side-link item to="/home">
+          <q-item-main label="Rubrique 1" />
+        </q-side-link>
+        <q-side-link item to="/home">
+          <q-item-main label="Rubrique 2" />
+        </q-side-link>
+        <q-side-link item to="/home">
+          <q-item-main label="Rubrique 3" />
+        </q-side-link>
+      </q-collapsible>
     </div>
 
     <router-view />
@@ -142,7 +149,8 @@ import {
   QListHeader,
   QPopover,
   QList,
-  QTooltip } from 'quasar'
+  QTooltip,
+  QCollapsible } from 'quasar'
 
 export default {
   components: {
@@ -161,7 +169,8 @@ export default {
     QListHeader,
     QPopover,
     QList,
-    QTooltip
+    QTooltip,
+    QCollapsible
   },
   data () {
     return {
