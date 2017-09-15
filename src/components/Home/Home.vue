@@ -1,8 +1,8 @@
 <template lang="html">
   <main class="">
     <!-- main presentation -->
-    <section id="main-presentation" class="row section-margin">
-      <div id="main-text-and-call" class="col-md-5">
+    <section id="main-presentation" class="row main-pres-background">
+      <div id="main-text-and-call" class="col-md-5 self-center">
         <h1 class="main-section-title">Accompagner le quotidien, stimuler les envies.</h1>
         <h2 class="main-section-subtitle">Nous sommes des professionnels passionnés par notre métier. Nous créons des liens sur le long terme avec les personnes âgées.</h2>
         <q-btn color="primary" big>
@@ -12,8 +12,8 @@
       <div class="col-md-7 img-overlay"> <!-- test-holder -->
         <!-- <img src="statics/home_care_1.jpg" alt=""> -->
         <q-gallery-carousel class="gallery-cropper" infinite autoplay :src="gallery"></q-gallery-carousel>
-        <svg viewBox="25 0 592 398">
-          <path d="M27,71.5a71.43,71.43,0,0,0,2.48,18.73L105,399H-71V0H98.5A71.5,71.5,0,0,0,27,71.5Z" fill="#FFFFFF"/>
+        <svg class="gt-sm" viewBox="25 0 592 398">
+          <path d="M27,71.5a71.43,71.43,0,0,0,2.48,18.73L105,399H-71V0H98.5A71.5,71.5,0,0,0,27,71.5Z" fill="#FCFBFB"/>
         </svg>
       </div>
     </section>
@@ -32,9 +32,14 @@
     </section>
     <!-- auxiliaries -->
     <section id="auxiliaries" class="row section-margin">
-      <div v-for="auxiliary in auxiliaries" class="col-sm-3 auxiliaries-container">
-        <img src="statics/Maud.jpg" alt="splash" width="100%" height="100%"/>
-        <div class="auxiliaries-filter" :style="{ backgroundColor: auxiliary.backgroundColor }"></div>
+      <div class="col-sm-3 auxiliaries-container" v-for="auxiliary in auxiliaries" v-if="auxiliary.youtube_link">
+        <img src="statics/Maud.jpg" alt="splash" />
+        <div class="auxiliaries-icon-container">
+          <q-icon class="auxiliaries-icon" name="play circle outline" color="white" size="5rem"/>
+        </div>
+        <div class="auxiliaries-filter" :style="{ backgroundColor: auxiliary.backgroundColor }">
+          <h4 class="auxiliaries-name">{{auxiliary.firstname}}</h4>
+        </div>
       </div>
     </section>
     <!-- <q-video src="https://www.youtube.com/embed/jvC2ywimFY0?wmode=opaque" style="width: 100%; height: 315px" /> -->
@@ -54,9 +59,6 @@ import {
   QIcon,
   QVideo,
   QCarousel,
-  QCard,
-  QCardTitle,
-  QCardMain
 } from 'quasar'
 
 import CarouselMedia from '../CarouselMedia/CarouselMedia.vue'
@@ -68,9 +70,6 @@ export default {
     QIcon,
     QVideo,
     QCarousel,
-    QCard,
-    QCardTitle,
-    QCardMain,
     CarouselMedia
   },
   data() {
@@ -106,56 +105,56 @@ export default {
       ],
       auxiliaries: [
         {
-          firstname: 'Guillaume',
+          firstname: 'Maud',
           lastname: 'Desnoës',
           youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
           image: 'statics/Maud.jpg',
           backgroundColor: '#F070AA'
         },
         {
-          firstname: 'Guillaume',
+          firstname: 'Maud',
           lastname: 'Desnoës',
           youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
           image: 'statics/Maud.jpg',
           backgroundColor: '#B61A6D'
         },
         {
-          firstname: 'Guillaume',
+          firstname: 'Maud',
           lastname: 'Desnoës',
           youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
           image: 'statics/Maud.jpg',
           backgroundColor: '#F070AA'
         },
         {
-          firstname: 'Guillaume',
+          firstname: 'Maud',
           lastname: 'Desnoës',
           youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
           image: 'statics/Maud.jpg',
           backgroundColor: '#B61A6D'
         },
         {
-          firstname: 'Guillaume',
+          firstname: 'Maud',
           lastname: 'Desnoës',
           youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
           image: 'statics/Maud.jpg',
           backgroundColor: '#B61A6D'
         },
         {
-          firstname: 'Guillaume',
+          firstname: 'Maud',
           lastname: 'Desnoës',
           youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
           image: 'statics/Maud.jpg',
           backgroundColor: '#F070AA'
         },
         {
-          firstname: 'Guillaume',
+          firstname: 'Maud',
           lastname: 'Desnoës',
           youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
           image: 'statics/Maud.jpg',
           backgroundColor: '#B61A6D'
         },
         {
-          firstname: 'Guillaume',
+          firstname: 'Maud',
           lastname: 'Desnoës',
           youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
           image: 'statics/Maud.jpg',
@@ -175,9 +174,12 @@ export default {
 
 
   #main-text-and-call
-    background: linear-gradient(to right, #FAF9F8, white)
     padding-left: 5%
     padding-right: 5%
+
+  .main-pres-background
+    background: linear-gradient(to right, #FAF9F8, white)
+    // background: rgba(0, 0, 0, 0);
 
   .gallery-cropper
     width: 100%
@@ -198,47 +200,64 @@ export default {
     display: block
     height: auto
 
-  // .test-holder
-  //   border-top-left-radius: 70px
-  //   transform-origin: left top
-  //   transform: skewX(12deg)
-  //   overflow: hidden
-  //
-  // .test-holder q-gallery-carousel
-  //   transform-origin: left top
-  //   transform: skewX(-12deg)
-  //   display: block
-  //   height: auto
-  //   width: 100%
-
   .auxiliaries-container
     position: relative
-    // height: 100%
+
+  .auxiliaries-container img
+    width: 100%
+    height: 100%
+
+  .auxiliaries-container:hover > .auxiliaries-icon-container
+    opacity: 1
+
+  .auxiliaries-icon-container
+    position: absolute
+    display: table
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    opacity: 0
+
+  .auxiliaries-icon
+    display: table-cell
+    text-align: center
+    vertical-align: middle
+    color: rgba(255, 255, 255, .5)
 
   .auxiliaries-container:hover:before
-    content: ''
-    position: absolute
-    top: 42%
-    left:48%
-    display: inline-block
-    width: 0
-    height: 0
-    border-top: 35px solid transparent
-    border-left: 40px solid rgba(255, 255, 255, .5)
-    border-bottom: 35px solid transparent
+    // content: ''
+    // position: absolute
+    // top: 42%
+    // left:48%
+    // display: inline-block
+    // width: 0
+    // height: 0
+    // border-top: 35px solid transparent
+    // border-left: 40px solid rgba(255, 255, 255, .5)
+    // border-bottom: 35px solid transparent
 
   .auxiliaries-filter
     position: absolute
+    display: table;
     width: 100%
     height: 100%
     top: 0
     left: 0
     opacity: 0.7
-    // background-color: pink
 
   .auxiliaries-filter:hover
     opacity: 0
 
+  .auxiliaries-name
+    display: table-cell
+    text-align: center
+    vertical-align: middle
+    color: white
+    font-weight: bold
+
+  // .auxiliaries-name:hover
+  //   opacity: 0
 
   .main-section-title
     font-size: 2.8em
