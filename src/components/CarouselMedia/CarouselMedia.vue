@@ -111,7 +111,8 @@ export default {
       margin: 10px 0px 10px 0px
 
   .bg-carousel-gradient
-    background: linear-gradient(135deg, $grey-carousel 0%, $grey-carousel-fade-1 20%, $grey-carousel-fade-2 40%, $white 50%)
+    background: linear-gradient(to right, #FAF9F8, white)
+    // background: linear-gradient(135deg, $grey-carousel 0%, $grey-carousel-fade-1 20%, $grey-carousel-fade-2 40%, $white 50%)
 
   .bg-carousel-transparent
     background: rgba(0, 0, 0, 0)

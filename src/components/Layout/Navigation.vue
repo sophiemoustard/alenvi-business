@@ -210,7 +210,7 @@ export default {
       display: none !important
 
 
-  @media (min-width: 1199px)
+  @media (min-width: 1025px)
     .lt-lgx
       display: none !important
 
