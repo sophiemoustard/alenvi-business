@@ -33,7 +33,6 @@ export default new VueRouter({
         {
           path: 'home',
           name: 'home',
-          title: 'Accueil',
           component: load('Home/Home')
         },
         {
