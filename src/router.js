@@ -25,19 +25,32 @@ export default new VueRouter({
     {
       path: '/',
       component: load('Layout/Navigation'),
+      meta: {
+        breadcrumb: 'Accueil',
+        name: '/'
+      },
       children: [
         {
           path: '',
-          component: load('Home/Home')
+          component: load('Home/Home'),
+          meta: {
+            breadcrumb: 'Accueil'
+          }
         },
         {
           path: 'home',
-          name: 'home',
-          component: load('Home/Home')
+          component: load('Home/Home'),
+          meta: {
+            breadcrumb: 'Accueil'
+          }
         },
         {
           path: 'test',
-          component: load('CarouselMedia/CarouselMedia')
+          component: load('CarouselMedia/CarouselMedia'),
+          meta: {
+            breadcrumb: 'test',
+            name: 'test'
+          }
         }
       ]
     },

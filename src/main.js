@@ -14,11 +14,13 @@ import Vue from 'vue'
 import Quasar from 'quasar'
 import router from './router'
 import axios from 'axios'
+import VueBreadcrumbs from 'vue-breadcrumbs'
 
 Vue.prototype.$http = axios;
 
 Vue.config.productionTip = false
 Vue.use(Quasar) // Install Quasar Framework
+Vue.use(VueBreadcrumbs)
 
 if (__THEME === 'mat') {
   require('quasar-extras/roboto-font')
