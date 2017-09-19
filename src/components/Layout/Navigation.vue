@@ -15,7 +15,9 @@
         <router-link :to="'home'">Equipe</router-link>
         <router-link :to="'home'">Recrutement</router-link>
         <router-link :to="'home'">
-          <div class="dropdown-item row justify-center" ref="dropdown" @mouseover="isActive(), getElementLeftPos()">Magazine<q-icon name="arrow drop down" /></div>
+          <div :class="[dropdownItemClass, { 'active-link': active }, rowClass, justifyCenterClass]" ref="dropdown" @mouseover="isActive(), getElementLeftPos()">
+            Magazine<q-icon name="arrow drop down" />
+          </div>
         </router-link>
       </nav>
 
@@ -175,6 +177,10 @@ export default {
   data () {
     return {
       active: false,
+      dropdownItemClass: 'dropdown-item',
+      activeLinkClass: 'active-link',
+      rowClass: 'row',
+      justifyCenterClass: 'justify-center',
       dropdownPos: {
         position: 'absolute',
         left: ''
@@ -230,6 +236,9 @@ export default {
   //
   // .nav li
   //   float: left
+
+  .active-link
+    color: $primary
 
   .dropdown-item
     display: inline-block
