@@ -1,5 +1,10 @@
 <template>
   <div class="row md-gutter layout-padding">
+    <div class="col-12">
+      <div class="row justify-center">
+        <h3><strong>Magazine : </strong>les derniers articles</h3>
+      </div>
+    </div>
     <div v-for="article in lastArticles" class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
       <q-card class="card" flat>
         <q-card-media>
