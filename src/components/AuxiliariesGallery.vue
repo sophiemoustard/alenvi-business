@@ -1,6 +1,7 @@
 <template lang="html">
   <div class="row">
-    <div class="col-sm-3 auxiliaries-container" v-for="auxiliary in auxiliaries" v-if="auxiliary.youtube_link">
+    <q-window-resize-observable @resize="onResize" />
+    <div class="col-sm-3 auxiliaries-container" v-for="auxiliary in auxiliaries" v-if="auxiliary.youtube_link" @click="openModal(auxiliary)">
       <img src="statics/Maud.jpg" alt="splash" />
       <div class="auxiliaries-icon-container">
         <q-icon class="auxiliaries-icon" name="play circle outline" color="white" size="5rem"/>
@@ -9,19 +10,27 @@
         <h4 class="auxiliaries-name">{{auxiliary.firstname}}</h4>
       </div>
     </div>
+    <q-modal ref="basicModal" :content-css="setVideoContainerSize()">
+      <q-video :src="video_link" style="width: 100%; height: 100%"/>
+    </q-modal>
   </div>
   <!-- <q-video src="https://www.youtube.com/embed/jvC2ywimFY0?wmode=opaque" style="width: 100%; height: 315px" /> -->
 </template>
 
 <script>
-import { QIcon } from 'quasar'
+import { QIcon, QModal, QVideo, QWindowResizeObservable } from 'quasar'
 
 export default {
   components: {
-    QIcon
+    QIcon,
+    QModal,
+    QVideo,
+    QWindowResizeObservable
   },
   data() {
     return {
+      windowSize: {},
+      video_link: '',
       auxiliaries: [
         {
           firstname: 'Maud',
@@ -80,6 +89,29 @@ export default {
           backgroundColor: '#F070AA'
         }
       ]
+    }
+  },
+  methods: {
+    openModal(auxiliary) {
+      this.video_link = `${auxiliary.youtube_link}?autoplay=1`;
+      this.$refs.basicModal.open();
+    },
+    setVideoContainerSize() {
+      let width = '50%';
+      let height = '50%';
+      if (this.windowSize.width < 1200) {
+        width = '100%';
+      }
+      if (this.windowSize.height < 500) {
+        height = '100%';
+      }
+      return {
+        width,
+        height
+      }
+    },
+    onResize(size) {
+      this.windowSize = size;
     }
   }
 }
