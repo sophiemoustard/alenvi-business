@@ -10,8 +10,9 @@
         <h4 class="auxiliaries-name">{{auxiliary.firstname}}</h4>
       </div>
     </div>
-    <q-modal ref="basicModal" :content-css="setVideoContainerSize()">
-      <q-video :src="video_link" style="width: 100%; height: 100%"/>
+    <q-modal ref="basicModal" @close="closeModal()" :content-css="setVideoContainerSize()">
+      <!-- <q-video id="iframe" :src="video_link" style="width: 100%; height: 100%"/> -->
+      <iframe id="auxiliary-iframe" :src="video_link" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
     </q-modal>
   </div>
   <!-- <q-video src="https://www.youtube.com/embed/jvC2ywimFY0?wmode=opaque" style="width: 100%; height: 315px" /> -->
@@ -93,7 +94,7 @@ export default {
   },
   methods: {
     openModal(auxiliary) {
-      this.video_link = `${auxiliary.youtube_link}?autoplay=1`;
+      this.video_link = `${auxiliary.youtube_link}?autoplay=1&enablejsapi=1`;
       this.$refs.basicModal.open();
     },
     setVideoContainerSize() {
@@ -112,6 +113,10 @@ export default {
     },
     onResize(size) {
       this.windowSize = size;
+    },
+    closeModal() {
+      const iframe = document.getElementById('auxiliary-iframe').contentWindow;
+      iframe.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
     }
   }
 }
