@@ -46,10 +46,34 @@ export default new VueRouter({
         },
         {
           path: 'test',
-          component: load('CarouselMedia/CarouselMedia'),
+          component: load('Home/CarouselMedia'),
           meta: {
             breadcrumb: 'test',
             name: 'test'
+          }
+        },
+        {
+          path: 'aide-a-domicile',
+          component: load('LandingPages/HomeCare'),
+          meta: {
+            breadcrumb: 'Aide à domicile',
+            name: 'aide-a-domicile'
+          }
+        },
+        {
+          path: 'compagnie',
+          component: load('LandingPages/Company'),
+          meta: {
+            breadcrumb: 'Compagnie et stimulation',
+            name: 'compagnie'
+          }
+        },
+        {
+          path: 'sortie-hopital',
+          component: load('LandingPages/HospitalExit'),
+          meta: {
+            breadcrumb: "Sortie d'hôpital",
+            name: 'aide-a-domicile'
           }
         }
       ]
