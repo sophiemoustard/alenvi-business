@@ -23,4 +23,10 @@ body
 h1, h2, h3, h4, h5, h6
   font-family: alenviTitleFont
   color: $tertiary
+
+h1
+  font-size: 2.8em
+
+h2
+  font-size: 1.5em
 </style>
