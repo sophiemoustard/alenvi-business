@@ -1,8 +1,8 @@
 <template lang="html">
   <div class="row main-pres-background">
     <div id="main-text-and-call" class="col-lg-6 self-center">
-      <h1 class="main-section-title">Accompagner le quotidien, stimuler les envies.</h1>
-      <h2 class="main-section-subtitle">Nous sommes des professionnels passionnés par notre métier. Nous créons des liens sur le long terme avec les personnes âgées.</h2>
+      <h1>Accompagner le quotidien, stimuler les envies.</h1>
+      <h2>Nous sommes des professionnels passionnés par notre métier. Nous créons des liens sur le long terme avec les personnes âgées.</h2>
       <q-btn color="primary" big>
         <a class="btn-call" href="tel:+33179755475">Appeler le 01 79 75 54 75</a>
       </q-btn>
@@ -73,12 +73,6 @@ export default {
   width: 100%
   display: block
   height: auto
-
-.main-section-title
-  font-size: 2.8em
-
-.main-section-subtitle
-  font-size: 1.5em
 
 .q-btn
   font-weight: bold
