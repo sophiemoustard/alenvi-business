@@ -15,6 +15,9 @@
     <section id="latest-articles">
       <latest-articles />
     </section>
+    <section id="apply">
+      <apply />
+    </section>
   </main>
 </template>
 
@@ -25,6 +28,7 @@ import Features from './Features.vue'
 import AuxiliariesGallery from '../AuxiliariesGallery.vue'
 import CarouselMedia from './CarouselMedia.vue'
 import LatestArticles from './LatestArticles.vue'
+import Apply from '../Apply.vue'
 
 export default {
   components: {
@@ -32,7 +36,8 @@ export default {
     CarouselMedia,
     AuxiliariesGallery,
     Features,
-    LatestArticles
+    LatestArticles,
+    Apply
   }
 }
 </script>
