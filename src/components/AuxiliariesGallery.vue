@@ -1,8 +1,8 @@
 <template lang="html">
   <div class="row">
     <q-window-resize-observable @resize="onResize" />
-    <div class="col-sm-3 auxiliaries-container" v-for="auxiliary in auxiliaries" v-if="auxiliary.youtube_link" @click="openModal(auxiliary)">
-      <img src="statics/Maud.jpg" alt="splash" />
+    <div class="col-sm-3 auxiliaries-container" v-for="auxiliary in auxiliaries" v-if="auxiliary.youtube" @click="openModal(auxiliary)">
+      <img :src="auxiliary.picture" alt="splash" />
       <div class="auxiliaries-icon-container">
         <q-icon class="auxiliaries-icon" name="play circle outline" color="white" size="5rem"/>
       </div>
@@ -32,69 +32,39 @@ export default {
     return {
       windowSize: {},
       video_link: '',
-      auxiliaries: [
-        {
-          firstname: 'Maud',
-          lastname: 'Desnoës',
-          youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-          image: 'statics/Maud.jpg',
-          backgroundColor: '#F070AA'
-        },
-        {
-          firstname: 'Maud',
-          lastname: 'Desnoës',
-          youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-          image: 'statics/Maud.jpg',
-          backgroundColor: '#B61A6D'
-        },
-        {
-          firstname: 'Maud',
-          lastname: 'Desnoës',
-          youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-          image: 'statics/Maud.jpg',
-          backgroundColor: '#F070AA'
-        },
-        {
-          firstname: 'Maud',
-          lastname: 'Desnoës',
-          youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-          image: 'statics/Maud.jpg',
-          backgroundColor: '#B61A6D'
-        },
-        {
-          firstname: 'Maud',
-          lastname: 'Desnoës',
-          youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-          image: 'statics/Maud.jpg',
-          backgroundColor: '#B61A6D'
-        },
-        {
-          firstname: 'Maud',
-          lastname: 'Desnoës',
-          youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-          image: 'statics/Maud.jpg',
-          backgroundColor: '#F070AA'
-        },
-        {
-          firstname: 'Maud',
-          lastname: 'Desnoës',
-          youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-          image: 'statics/Maud.jpg',
-          backgroundColor: '#B61A6D'
-        },
-        {
-          firstname: 'Maud',
-          lastname: 'Desnoës',
-          youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-          image: 'statics/Maud.jpg',
-          backgroundColor: '#F070AA'
-        }
-      ]
+      auxiliaries: [],
+      auxiliariesRaw: [],
+      videoNumber: 8 || 8
+    }
+  },
+  async created() {
+    const auxiliariesRaw = await this.$http.get('http://localhost:3000/users/presentation', {
+      params: {
+        role: 'auxiliary',
+        location: 'accueil'
+      }
+    });
+    this.auxiliariesRaw = auxiliariesRaw.data.data.users;
+    this.shuffle(this.auxiliaries);
+    this.auxiliaries = this.auxiliariesRaw;
+    if (this.windowSize.width < 1024) {
+      this.auxiliaries = this.auxiliariesRaw;
+      this.auxiliaries.splice(this.videoNumber / 2);
+    } else {
+      this.auxiliaries = this.auxiliariesRaw;
+      this.auxiliaries.splice(this.videoNumber);
+    }
+    for (let i = 0; i < this.auxiliaries.length; i++) {
+      if (i < 4) {
+        this.auxiliaries[i].backgroundColor = i % 2 == 1 ? '#F070AA' : '#B61A6D';
+      } else {
+        this.auxiliaries[i].backgroundColor = i % 2 == 0 ? '#F070AA' : '#B61A6D';
+      }
     }
   },
   methods: {
     openModal(auxiliary) {
-      this.video_link = `${auxiliary.youtube_link}?autoplay=1&enablejsapi=1`;
+      this.video_link = `${auxiliary.youtube.link}?autoplay=1&enablejsapi=1`;
       this.$refs.basicModal.open();
     },
     setVideoContainerSize() {
@@ -117,8 +87,72 @@ export default {
     closeModal() {
       const iframe = document.getElementById('auxiliary-iframe').contentWindow;
       iframe.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
+    },
+    shuffle(a) {
+      for (let i = a.length; i; i--) {
+        let j = Math.floor(Math.random() * i);
+        [a[i - 1], a[j]] = [a[j], a[i - 1]];
+      }
     }
   }
+
+  // {
+  //   firstname: 'Maud',
+  //   lastname: 'Desnoës',
+  //   youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
+  //   image: 'statics/Maud.jpg',
+  //   backgroundColor: '#F070AA'
+  // },
+  // {
+  //   firstname: 'Maud',
+  //   lastname: 'Desnoës',
+  //   youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
+  //   image: 'statics/Maud.jpg',
+  //   backgroundColor: '#B61A6D'
+  // },
+  // {
+  //   firstname: 'Maud',
+  //   lastname: 'Desnoës',
+  //   youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
+  //   image: 'statics/Maud.jpg',
+  //   backgroundColor: '#F070AA'
+  // },
+  // {
+  //   firstname: 'Maud',
+  //   lastname: 'Desnoës',
+  //   youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
+  //   image: 'statics/Maud.jpg',
+  //   backgroundColor: '#B61A6D'
+  // },
+  // {
+  //   firstname: 'Maud',
+  //   lastname: 'Desnoës',
+  //   youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
+  //   image: 'statics/Maud.jpg',
+  //   backgroundColor: '#B61A6D'
+  // },
+  // {
+  //   firstname: 'Maud',
+  //   lastname: 'Desnoës',
+  //   youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
+  //   image: 'statics/Maud.jpg',
+  //   backgroundColor: '#F070AA'
+  // },
+  // {
+  //   firstname: 'Maud',
+  //   lastname: 'Desnoës',
+  //   youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
+  //   image: 'statics/Maud.jpg',
+  //   backgroundColor: '#B61A6D'
+  // },
+  // {
+  //   firstname: 'Maud',
+  //   lastname: 'Desnoës',
+  //   youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
+  //   image: 'statics/Maud.jpg',
+  //   backgroundColor: '#F070AA'
+  // }
+
 }
 </script>
 
