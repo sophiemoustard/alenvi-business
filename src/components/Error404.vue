@@ -6,7 +6,7 @@
     <div>
       <div class="error-card shadow-4 bg-white column items-center justify-center no-wrap">
         <q-icon name="error_outline" color="grey-5" />
-        <p class="caption text-center">Oops. Nothing here...</p>
+        <p class="caption text-center">Oups. Il n'y a rien ici...</p>
         <p class="text-center group">
           <q-btn
             v-if="canGoBack"
@@ -15,7 +15,7 @@
             @click="goBack"
             icon="keyboard_arrow_left"
           >
-            Go back
+            Précédent
           </q-btn>
           <q-btn
             color="primary"
@@ -23,7 +23,7 @@
             @click="$router.replace('/')"
             icon-right="home"
           >
-            Go home
+            Accueil
           </q-btn>
         </p>
       </div>
