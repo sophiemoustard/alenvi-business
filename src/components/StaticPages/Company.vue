@@ -1,12 +1,12 @@
 <template>
-  <div class="row">
+  <div class="row bg-gradient">
     <breadcrumb class="breadcrumb"/>
     <div class="row justify-center title">
       <h1>Compagnie et stimulation pour les personnes âgées</h1>
     </div>
     <section class="content">
-      <div class="row items-start lg-gutter layout-padding">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <div class="row xl-gutter layout-padding items-start">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
           <h2>Thierry et Dorothée</h2>
           <p class="text-justify">
             Chaque après-midi, Dorothée se rend chez Thierry. Selon l’humeur du jour, ils décident d’aller se promener, de faire un jeu, ou de simplement lire un livre ensemble. C’est souvent dur de se quitter, mais Dorothée s’en va avec un sentiment de fierté car elle sent Thierry plus apaisé qu’à son arrivée.
@@ -18,7 +18,7 @@
             Les auxiliaires d’envie sont là pour offrir ces moments d’apaisement à votre proche âgé.
           </p>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
           <img class="img-company" src="statics/compagnie.jpg" alt="photo compagnie">
         </div>
       </div>
@@ -47,6 +47,9 @@ export default {
   // h1
     // padding-top: 3%
 
+  .bg-gradient
+    background: linear-gradient(180deg, $grey-carousel-fade-1, $white 90%)
+
   .breadcrumb
     padding-left: 1%
     @media (max-width: 1024px) and (min-width: 320px)
@@ -63,5 +66,4 @@ export default {
 
   .img-company
     width: 100%
-    height: auto
 </style>

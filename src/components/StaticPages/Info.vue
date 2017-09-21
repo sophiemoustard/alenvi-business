@@ -67,8 +67,8 @@ export default {
       flex-wrap: wrap
 
   .img-info
-    width: 150px
-    height: 150px
+    width: 100px
+    height: 100px
 
   .padding-info
     padding-top: 5%
