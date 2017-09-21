@@ -54,7 +54,7 @@ export default new VueRouter({
         },
         {
           path: 'aide-a-domicile',
-          component: load('LandingPages/HomeCare'),
+          component: load('StaticPages/HomeCare'),
           meta: {
             breadcrumb: 'Aide à domicile',
             name: 'aide-a-domicile'
@@ -62,7 +62,7 @@ export default new VueRouter({
         },
         {
           path: 'compagnie',
-          component: load('LandingPages/Company'),
+          component: load('StaticPages/Company'),
           meta: {
             breadcrumb: 'Compagnie et stimulation',
             name: 'compagnie'
@@ -70,10 +70,18 @@ export default new VueRouter({
         },
         {
           path: 'sortie-hopital',
-          component: load('LandingPages/HospitalExit'),
+          component: load('StaticPages/HospitalExit'),
           meta: {
             breadcrumb: "Sortie d'hôpital",
             name: 'aide-a-domicile'
+          }
+        },
+        {
+          path: 'vision',
+          component: load('StaticPages/Vision'),
+          meta: {
+            breadcrumb: 'Vision',
+            name: 'vision'
           }
         }
       ]
