@@ -11,7 +11,7 @@
       <!-- <img src="statics/home_care_1.jpg" alt=""> -->
       <q-gallery-carousel class="gallery-cropper" infinite autoplay :arrows="false" :src="gallery"></q-gallery-carousel>
       <svg class="gt-sm" viewBox="25 0 592 398">
-        <path d="M27,71.5a71.43,71.43,0,0,0,2.48,18.73L105,399H-71V0H98.5A71.5,71.5,0,0,0,27,71.5Z" fill="#FFFFFF"/> <!-- #FCFBFB -->
+        <path d="M27,71.5a71.43,71.43,0,0,0,2.48,18.73L105,399H-71V0H98.5A71.5,71.5,0,0,0,27,71.5Z" fill="#FAF9F8"/> <!-- #FCFBFB -->
       </svg>
     </div>
   </div>
@@ -46,14 +46,14 @@ export default {
   // background-color: #FAF9F8
   // max-height: 500px
 
-
 #main-text-and-call
   padding-left: 5%
   padding-right: 5%
 
 .main-pres-background
-  background: linear-gradient(to right, #FAF9F8, white)
+  // background: linear-gradient(to right, #FAF9F8, white)
   // background: rgba(0, 0, 0, 0);
+  background: #FAF9F8
 
 .gallery-cropper
   width: 100%
