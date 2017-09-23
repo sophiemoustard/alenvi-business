@@ -7,11 +7,11 @@
         <a class="btn-call" href="tel:+33179755475">Appeler le 01 79 75 54 75</a>
       </q-btn>
     </div>
-    <div class="col-lg-6 img-overlay"> <!-- test-holder -->
+    <div class="col-lg-6 img-overlay self-center"> <!-- test-holder -->
       <!-- <img src="statics/home_care_1.jpg" alt=""> -->
       <q-gallery-carousel class="gallery-cropper" infinite autoplay :arrows="false" :src="gallery"></q-gallery-carousel>
       <svg class="gt-sm" viewBox="25 0 592 398">
-        <path d="M27,71.5a71.43,71.43,0,0,0,2.48,18.73L105,399H-71V0H98.5A71.5,71.5,0,0,0,27,71.5Z" fill="#FCFBFB"/>
+        <path d="M27,71.5a71.43,71.43,0,0,0,2.48,18.73L105,399H-71V0H98.5A71.5,71.5,0,0,0,27,71.5Z" fill="#FFFFFF"/> <!-- #FCFBFB -->
       </svg>
     </div>
   </div>

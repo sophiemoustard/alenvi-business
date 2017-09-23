@@ -1,42 +1,69 @@
 <template>
-  <div class="row bg-gradient">
-    <breadcrumb class="breadcrumb"/>
-    <div class="row justify-center title">
-      <h1>Compagnie et stimulation pour les personnes âgées</h1>
-    </div>
-    <section class="content">
-      <div class="row xl-gutter layout-padding items-start">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
-          <h2>Thierry et Dorothée</h2>
-          <p class="text-justify">
-            Chaque après-midi, Dorothée se rend chez Thierry. Selon l’humeur du jour, ils décident d’aller se promener, de faire un jeu, ou de simplement lire un livre ensemble. C’est souvent dur de se quitter, mais Dorothée s’en va avec un sentiment de fierté car elle sent Thierry plus apaisé qu’à son arrivée.
-          </p>
-          <p>
-            Ce sont ces moments humains, de partage, qui aident les personnes touchées par des troubles cognitifs à se sentir mieux. Ils peuvent également freiner l’évolution de la maladie.
-          </p>
-          <p>
-            Les auxiliaires d’envie sont là pour offrir ces moments d’apaisement à votre proche âgé.
-          </p>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-          <img class="img-company" src="statics/compagnie.jpg" alt="photo compagnie">
-        </div>
-      </div>
+  <div class="">
+    <breadcrumb class="col-12 breadcrumb"/>
+    <section id="presentation">
+      <presentation :presentationContent="presentationContent" />
     </section>
-    <section class="info layout-padding">
-      <info />
+    <section id="features">
+      <features :featuresContent="featuresContent" />
+    </section>
+    <section id="auxiliaries">
+      <auxiliaries :videoNumber="videoNumber" />
+    </section>
+    <section id="carousel-media">
+      <carousel-media />
     </section>
   </div>
 </template>
 
 <script>
 import Breadcrumb from '../Breadcrumbs.vue'
-import Info from './Info.vue'
+import Presentation from './Presentation.vue'
+import Features from '../Features.vue'
+import Auxiliaries from '../AuxiliariesGallery.vue'
+import CarouselMedia from '../CarouselMedia.vue'
 
 export default {
   components: {
     Breadcrumb,
-    Info
+    Presentation,
+    Features,
+    Auxiliaries,
+    CarouselMedia
+  },
+  data() {
+    return {
+      presentationContent: {
+        title: 'Compagnie et stimulation pour les personnes âgées',
+        subtitle: 'Thierry et Dorothée',
+        text1: `Chaque après-midi, Dorothée se rend chez Thierry. Selon l’humeur du jour, ils décident d’aller se promener, de faire un jeu, ou de simplement lire un livre ensemble. C’est souvent dur de se quitter, mais Dorothée s’en va avec un sentiment de fierté car elle sent Thierry plus apaisé qu’à son arrivée.`,
+        text2: `Ce sont ces moments humains, de partage, qui aident les personnes touchées par des troubles cognitifs à se sentir mieux. Ils peuvent également freiner l’évolution de la maladie.`,
+        text3: `Les auxiliaires d’envie sont là pour offrir ces moments d’apaisement à votre proche âgé.`,
+        image: 'statics/compagnie.jpg'
+      },
+      featuresContent: [
+        {
+          title: 'Mise en place sous 3 jours',
+          text: `Nous vous rendons visite gratuitement pour discuter de votre besoin. L'accompagnement peut démarrer tout de suite`,
+          image: 'statics/picto.png',
+          backgroundColor: '#FFFFFF'
+        },
+        {
+          title: 'Un accompagnement sur mesure',
+          text: `Une équipe d'auxiliaires adaptée à vos besoins vous suit et fait évoluer ses prestations si nécessaire`,
+          image: 'statics/picto.png',
+          backgroundColor: '#FAF9F8'
+        },
+        {
+          title: 'Entre 23 et 26€ / heure',
+          text: `50% remboursé en crédit d'impôt. Prise en charge APA possible`,
+          image: 'statics/picto.png',
+          link: '#',
+          backgroundColor: '#FFFFFF'
+        }
+      ],
+      videoNumber: 4
+    }
   }
 }
 </script>
@@ -44,26 +71,10 @@ export default {
 <style lang="stylus" scoped>
   @import "~variables"
 
-  // h1
-    // padding-top: 3%
-
-  .bg-gradient
-    background: linear-gradient(180deg, $grey-carousel-fade-1, $white 90%)
-
   .breadcrumb
     padding-left: 1%
     @media (max-width: 1024px) and (min-width: 320px)
       padding-left: 0%
     @media (min-width: 1199px)
       padding-left: 2%
-
-  .title
-    width: 100%
-
-  .info
-    width: 100%
-    padding-top: 3%
-
-  .img-company
-    width: 100%
 </style>

@@ -11,11 +11,9 @@
       </div>
     </div>
     <q-modal ref="basicModal" @close="closeModal()" :content-css="setVideoContainerSize()">
-      <!-- <q-video id="iframe" :src="video_link" style="width: 100%; height: 100%"/> -->
       <iframe id="auxiliary-iframe" :src="video_link" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
     </q-modal>
   </div>
-  <!-- <q-video src="https://www.youtube.com/embed/jvC2ywimFY0?wmode=opaque" style="width: 100%; height: 315px" /> -->
 </template>
 
 <script>
@@ -28,13 +26,15 @@ export default {
     QVideo,
     QWindowResizeObservable
   },
+  props: [
+    'videoNumber'
+  ],
   data() {
     return {
       windowSize: {},
       video_link: '',
       auxiliaries: [],
-      auxiliariesRaw: [],
-      videoNumber: 8 || 8
+      auxiliariesRaw: []
     }
   },
   async created() {

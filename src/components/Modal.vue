@@ -1,18 +1,13 @@
 <template lang="html">
   <div>
     <q-window-resize-observable @resize="onResize" />
-    <div class="text-center">
-      <q-btn color="primary" big>
-        <a class="btn-call" @click="$refs.basicModal.open()">POSTULER</a>
-      </q-btn>
-    </div>
     <q-modal ref="basicModal" :content-css="setVideoContainerSize()">
       <div class="absolute-right">
         <q-btn color="primary" @click="$refs.basicModal.close()">
           <q-icon name="close"></q-icon>
         </q-btn>
       </div>
-      <iframe id="apply_typeform" src="https://alenvi.typeform.com/to/MwEMWk" frameborder="0"></iframe>
+      <iframe id="apply_typeform" :src="typeform_link" frameborder="0"></iframe>
     </q-modal>
   </div>
 </template>
@@ -29,7 +24,8 @@ export default {
   },
   data() {
     return {
-      windowSize: {}
+      windowSize: {},
+      typeform_link: ''
     }
   },
   methods: {
@@ -47,6 +43,10 @@ export default {
     },
     onResize(size) {
       this.windowSize = size;
+    },
+    openModal(link) {
+      this.typeform_link = link;
+      this.$refs.basicModal.open();
     }
   }
 }
