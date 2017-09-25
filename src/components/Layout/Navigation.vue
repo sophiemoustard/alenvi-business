@@ -55,7 +55,7 @@
 
       <q-btn id="btn-call-header" class="gt-mld col-auto" color="primary"><a class="btn-call" href="tel:+33179755475">Appeler le <b>01 79 75 54 75</b></a></q-btn>
 
-      <q-btn color="primary" class="lt-lgx hide-on-drawer-visible" @click="$refs.layout.toggleLeft()" flat big>
+      <q-btn color="tertiary" class="lt-lgx hide-on-drawer-visible" @click="$refs.layout.toggleRight()" flat big>
         <q-icon name="menu" />
       </q-btn>
 
@@ -72,7 +72,7 @@
     </div> -->
 
 
-    <div slot="left">
+    <div slot="right">
       <q-item-side right>
         <q-btn @click="$refs.layout.hideCurrentSide()" class="justify-end" color="tertiary" flat big>
           <q-icon name="close" />
@@ -80,23 +80,18 @@
       </q-item-side>
       <q-list-header>Alenvi</q-list-header>
       <q-side-link item to="/home">
-        <q-item-side icon="home" />
         <q-item-main label="Accueil" />
       </q-side-link>
       <q-side-link item to="/home">
-        <q-item-side icon="visibility" />
         <q-item-main label="Vision" />
       </q-side-link>
       <q-side-link item to="/home">
-        <q-item-side icon="supervisor account" />
         <q-item-main label="Equipe" />
       </q-side-link>
       <q-side-link item to="/home">
-        <q-item-side icon="assignment ind" />
         <q-item-main label="Recrutement" />
       </q-side-link>
-      <q-collapsible icon="book" label="Magazine">
-        <q-side-link item to="/home">
+      <q-collapsible label="Magazine">
           <q-item-main label="Rubrique 1" />
         </q-side-link>
         <q-side-link item to="/home">
