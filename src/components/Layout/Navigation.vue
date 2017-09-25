@@ -4,12 +4,12 @@
     <q-toolbar color="white" slot="header" class="justify-between items-start">
 
       <div class="col-2">
-        <router-link :to="'home'" active-class="active">
+        <router-link :to="'home'">
           <img src="statics/alenvi_logo_complet_183x50.png" alt="Logo Alenvi">
         </router-link>
       </div>
 
-      <nav class="gt-mld col-8 row items-center">
+      <!-- <nav class="gt-mld col-8 row items-center">
         <router-link :to="'home'">Accueil</router-link>
         <router-link :to="'home'">Vision</router-link>
         <router-link :to="'home'">Equipe</router-link>
@@ -19,10 +19,10 @@
             Magazine<q-icon name="arrow drop down" />
           </div>
         </router-link>
-      </nav>
+      </nav> -->
 
 
-      <!-- <nav class="gt-md mobile-hide col-8">
+      <nav class="gt-mld mobile-hide col-8">
         <div class="row justify-start">
           <ul class="nav">
             <li>
@@ -41,7 +41,7 @@
               <router-link :to="'home'">
                 Magazine<q-icon name="arrow drop down" />
               </router-link>
-              <q-popover ref="popover1" style="top: 70px;">
+              <q-popover ref="popover1" style="position: absolute;">
                 <q-list @mouseover="isActive()" link separator>
                   <q-item @click.native="$refs.popover1.close()" :to="'test'">Rubrique 1</q-item>
                   <q-item @click.native="$refs.popover1.close()":to="'test'">Rubrique 2</q-item>
@@ -51,9 +51,9 @@
             </li>
           </ul>
         </div>
-      </nav> -->
+      </nav>
 
-      <q-btn id="btn-call-header" class="gt-mld col-auto" color="primary" no-caps><a class="btn-call" href="tel:+33179755475">Appeler le <b>01 79 75 54 75</b></a></q-btn>
+      <q-btn id="btn-call-header" class="gt-mld col-auto" color="primary"><a class="btn-call" href="tel:+33179755475">Appeler le <b>01 79 75 54 75</b></a></q-btn>
 
       <q-btn color="primary" class="lt-lgx hide-on-drawer-visible" @click="$refs.layout.toggleLeft()" flat big>
         <q-icon name="menu" />
@@ -61,7 +61,7 @@
 
     </q-toolbar>
 
-    <div v-if="active" class="row justify-center" slot="navigation">
+    <!-- <div v-if="active" class="row justify-center" slot="navigation">
       <div @mouseleave="isActive" :style="dropdownPos">
       <q-tabs id="tabs-nav" color="white" class="shadow-2" align="center">
         <q-route-tab @click="active = false" to="home" slot="title" label="Rubrique 1" />
@@ -69,7 +69,7 @@
         <q-route-tab @click="active = false" to="home" slot="title" label="Rubrique 3" />
       </q-tabs>
       </div>
-    </div>
+    </div> -->
 
 
     <div slot="left">
@@ -152,7 +152,8 @@ import {
   QPopover,
   QList,
   QTooltip,
-  QCollapsible } from 'quasar'
+  QCollapsible,
+  QPopover } from 'quasar'
 
 export default {
   components: {
@@ -172,7 +173,8 @@ export default {
     QPopover,
     QList,
     QTooltip,
-    QCollapsible
+    QCollapsible,
+    QPopover
   },
   data () {
     return {
@@ -220,22 +222,27 @@ export default {
     .lt-lgx
       display: none !important
 
-  nav a
-    color: $tertiary
-    font-weight: bold
-    padding: 0px 20px
-    line-height: 20px
+  // nav a
+  //   color: $tertiary
+  //   font-weight: bold
+  //   padding: 0px 20px
+  //   line-height: 20px
 
   // nav a div
   //   display: inline-block;
   // .q-tabs-scroller
   //   flex-wrap: wrap;
 
-  // .nav
-  //   list-style: none
-  //
-  // .nav li
-  //   float: left
+  .nav
+    list-style: none
+
+  .nav li
+    float: left
+    padding-right: 30px
+
+  .nav li a
+    color: $tertiary
+    font-weight: bold
 
   .active-link
     color: $primary
@@ -282,9 +289,4 @@ export default {
     text-decoration: underline
     color: $white
 
-
-  // .sidebar-link {
-  //   margin-left: 10px
-  //   color: #0c0c0c
-  // }
 </style>
