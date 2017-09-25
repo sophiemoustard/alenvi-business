@@ -61,11 +61,11 @@ export default new VueRouter({
           }
         },
         {
-          path: 'compagnie',
+          path: 'compagnie-et-stimulation',
           component: load('StaticPages/Company'),
           meta: {
             breadcrumb: 'Compagnie et stimulation',
-            name: 'compagnie'
+            name: 'compagnie-et-stimulation'
           }
         },
         {
@@ -73,7 +73,7 @@ export default new VueRouter({
           component: load('StaticPages/HospitalExit'),
           meta: {
             breadcrumb: "Sortie d'hôpital",
-            name: 'aide-a-domicile'
+            name: 'sortie-hopital'
           }
         },
         {

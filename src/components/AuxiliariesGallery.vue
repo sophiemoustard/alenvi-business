@@ -11,11 +11,9 @@
       </div>
     </div>
     <q-modal ref="basicModal" @close="closeModal()" :content-css="setVideoContainerSize()">
-      <!-- <q-video id="iframe" :src="video_link" style="width: 100%; height: 100%"/> -->
       <iframe id="auxiliary-iframe" :src="video_link" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
     </q-modal>
   </div>
-  <!-- <q-video src="https://www.youtube.com/embed/jvC2ywimFY0?wmode=opaque" style="width: 100%; height: 315px" /> -->
 </template>
 
 <script>
@@ -28,17 +26,19 @@ export default {
     QVideo,
     QWindowResizeObservable
   },
+  props: [
+    'videoNumber'
+  ],
   data() {
     return {
       windowSize: {},
       video_link: '',
       auxiliaries: [],
-      auxiliariesRaw: [],
-      videoNumber: 8 || 8
+      auxiliariesRaw: []
     }
   },
   async created() {
-    const auxiliariesRaw = await this.$http.get('http://localhost:3000/users/presentation', {
+    const auxiliariesRaw = await this.$http.get('https://536a9a0b.ngrok.io/users/presentation', {
       params: {
         role: 'auxiliary',
         location: 'accueil'
@@ -95,65 +95,46 @@ export default {
       }
     }
   }
-
-  // {
-  //   firstname: 'Maud',
-  //   lastname: 'Desnoës',
-  //   youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-  //   image: 'statics/Maud.jpg',
-  //   backgroundColor: '#F070AA'
-  // },
-  // {
-  //   firstname: 'Maud',
-  //   lastname: 'Desnoës',
-  //   youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-  //   image: 'statics/Maud.jpg',
-  //   backgroundColor: '#B61A6D'
-  // },
-  // {
-  //   firstname: 'Maud',
-  //   lastname: 'Desnoës',
-  //   youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-  //   image: 'statics/Maud.jpg',
-  //   backgroundColor: '#F070AA'
-  // },
-  // {
-  //   firstname: 'Maud',
-  //   lastname: 'Desnoës',
-  //   youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-  //   image: 'statics/Maud.jpg',
-  //   backgroundColor: '#B61A6D'
-  // },
-  // {
-  //   firstname: 'Maud',
-  //   lastname: 'Desnoës',
-  //   youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-  //   image: 'statics/Maud.jpg',
-  //   backgroundColor: '#B61A6D'
-  // },
-  // {
-  //   firstname: 'Maud',
-  //   lastname: 'Desnoës',
-  //   youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-  //   image: 'statics/Maud.jpg',
-  //   backgroundColor: '#F070AA'
-  // },
-  // {
-  //   firstname: 'Maud',
-  //   lastname: 'Desnoës',
-  //   youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-  //   image: 'statics/Maud.jpg',
-  //   backgroundColor: '#B61A6D'
-  // },
-  // {
-  //   firstname: 'Maud',
-  //   lastname: 'Desnoës',
-  //   youtube_link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-  //   image: 'statics/Maud.jpg',
-  //   backgroundColor: '#F070AA'
-  // }
-
 }
+
+// auxiliaries: [
+//   {
+//     firstname: 'Maud',
+//     lastname: 'Desnoës',
+//     youtube: {
+//       link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
+//       location: 'accueil'
+//     },
+//     picture: 'statics/Maud.jpg',
+//   },
+//   {
+//     firstname: 'Maud',
+//     lastname: 'Desnoës',
+//     youtube: {
+//       link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
+//       location: 'accueil'
+//     },
+//     picture: 'statics/Maud.jpg',
+//   },
+//   {
+//     firstname: 'Maud',
+//     lastname: 'Desnoës',
+//     youtube: {
+//       link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
+//       location: 'accueil'
+//     },
+//     picture: 'statics/Maud.jpg',
+//   },
+//   {
+//     firstname: 'Maud',
+//     lastname: 'Desnoës',
+//     youtube: {
+//       link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
+//       location: 'accueil'
+//     },
+//     picture: 'statics/Maud.jpg',
+//   }
+// ]
 </script>
 
 <style lang="stylus" scoped>

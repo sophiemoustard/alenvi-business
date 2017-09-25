@@ -11,9 +11,9 @@
 
       <!-- <nav class="gt-mld col-8 row items-center">
         <router-link :to="'home'">Accueil</router-link>
-        <router-link :to="'home'">Vision</router-link>
-        <router-link :to="'home'">Equipe</router-link>
-        <router-link :to="'home'">Recrutement</router-link>
+        <router-link :to="'vision'">Vision</router-link>
+        <router-link :to="'equipe'">Equipe</router-link>
+        <router-link :to="'recrutement'">Recrutement</router-link>
         <router-link :to="'home'">
           <div :class="[dropdownItemClass, { 'active-link': active }, rowClass, justifyCenterClass]" ref="dropdown" @mouseover="isActive(), getElementLeftPos()">
             Magazine<q-icon name="arrow drop down" />
@@ -116,17 +116,17 @@
         <div class="col-auto">
           <ul>
             <li><router-link :to="'home'" class="footer-links">Accueil</router-link></li>
-            <li><router-link :to="'home'" class="footer-links">Vision</router-link></li>
-            <li><router-link :to="'home'" class="footer-links">Equipe</router-link></li>
-            <li><router-link :to="'home'" class="footer-links">Recrutement</router-link></li>
+            <li><router-link :to="'vision'" class="footer-links">Vision</router-link></li>
+            <li><router-link :to="'equipe'" class="footer-links">Equipe</router-link></li>
+            <li><router-link :to="'recrutement'" class="footer-links">Recrutement</router-link></li>
             <li><router-link :to="'home'" class="footer-links">Magazine</router-link></li>
           </ul>
         </div>
         <div class="col-auto">
           <ul>
-            <li><router-link :to="'home'" class="footer-links">Aide à domicile</router-link></li>
-            <li><router-link :to="'home'" class="footer-links">Stimulation et compagnie</router-link></li>
-            <li><router-link :to="'home'" class="footer-links">Sortie d'hospitalisation</router-link></li>
+            <li><router-link :to="'aide-a-domicile'" class="footer-links">Aide à domicile</router-link></li>
+            <li><router-link :to="'stimulation-et-compagnie'" class="footer-links">Stimulation et compagnie</router-link></li>
+            <li><router-link :to="'sortie-hopital'" class="footer-links">Sortie d'hospitalisation</router-link></li>
           </ul>
         </div>
       </div>

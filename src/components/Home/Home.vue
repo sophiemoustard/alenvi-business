@@ -1,13 +1,14 @@
 <template lang="html">
-  <main class="">
+  <div class="">
     <section id="main-presentation">
       <main-presentation />
     </section>
-    <section id="features" class="section-margin">
-      <features />
+    <!-- class="section-margin" -->
+    <section id="features">
+      <features :featuresContent="featuresContent"/>
     </section>
     <section id="auxiliaries-gallery" class="section-margin">
-      <auxiliaries-gallery />
+      <auxiliaries-gallery :videoNumber="videoNumber"/>
     </section>
     <section id="carousel-media">
       <carousel-media />
@@ -15,15 +16,15 @@
     <section id="latest-articles">
       <latest-articles />
     </section>
-  </main>
+  </div>
 </template>
 
 <script>
 
 import MainPresentation from './MainPresentation.vue'
-import Features from './Features.vue'
+import Features from '../Features.vue'
 import AuxiliariesGallery from '../AuxiliariesGallery.vue'
-import CarouselMedia from './CarouselMedia.vue'
+import CarouselMedia from '../CarouselMedia.vue'
 import LatestArticles from './LatestArticles.vue'
 
 export default {
@@ -32,7 +33,35 @@ export default {
     CarouselMedia,
     AuxiliariesGallery,
     Features,
-    LatestArticles
+    LatestArticles,
+  },
+  data() {
+    return {
+      videoNumber: 8,
+      featuresContent: [
+        {
+          title: 'Aide à domicile',
+          text: 'Nous assistons votre proche pour les tâches de la vie quotidienne et passons de bons moments ensemble',
+          link: '/aide-a-domicile',
+          image: 'statics/picto.png',
+          backgroundColor: '#FFFFFF'
+        },
+        {
+          title: 'Compagnie & stimulation',
+          text: 'Formés en continu sur les troubles cognitifs, nous sommes là pour aider votre proche à garder des activités : promenades, jeux...',
+          link: '/compagnie-et-stimulation',
+          image: 'statics/picto.png',
+          backgroundColor: '#FAF9F8'
+        },
+        {
+          title: `Sortie d'hospitalisation`,
+          text: 'Nous aidons votre proche à retrouver son autonomie lorsqu’il regagne son domicile après un passage à l’hôpital',
+          link: '/sortie-hopital',
+          image: 'statics/picto.png',
+          backgroundColor: '#FFFFFF'
+        }
+      ]
+    }
   }
 }
 </script>
