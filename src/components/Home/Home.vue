@@ -8,7 +8,7 @@
       <features :featuresContent="featuresContent"/>
     </section>
     <section id="auxiliaries-gallery" class="section-margin">
-      <auxiliaries-gallery :videoNumber="videoNumber"/>
+      <auxiliaries-gallery :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
     </section>
     <section id="carousel-media">
       <carousel-media />
@@ -38,6 +38,8 @@ export default {
   data() {
     return {
       videoNumber: 8,
+      videoLocation: ['accueil'],
+      videoRoles: ['auxiliary'],
       featuresContent: [
         {
           title: 'Aide à domicile',

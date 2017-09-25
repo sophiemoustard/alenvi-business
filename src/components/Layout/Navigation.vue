@@ -29,13 +29,13 @@
               <router-link :to="'home'">Accueil</router-link>
             </li>
             <li>
-              <router-link :to="'home'">Vision</router-link>
+              <router-link :to="'vision'">Vision</router-link>
             </li>
             <li>
-              <router-link :to="'home'">Equipe</router-link>
+              <router-link :to="'equipe'">Equipe</router-link>
             </li>
             <li>
-              <router-link :to="'home'">Recrutement</router-link>
+              <router-link :to="'recrutement'">Recrutement</router-link>
             </li>
             <li @mouseover="$refs.popover1.open()" @mouseleave="closePopover()">
               <router-link :to="'home'">
