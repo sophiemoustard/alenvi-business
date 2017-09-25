@@ -18,6 +18,7 @@
 
 <script>
 import { QIcon, QModal, QVideo, QWindowResizeObservable } from 'quasar'
+import _ from 'lodash'
 
 export default {
   components: {
@@ -27,7 +28,9 @@ export default {
     QWindowResizeObservable
   },
   props: [
-    'videoNumber'
+    'videoNumber',
+    'videoLocation',
+    'videoRoles'
   ],
   data() {
     return {
@@ -38,27 +41,41 @@ export default {
     }
   },
   async created() {
+    const params = {
+      role: this.videoRoles || '',
+      location: this.videoLocation
+    };
+    const payload = _.pickBy(params);
     const auxiliariesRaw = await this.$http.get('https://536a9a0b.ngrok.io/users/presentation', {
-      params: {
-        role: 'auxiliary',
-        location: 'accueil'
-      }
+      params: payload
     });
     this.auxiliariesRaw = auxiliariesRaw.data.data.users;
-    this.shuffle(this.auxiliaries);
     this.auxiliaries = this.auxiliariesRaw;
-    if (this.windowSize.width < 1024) {
-      this.auxiliaries = this.auxiliariesRaw;
-      this.auxiliaries.splice(this.videoNumber / 2);
-    } else {
-      this.auxiliaries = this.auxiliariesRaw;
-      this.auxiliaries.splice(this.videoNumber);
-    }
-    for (let i = 0; i < this.auxiliaries.length; i++) {
-      if (i < 4) {
-        this.auxiliaries[i].backgroundColor = i % 2 == 1 ? '#F070AA' : '#B61A6D';
+    this.shuffle(this.auxiliaries);
+    if (this.videoNumber) {
+      if (this.windowSize.width < 1024) {
+        this.auxiliaries.splice(this.videoNumber / 2);
       } else {
-        this.auxiliaries[i].backgroundColor = i % 2 == 0 ? '#F070AA' : '#B61A6D';
+        this.auxiliaries.splice(this.videoNumber);
+      }
+    }
+    for (let i = 0, j = 4, test = false; i < this.auxiliaries.length; i++) {
+      if (this.auxiliaries[i].role == 'auxiliary') {
+        if (i < j) {
+          if (test) {
+            this.auxiliaries[i].backgroundColor = i % 2 == 1 ? '#F070AA' : '#B61A6D';
+          }
+          else {
+            this.auxiliaries[i].backgroundColor = i % 2 == 0 ? '#F070AA' : '#B61A6D';
+          }
+        } else {
+          j += 4;
+          test = !test;
+          this.auxiliaries[i].backgroundColor = this.auxiliaries[i - 4].backgroundColor == '#F070AA' ? '#B61A6D' : '#F070AA';
+          // this.auxiliaries[i].backgroundColor = i % 2 == 0 ? '#F070AA' : '#B61A6D';
+        }
+      } else {
+        this.auxiliaries[i].backgroundColor = '#F29400';
       }
     }
   },

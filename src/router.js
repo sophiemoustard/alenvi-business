@@ -83,6 +83,22 @@ export default new VueRouter({
             breadcrumb: 'Vision',
             name: 'vision'
           }
+        },
+        {
+          path: 'equipe',
+          component: load('StaticPages/Team'),
+          meta: {
+            breadcrumb: 'Equipe',
+            name: 'team'
+          }
+        },
+        {
+          path: 'recrutement',
+          component: load('StaticPages/Recruitment'),
+          meta: {
+            breadcrumb: 'Recrutement',
+            name: 'recruitment'
+          }
         }
       ]
     },
