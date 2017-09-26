@@ -16,7 +16,7 @@
           </ul>
           <p>Nous recrutons actuellement pour des interventions à Paris et dans les Hauts de Seine.</p>
           <q-btn color="primary" big>
-            <a class="btn-call" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/j8Zn47')">Postuler</a>
+            <a class="btn-call" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/MwEMWk')">Postuler</a>
           </q-btn>
           <modal ref="infoModal"/>
         </div>

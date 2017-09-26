@@ -8,7 +8,7 @@
       <features :featuresContent="featuresContent" />
     </section>
     <section id="auxiliaries">
-      <auxiliaries :videoNumber="videoNumber" />
+      <auxiliaries :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
     </section>
     <section id="carousel-media">
       <carousel-media />
@@ -62,7 +62,9 @@ export default {
           backgroundColor: '#FFFFFF'
         }
       ],
-      videoNumber: 4
+      videoNumber: 4,
+      videoLocation: ['accueil'],
+      videoRoles: ['auxiliary']
     }
   }
 }

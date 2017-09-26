@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       videoNumber: '',
-      videoLocation: ['accueil'],
+      videoLocation: ['accueil', 'team'],
       videoRoles: ['auxiliary', 'tech']
     }
   }
