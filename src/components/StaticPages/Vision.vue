@@ -54,32 +54,39 @@
 </template>
 
 <script>
-import {
-  QIcon,
-} from 'quasar'
-
+import { QIcon } from 'quasar'
 import Breadcrumb from '../Breadcrumbs.vue'
 
 export default {
   components: {
-    QIcon,
-    Breadcrumb
+    Breadcrumb,
+    QIcon
   }
 }
 </script>
 
 <style lang="stylus">
 
-  p ul
-    list-style: none
 
-  .title
-    width: 100%
+.title-margin-bottom
+  margin-bottom: 3%
 
-  .breadcrumb
-    padding-left: 1%
-    @media (max-width: 1024px) and (min-width: 320px)
-      padding-left: 0%
-    @media (min-width: 1199px)
-      padding-left: 2%
+ul
+  list-style: none
+
+#vision
+  padding-left: 5%
+  padding-right: 5%
+  @media (max-width: 991px)
+    padding-bottom: 5%
+
+p ul
+  list-style: none
+
+.breadcrumb
+  padding-left: 1%
+  @media (max-width: 1024px) and (min-width: 320px)
+    padding-left: 0%
+  @media (min-width: 1199px)
+    padding-left: 2%
 </style>

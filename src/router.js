@@ -93,7 +93,7 @@ export default new VueRouter({
           }
         },
         {
-          path: 'recruitement',
+          path: 'recrutement',
           component: load('StaticPages/Recruitment'),
           meta: {
             breadcrumb: 'Recrutement',
