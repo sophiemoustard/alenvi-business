@@ -6,6 +6,11 @@
       <q-btn color="primary" big>
         <a class="btn-call" href="tel:+33179755475">Appeler le 01 79 75 54 75</a>
       </q-btn>
+      <p id="online-asking" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/Hq6cm5')">Demande en ligne</p>
+      <modal ref="infoModal"/>
+      <!-- <q-btn color="primary" big>
+        <a class="btn-call" href="tel:+33179755475">Appeler le 01 79 75 54 75</a>
+      </q-btn> -->
     </div>
     <div class="col-lg-6 img-overlay self-center"> <!-- test-holder -->
       <!-- <img src="statics/home_care_1.jpg" alt=""> -->
@@ -23,10 +28,13 @@ import {
   QBtn
 } from 'quasar'
 
+import Modal from '../Modal.vue'
+
 export default {
   components: {
     QGalleryCarousel,
-    QBtn
+    QBtn,
+    Modal
   },
   data() {
     return {
@@ -49,6 +57,9 @@ export default {
 #main-text-and-call
   padding-left: 5%
   padding-right: 5%
+  @media (max-width: 991px)
+    padding-bottom: 5%
+
 
 .main-pres-background
   // background: linear-gradient(to right, #FAF9F8, white)

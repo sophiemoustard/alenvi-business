@@ -45,10 +45,12 @@ export default {
 #pres-text
   padding-left: 5%
   padding-right: 5%
+  @media (max-width: 991px)
+    padding-bottom: 5%
 
 #online-asking
   padding-top: 2%
-  padding-left: 11%
+  padding-left: 9%
 
 .title-margin-bottom
   margin-bottom: 3%

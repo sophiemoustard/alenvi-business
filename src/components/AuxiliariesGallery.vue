@@ -158,6 +158,7 @@ export default {
 
 .auxiliaries-container
   position: relative
+  cursor: pointer
 
 .auxiliaries-container img
   width: 100%
