@@ -51,12 +51,12 @@ export default {
         {
           title: 'Compagnie & stimulation',
           text: 'Formés en continu sur les troubles cognitifs, nous sommes là pour aider votre proche à garder des activités : promenades, jeux...',
-          link: '/compagnie-et-stimulation',
+          link: '/compagnie',
           image: 'statics/picto.png',
           backgroundColor: '#FAF9F8'
         },
         {
-          title: `Sortie d'hospitalisation`,
+          title: `Sortie d'hôpital`,
           text: 'Nous aidons votre proche à retrouver son autonomie lorsqu’il regagne son domicile après un passage à l’hôpital',
           link: '/sortie-hopital',
           image: 'statics/picto.png',

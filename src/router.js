@@ -61,11 +61,11 @@ export default new VueRouter({
           }
         },
         {
-          path: 'compagnie-et-stimulation',
+          path: 'compagnie',
           component: load('StaticPages/Company'),
           meta: {
             breadcrumb: 'Compagnie et stimulation',
-            name: 'compagnie-et-stimulation'
+            name: 'compagnie'
           }
         },
         {

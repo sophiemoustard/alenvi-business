@@ -120,7 +120,7 @@
         <div class="col-auto">
           <ul>
             <li><router-link :to="'aide-a-domicile'" class="footer-links">Aide à domicile</router-link></li>
-            <li><router-link :to="'stimulation-et-compagnie'" class="footer-links">Stimulation et compagnie</router-link></li>
+            <li><router-link :to="'compagnie'" class="footer-links">Stimulation et compagnie</router-link></li>
             <li><router-link :to="'sortie-hopital'" class="footer-links">Sortie d'hospitalisation</router-link></li>
           </ul>
         </div>
