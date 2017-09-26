@@ -20,12 +20,13 @@ export default {
     return {
       videoNumber: '',
       videoLocation: ['accueil', 'team'],
-      videoRoles: ['auxiliary', 'tech']
+      videoRoles: ['auxiliary', 'tech', 'coach']
     }
-  }
-}
+  }// https://puu.sh/xJhc9/d5777c1bc9.png
+}// https://puu.sh/xJhcG/24789e1731.png
 </script>
 
 <style lang="stylus">
-
+  .section-margin
+    margin-bottom: 3%
 </style>

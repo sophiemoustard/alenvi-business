@@ -2,7 +2,7 @@
   <div class="row">
     <q-window-resize-observable @resize="onResize" />
     <div class="col-sm-3 auxiliaries-container" v-for="auxiliary in auxiliaries" v-if="auxiliary.youtube" @click="openModal(auxiliary)">
-      <img :src="auxiliary.picture" alt="splash" />
+      <img class="auxiliaries-size" :src="auxiliary.picture" alt="splash" />
       <div class="auxiliaries-icon-container">
         <q-icon class="auxiliaries-icon" name="play circle outline" color="white" size="5rem"/>
       </div>
@@ -52,6 +52,12 @@ export default {
     this.auxiliariesRaw = auxiliariesRaw.data.data.users;
     this.auxiliaries = this.auxiliariesRaw;
     this.shuffle(this.auxiliaries);
+    if (this.auxiliaries[0].role == 'admin'
+    || this.auxiliaries[0].role == 'coach'
+    || this.auxiliaries[0].role == 'tech') {
+      const first = this.auxiliaries.splice(0,1);
+      this.auxiliaries.push(first[0]);
+    }
     if (this.videoNumber) {
       if (this.windowSize.width < 1024) {
         this.auxiliaries.splice(this.videoNumber / 2);
@@ -159,6 +165,9 @@ export default {
 .auxiliaries-container
   position: relative
   cursor: pointer
+  width: 100%
+  max-height: 300px
+  height: auto
 
 .auxiliaries-container img
   width: 100%

@@ -60,6 +60,10 @@ export default {
   @media (max-width: 991px)
     padding-bottom: 5%
 
+#online-asking
+  padding-top: 2%
+  padding-left: 65px
+  cursor: pointer
 
 .main-pres-background
   // background: linear-gradient(to right, #FAF9F8, white)

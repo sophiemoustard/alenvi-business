@@ -50,12 +50,14 @@ export default {
 
 #online-asking
   padding-top: 2%
-  padding-left: 9%
+  padding-left: 65px
+  cursor: pointer
 
 .title-margin-bottom
   margin-bottom: 3%
 
 .img-size
   width: 75%
+  max-width: 600px
   height: auto;
 </style>
