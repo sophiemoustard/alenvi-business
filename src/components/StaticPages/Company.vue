@@ -78,5 +78,5 @@ export default {
     @media (max-width: 1024px) and (min-width: 320px)
       padding-left: 0%
     @media (min-width: 1199px)
-      padding-left: 2%
+      padding-left: 2.3%
 </style>

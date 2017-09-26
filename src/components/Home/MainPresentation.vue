@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="row "> <!-- main-pres-background -->
+  <div class="row"> <!-- main-pres-background -->
     <div id="main-text-and-call" class="col-lg-6 self-center">
       <h1>Accompagner le quotidien, stimuler les envies.</h1>
       <h2>Nous sommes des professionnels passionnés par notre métier. Nous créons des liens sur le long terme avec les personnes âgées.</h2>
@@ -15,7 +15,7 @@
     <div class="col-lg-6 img-overlay self-center"> <!-- test-holder -->
       <!-- <img src="statics/home_care_1.jpg" alt=""> -->
       <q-gallery-carousel class="gallery-cropper" infinite autoplay :arrows="false" :src="gallery"></q-gallery-carousel>
-      <svg class="gt-sm" viewBox="25 0 592 398">
+      <svg viewBox="25 0 592 398">
         <path d="M27,71.5a71.43,71.43,0,0,0,2.48,18.73L105,399H-71V0H98.5A71.5,71.5,0,0,0,27,71.5Z" fill="#FFFFFF"/> <!-- #FAF9F8 -->
       </svg>
     </div>
@@ -83,6 +83,8 @@ export default {
   top: 0
   left: 0
   height: 100%
+  @media (max-width: 991px)
+    display: none;
 
 .img-overlay q-gallery-carousel
   width: 100%
