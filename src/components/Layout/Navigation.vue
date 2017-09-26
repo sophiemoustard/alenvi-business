@@ -183,7 +183,7 @@ export default {
     }
   },
   mounted () {
-    this.$refs.layout.hideLeft();
+    this.$refs.layout.hideRight();
   },
   methods: {
     isActive () {
