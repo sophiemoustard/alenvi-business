@@ -50,6 +50,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import "~variables"
+
 #main-presentation
   // background-color: #FAF9F8
   // max-height: 500px
@@ -61,9 +63,10 @@ export default {
     padding-bottom: 5%
 
 #online-asking
-  padding-top: 2%
+  padding-top: 1%
   padding-left: 65px
   cursor: pointer
+  color: $primary
 
 .main-pres-background
   // background: linear-gradient(to right, #FAF9F8, white)
