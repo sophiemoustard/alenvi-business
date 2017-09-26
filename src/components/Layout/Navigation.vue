@@ -35,7 +35,7 @@
               <router-link :to="'equipe'">Equipe</router-link>
             </li>
             <li>
-              <router-link :to="'recrutement'">Recrutement</router-link>
+              <router-link :to="'recruitement'">Recrutement</router-link>
             </li>
             <li @mouseover="$refs.popover1.open()" @mouseleave="closePopover()">
               <router-link :to="'home'">
@@ -113,17 +113,20 @@
             <li><router-link :to="'home'" class="footer-links">Accueil</router-link></li>
             <li><router-link :to="'vision'" class="footer-links">Vision</router-link></li>
             <li><router-link :to="'equipe'" class="footer-links">Equipe</router-link></li>
-            <li><router-link :to="'recrutement'" class="footer-links">Recrutement</router-link></li>
-            <li><router-link :to="'home'" class="footer-links">Magazine</router-link></li>
+            <li><router-link :to="'recruitement'" class="footer-links">Recrutement</router-link></li>
+            <li><router-link :to="'home'" class="footer-links">Blog</router-link></li>
           </ul>
         </div>
         <div class="col-auto">
           <ul>
             <li><router-link :to="'aide-a-domicile'" class="footer-links">Aide à domicile</router-link></li>
             <li><router-link :to="'compagnie'" class="footer-links">Stimulation et compagnie</router-link></li>
-            <li><router-link :to="'sortie-hopital'" class="footer-links">Sortie d'hospitalisation</router-link></li>
+            <li><router-link :to="'sortie-hopital'" class="footer-links">Sortie d'hôpital</router-link></li>
           </ul>
         </div>
+        <!-- <div class="col-auto">
+          <img src=""
+        </div> -->
       </div>
     </q-toolbar>
   </q-layout>

@@ -1,6 +1,9 @@
 <template lang="html">
   <div class="">
     <breadcrumb class="col-12 breadcrumb"/>
+    <div class="row">
+      <h1 class="col-12 text-center title-margin-bottom">Découvrez notre équipe engagée</h1>
+    </div>
     <section id="auxiliaries-gallery" class="section-margin">
       <auxiliaries-gallery :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
     </section>
@@ -27,6 +30,9 @@ export default {
 </script>
 
 <style lang="stylus">
-  .section-margin
-    margin-bottom: 3%
+.title-margin-bottom
+  margin-bottom: 3%
+
+.section-margin
+  margin-bottom: 3%
 </style>
