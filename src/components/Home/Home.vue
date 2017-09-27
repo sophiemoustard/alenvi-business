@@ -28,6 +28,12 @@ import CarouselMedia from '../CarouselMedia.vue'
 import LatestArticles from './LatestArticles.vue'
 
 export default {
+  metaInfo: {
+    title: 'Accueil',
+    meta: [
+      { name: 'description', content: 'Home description' }
+    ]
+  },
   components: {
     MainPresentation,
     CarouselMedia,
