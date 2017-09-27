@@ -8,22 +8,22 @@
         </router-link>
         <div class="row items-center gt-mld">
           <div class="w3-dropdown-hover bg-white">
-            <button id="dropdownHome" class="alenvi-button text-tertiary">Accueil <q-icon name="arrow drop down"/></button>
+            <button id="dropdownHome" class="alenvi-button text-tertiary"><router-link active-class :to="'home'">Accueil <q-icon name="arrow drop down"/></router-link></button>
             <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
-              <router-link :to="'aide-a-domicile'" class="w3-bar-item w3-button">Aide à domicile</router-link>
-              <router-link :to="'compagnie'" class="w3-bar-item w3-button">Stimulation et compagnie</router-link>
-              <router-link :to="'sortie-hopital'" class="w3-bar-item w3-button">Sortie d'hôpital</router-link>
+              <router-link :to="'aide-a-domicile'" class="w3-bar-item">Aide à domicile</router-link>
+              <router-link :to="'compagnie'" class="w3-bar-item">Stimulation et compagnie</router-link>
+              <router-link :to="'sortie-hopital'" class="w3-bar-item">Sortie d'hôpital</router-link>
             </div>
           </div>
           <router-link :to="'vision'" class="w3-bar-item">Vision</router-link>
           <router-link :to="'equipe'" class="w3-bar-item">Equipe</router-link>
           <router-link :to="'recrutement'" class="w3-bar-item">Recrutement</router-link>
           <div class="w3-dropdown-hover bg-white">
-            <button id="dropdownMag" class="alenvi-button text-tertiary">Blog <q-icon name="arrow drop down"/></button>
+            <button id="dropdownMag" class="alenvi-button text-tertiary"><a href="https://blog.alenvi.io/">Blog <q-icon name="arrow drop down"/></a></button>
             <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
-              <a href="https://blog.alenvi.io/tag/aidants-familiaux" class="w3-bar-item w3-button">Aidants familiaux</a>
-              <a href="https://blog.alenvi.io/tag/auxiliaires" class="w3-bar-item w3-button">Auxiliaires</a>
-              <a href="https://blog.alenvi.io/tag/alenvi" class="w3-bar-item w3-button">Le projet Alenvi</a>
+              <a href="https://blog.alenvi.io/tag/aidants-familiaux" class="w3-bar-item">Aidants familiaux</a>
+              <a href="https://blog.alenvi.io/tag/auxiliaires" class="w3-bar-item">Auxiliaires</a>
+              <a href="https://blog.alenvi.io/tag/alenvi" class="w3-bar-item">Le projet Alenvi</a>
             </div>
           </div>
         </div>
@@ -319,6 +319,10 @@ export default {
 
   .w3-dropdown-hover
     height: 60px
+
+  .router-link-exact-active
+    font-weight: 900
+    color: $primary !important
 
   .alenvi-logo
     width: 80%
