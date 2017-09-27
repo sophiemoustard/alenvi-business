@@ -6,6 +6,7 @@
         <router-link :to="'home'" class="w3-bar-item">
           <img class="alenvi-logo" src="statics/alenvi_logo_complet_183x50.png" alt="Logo Alenvi">
         </router-link>
+        <div class="row items-center gt-mld">
           <div class="w3-dropdown-hover bg-white">
             <button id="dropdownHome" class="alenvi-button text-tertiary">Accueil <q-icon name="arrow drop down"/></button>
             <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
@@ -25,7 +26,11 @@
               <a href="https://blog.alenvi.io/tag/alenvi" class="w3-bar-item w3-button">Le projet Alenvi</a>
             </div>
           </div>
+        </div>
         <q-btn id="btn-call-header" class="gt-mld" color="primary" big><a class="btn-call text-white" href="tel:+33179755475">Appeler le <b>01 79 75 54 75</b></a></q-btn>
+        <q-btn color="tertiary" class="lt-lgx hide-on-drawer-visible absolute-right" @click="$refs.layout.toggleRight()" flat big>
+          <q-icon name="menu" />
+        </q-btn>
       </div>
     </div>
   </div>
