@@ -23,7 +23,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .main-picto
   width: 100px
   height: 100px

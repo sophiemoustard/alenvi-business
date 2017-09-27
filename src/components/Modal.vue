@@ -52,7 +52,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 
 #apply_typeform
   width: 100%

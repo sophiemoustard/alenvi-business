@@ -29,7 +29,7 @@ export default {
 }// https://puu.sh/xJhcG/24789e1731.png
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .title-margin-bottom
   margin-bottom: 3%
 
