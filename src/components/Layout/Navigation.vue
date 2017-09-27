@@ -1,8 +1,8 @@
 <template>
   <!-- Configure "view" prop for QLayout -->
   <q-layout ref="layout" view="hHh lpr fff">
-    <div slot="header" class="w3-top">
-      <div class="w3-bar w3-border w3-white alenvi-nav row items-center justify-start">
+    <div slot="header">
+      <div class="w3-bar w3-white alenvi-nav row items-center justify-start">
         <router-link :to="'home'" class="w3-bar-item">
           <img class="alenvi-logo" src="statics/alenvi_logo_complet_183x50.png" alt="Logo Alenvi">
         </router-link>
@@ -300,7 +300,7 @@ export default {
     white-space: nowrap;
 
   .alenvi-dropdown-list
-    margin-top: 2.5px
+    margin-top: 0.5px
 
   .alenvi-nav
     font-weight: bold
