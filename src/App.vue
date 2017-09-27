@@ -14,8 +14,7 @@ export default {
     title: 'Alenvi',
     titleTemplate: '%s | Alenvi',
     htmlAttrs: {
-      lang: 'fr',
-      amp: undefined
+      lang: 'fr'
     }
   }
 }

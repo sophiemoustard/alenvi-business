@@ -24,6 +24,12 @@ import Auxiliaries from '../AuxiliariesGallery.vue'
 import CarouselMedia from '../CarouselMedia.vue'
 
 export default {
+  metaInfo: {
+    title: 'Compagnie',
+    meta: [
+      { name: 'description', content: 'Compagnie description' }
+    ]
+  },
   components: {
     Breadcrumb,
     Presentation,
