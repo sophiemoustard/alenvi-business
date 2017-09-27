@@ -32,4 +32,7 @@ h2
   font-size: 1.5em
   @media (max-width: 400px)
     font-size: 1.4em
+
+.btn-call
+  color: $white
 </style>
