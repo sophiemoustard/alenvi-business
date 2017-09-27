@@ -105,7 +105,10 @@ module.exports = {
     new PrerenderSpaPlugin(
       path.join(__dirname, '../dist'),
       // List of routes to prerender
-      [ '/', '/aide-a-domicile', '/compagnie', '/sortie-hopital', '/equipe', '/recrutement', '/mentions', '/vision' ]
+      [ '/', '/aide-a-domicile', '/compagnie', '/sortie-hopital', '/equipe', '/recrutement', '/mentions', '/vision' ],
+      {
+        captureAfterTime: 5000
+      }
     )
   ],
   performance: {
