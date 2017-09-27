@@ -124,7 +124,7 @@ export default {
     min-height: 100px
 
   .content
-    color: $tertiary
+    color: $primary
     font-weight: 100
     padding: 0px 15px
 

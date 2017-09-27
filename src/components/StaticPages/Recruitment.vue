@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <breadcrumb class="col-12 breadcrumb"/>
-    <section id="presentation">
+    <section id="presentation" class="section-margin">
       <div class="row"> <!-- pres-background -->
         <h1 class="col-12 text-center title-margin-bottom">Rejoignez une équipe engagée pour la valorisation du métier d’auxiliaire de vie</h1>
         <div id="pres-text" class="col-lg-7">
@@ -50,7 +50,7 @@ export default {
     @media (max-width: 1024px) and (min-width: 320px)
       padding-left: 0%
     @media (min-width: 1199px)
-      padding-left: 2%
+      padding-left: 2.3%
 
   .pres-background
     background: linear-gradient(to right, #FAF9F8, white)
@@ -58,6 +58,8 @@ export default {
   #pres-text
     padding-left: 5%
     padding-right: 5%
+    @media (max-width: 991px)
+      padding-bottom: 5%
 
   .title-margin-bottom
     margin-bottom: 3%
@@ -67,4 +69,11 @@ export default {
     height: auto
     min-height: 325px
     max-width: 500px
+    @media (max-width: 1200px)
+      max-width: 100%
+
+  .section-margin
+    @media (max-width: 1200px)
+      margin-bottom: 3%
+
 </style>

@@ -38,7 +38,9 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
+@import '~variables'
+
 .pres-background
   background: linear-gradient(to right, #FAF9F8, white)
 
@@ -49,9 +51,10 @@ export default {
     padding-bottom: 5%
 
 #online-asking
-  padding-top: 2%
+  padding-top: 1%
   padding-left: 65px
   cursor: pointer
+  color: $primary
 
 .title-margin-bottom
   margin-bottom: 3%
