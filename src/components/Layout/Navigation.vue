@@ -1,13 +1,41 @@
 <template>
   <!-- Configure "view" prop for QLayout -->
   <q-layout ref="layout" view="hHh lpr fff">
-    <q-toolbar color="white" slot="header" class="justify-between items-start">
+    <div slot="header" class="w3-top">
+      <div class="w3-bar w3-border w3-white alenvi-nav row items-center justify-start">
+        <router-link :to="'home'" class="w3-bar-item">
+          <img class="alenvi-logo" src="statics/alenvi_logo_complet_183x50.png" alt="Logo Alenvi">
+        </router-link>
+          <div class="w3-dropdown-hover bg-white">
+            <button id="dropdownHome" class="alenvi-button text-tertiary">Accueil <q-icon name="arrow drop down"/></button>
+            <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
+              <router-link :to="'aide-a-domicile'" class="w3-bar-item w3-button">Aide à domicile</router-link>
+              <router-link :to="'compagnie'" class="w3-bar-item w3-button">Stimulation et compagnie</router-link>
+              <router-link :to="'sortie-hopital'" class="w3-bar-item w3-button">Sortie d'hôpital</router-link>
+            </div>
+          </div>
+          <router-link :to="'vision'" class="w3-bar-item">Vision</router-link>
+          <router-link :to="'equipe'" class="w3-bar-item">Equipe</router-link>
+          <router-link :to="'recrutement'" class="w3-bar-item">Recrutement</router-link>
+          <div class="w3-dropdown-hover bg-white">
+            <button id="dropdownMag" class="alenvi-button text-tertiary">Blog <q-icon name="arrow drop down"/></button>
+            <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
+              <a href="https://blog.alenvi.io/tag/aidants-familiaux" class="w3-bar-item w3-button">Aidants familiaux</a>
+              <a href="https://blog.alenvi.io/tag/auxiliaires" class="w3-bar-item w3-button">Auxiliaires</a>
+              <a href="https://blog.alenvi.io/tag/alenvi" class="w3-bar-item w3-button">Le projet Alenvi</a>
+            </div>
+          </div>
+        <q-btn id="btn-call-header" class="gt-mld" color="primary" big><a class="btn-call text-white" href="tel:+33179755475">Appeler le <b>01 79 75 54 75</b></a></q-btn>
+      </div>
+    </div>
+  </div>
+    <!-- <q-toolbar color="white" slot="header" class="justify-between items-start">
 
       <div class="col-2">
         <router-link :to="'home'">
           <img src="statics/alenvi_logo_complet_183x50.png" alt="Logo Alenvi">
         </router-link>
-      </div>
+      </div> -->
 
       <!-- <nav class="gt-mld col-8 row items-center">
         <router-link :to="'home'">Accueil</router-link>
@@ -22,7 +50,7 @@
       </nav> -->
 
 
-      <nav class="gt-mld mobile-hide col-8">
+      <!-- <nav class="gt-mld mobile-hide col-8">
         <div class="row justify-start">
           <ul class="nav">
             <li>
@@ -59,7 +87,7 @@
         <q-icon name="menu" />
       </q-btn>
 
-    </q-toolbar>
+    </q-toolbar> -->
 
     <!-- <div v-if="active" class="row justify-center" slot="navigation">
       <div @mouseleave="isActive" :style="dropdownPos">
@@ -206,7 +234,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
   @import '~variables'
 
   @media (max-width: 1024px) and (min-width: 320px)
@@ -229,34 +257,66 @@ export default {
   // .q-tabs-scroller
   //   flex-wrap: wrap;
 
-  .nav
-    list-style: none
+  // .nav
+  //   list-style: none
+  //
+  // .nav li
+  //   float: left
+  //   padding-right: 30px
+  //
+  // .nav li a
+  //   color: $tertiary
+  //   font-weight: bold
+  //
+  // .active-link
+  //   color: $primary
+  //
+  // .dropdown-item
+  //   display: inline-block
+  //   height: 60px
+  //   padding-top: 20px
+  //
+  //
+  // .q-toolbar
+  //   min-height: 70px
+  //
+  // .q-tab-label
+  //   color: $tertiary
+  //
+  // .q-tab-label:hover
+  //   color: $primary
 
-  .nav li
-    float: left
-    padding-right: 30px
+  .alenvi-button
+    border: none;
+    display: inline-block;
+    outline: 0;
+    padding: 19px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
 
-  .nav li a
-    color: $tertiary
+  .alenvi-dropdown-list
+    margin-top: 2.5px
+
+  .alenvi-nav
     font-weight: bold
-
-  .active-link
-    color: $primary
-
-  .dropdown-item
-    display: inline-block
-    height: 60px
-    padding-top: 20px
-
-
-  .q-toolbar
-    min-height: 70px
-
-  .q-tab-label
     color: $tertiary
+    min-height: 60px
+    a
+      color: $tertiary
+      text-decoration: none
+      &:hover
+        color: $primary
 
-  .q-tab-label:hover
-    color: $primary
+  .w3-dropdown-hover
+    height: 60px
+
+  .alenvi-logo
+    width: 80%
 
   .btn-call
     color: $white
@@ -270,7 +330,8 @@ export default {
 
 
   #btn-call-header
-    margin: 0 -15px
+    // margin: 0 -15px
+    margin-left: auto
 
   footer ul
     list-style: none
