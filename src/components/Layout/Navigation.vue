@@ -8,7 +8,7 @@
         </router-link>
         <div class="row items-center gt-mld">
           <div class="w3-dropdown-hover bg-white">
-            <button id="dropdownHome" class="alenvi-button text-tertiary"><router-link active-class :to="'home'">Accueil <q-icon name="arrow drop down"/></router-link></button>
+            <button id="dropdownHome" class="alenvi-button text-tertiary"><router-link :to="'home'">Accueil <q-icon name="arrow drop down"/></router-link></button>
             <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
               <router-link :to="'aide-a-domicile'" class="w3-bar-item">Aide à domicile</router-link>
               <router-link :to="'compagnie'" class="w3-bar-item">Stimulation et compagnie</router-link>
@@ -140,27 +140,42 @@
 
     <!-- Footer -->
     <q-toolbar slot="footer">
-      <div class="row sm-gutter justify-between">
-        <div class="col-auto">
-          <ul>
-            <li><router-link :to="'home'" class="footer-links">Accueil</router-link></li>
-            <li><router-link :to="'vision'" class="footer-links">Vision</router-link></li>
-            <li><router-link :to="'equipe'" class="footer-links">Equipe</router-link></li>
-            <li><router-link :to="'recruitement'" class="footer-links">Recrutement</router-link></li>
-            <li><router-link :to="'home'" class="footer-links">Blog</router-link></li>
-          </ul>
+        <div class="col-4 self-baseline">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+              <ul>
+                <li><router-link :to="'home'" class="footer-links text-white">Accueil</router-link></li>
+                <li><router-link :to="'vision'" class="footer-links">Vision</router-link></li>
+                <li><router-link :to="'equipe'" class="footer-links">Equipe</router-link></li>
+                <li><router-link :to="'recruitement'" class="footer-links">Recrutement</router-link></li>
+                <li><router-link :to="'home'" class="footer-links">Blog</router-link></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+              <ul>
+                <li><router-link :to="'aide-a-domicile'" class="footer-links">Aide à domicile</router-link></li>
+                <li><router-link :to="'compagnie'" class="footer-links">Stimulation et compagnie</router-link></li>
+                <li><router-link :to="'sortie-hopital'" class="footer-links">Sortie d'hôpital</router-link></li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="col-auto">
-          <ul>
-            <li><router-link :to="'aide-a-domicile'" class="footer-links">Aide à domicile</router-link></li>
-            <li><router-link :to="'compagnie'" class="footer-links">Stimulation et compagnie</router-link></li>
-            <li><router-link :to="'sortie-hopital'" class="footer-links">Sortie d'hôpital</router-link></li>
-          </ul>
+        <div class="col-4">
+          <div class="row justify-center">
+            <a href="https://www.facebook.com/alenviservices/">
+              <q-icon name="fa-facebook-official" color="white" size="2.5rem" class="on-left"/>
+            </a>
+            <a href="https://www.youtube.com/channel/UCY31qIuLKsPY6zFUh_pR-pw">
+              <q-icon name="fa-youtube" color="white" size="2.5rem"/>
+            </a>
+          </div>
         </div>
-        <!-- <div class="col-auto">
-          <img src=""
-        </div> -->
-      </div>
+        <div class="col-4">
+          <div class="row justify-end items-center footer-logos">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center"><img class="footer-img" src="statics/logo_charte_qualite.gif" alt="logo charte qualité"></div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"><img class="footer-img" src="statics/logo-service-personne.png" alt="logo service personne"></div>
+          </div>
+        </div>
     </q-toolbar>
   </q-layout>
 </template>
@@ -180,10 +195,7 @@ import {
   QTab,
   QRouteTab,
   QListHeader,
-  QList,
-  QTooltip,
-  QCollapsible,
-  QPopover } from 'quasar'
+  QList } from 'quasar'
 
 export default {
   components: {
@@ -201,9 +213,6 @@ export default {
     QRouteTab,
     QListHeader,
     QList,
-    QTooltip,
-    QCollapsible,
-    QPopover
   },
   data () {
     return {
@@ -320,9 +329,9 @@ export default {
   .w3-dropdown-hover
     height: 60px
 
-  .router-link-exact-active
+  header .router-link-exact-active
     font-weight: 900
-    color: $primary !important
+    color: $primary
 
   .alenvi-logo
     width: 80%
@@ -350,9 +359,22 @@ export default {
     color: $white
     line-height: 30px
 
-
-  .footer-links:hover
-    text-decoration: underline
+  .footer-links
     color: $white
+
+  .footer-logos
+    background-color: $white
+    border-radius: 15px
+
+    &:hover
+      text-decoration: underline
+      color: $white
+
+  .footer-img
+    width: 100px
+    height: auto
+
+  i:hover
+    color: $blue
 
 </style>
