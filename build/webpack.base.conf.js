@@ -6,8 +6,7 @@ var
   env = require('./env-utils'),
   merge = require('webpack-merge'),
   projectRoot = path.resolve(__dirname, '../'),
-  ProgressBarPlugin = require('progress-bar-webpack-plugin')
-  // PrerenderSpaPlugin = require('prerender-spa-plugin'),
+  ProgressBarPlugin = require('progress-bar-webpack-plugin'),
   useCssSourceMap =
     (env.dev && config.dev.cssSourceMap) ||
     (env.prod && config.build.productionSourceMap)
@@ -101,24 +100,7 @@ module.exports = {
     }),
     new ProgressBarPlugin({
       format: config.progressFormat
-<<<<<<< HEAD
     })
-    // new PrerenderSpaPlugin(
-    //   path.join(__dirname, '../dist'),
-    //   // List of routes to prerender
-    //   [ '/', '/aide-a-domicile', '/compagnie', '/sortie-hopital', '/equipe', '/recrutement', '/mentions', '/vision' ]
-    // )
-=======
-    }),
-    new PrerenderSpaPlugin(
-      path.join(__dirname, '../dist'),
-      // List of routes to prerender
-      [ '/', '/aide-a-domicile', '/compagnie', '/sortie-hopital', '/equipe', '/recrutement', '/mentions', '/vision' ],
-      {
-        captureAfterTime: 5000
-      }
-    )
->>>>>>> 76df7db4204aad778a10cb651daa81ed2c9d58ea
   ],
   performance: {
     hints: false

@@ -7,7 +7,8 @@ var
   baseWebpackConfig = require('./webpack.base.conf'),
   ExtractTextPlugin = require('extract-text-webpack-plugin'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
-  OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+  OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin'),
+  PrerenderSpaPlugin = require('prerender-spa-plugin')
 
 module.exports = merge(baseWebpackConfig, {
   module: {
@@ -73,6 +74,26 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest',
       chunks: ['vendor']
-    })
+    }),
+    new PrerenderSpaPlugin(
+      path.join(__dirname, '../dist'),
+      // List of routes to prerender
+      [ '/' ],
+      {
+        postProcessHtml: function(context) {
+          var contents = {
+            '/': {
+              title: 'Accueil',
+              metaName: 'description',
+              content: 'Home Description'
+            }
+          }
+          return context.html.replace(
+            /<title>[^<]*<\/title>/i,
+            `<title>${contents[context.route].title} | Alenvi</title><meta name="${contents[context.route].metaName}" content="${contents[context.route].content}">`
+          )
+        }
+      }
+    )
   ]
 })
