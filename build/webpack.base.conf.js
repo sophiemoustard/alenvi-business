@@ -100,19 +100,7 @@ module.exports = {
     }),
     new ProgressBarPlugin({
       format: config.progressFormat
-<<<<<<< HEAD
-    }),
-    new PrerenderSpaPlugin(
-      path.join(__dirname, '../dist'),
-      // List of routes to prerender
-      [ '/', '/aide-a-domicile', '/compagnie', '/sortie-hopital', '/equipe', '/recrutement', '/mentions', '/vision' ],
-      {
-        captureAfterTime: 5000
-      }
-    )
-=======
     })
->>>>>>> e2e6fca3d76e9d4f15f1d182cae31003de37d938
   ],
   performance: {
     hints: false
