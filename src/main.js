@@ -32,9 +32,12 @@ import 'quasar-extras/fontawesome'
 
 Quasar.start(() => {
   /* eslint-disable no-new */
-  new Vue({
+  var root = new Vue({
     el: '#alenvi-app',
     router,
     render: h => h(require('./App'))
+  })
+  document.addEventListener('DOMContentLoaded', function () {
+    root.$mount('#alenvi-app')
   })
 })
