@@ -28,6 +28,7 @@ import CarouselMedia from '../CarouselMedia.vue'
 import LatestArticles from './LatestArticles.vue'
 
 export default {
+
   // metaInfo: {
   //   title: 'Accueil',
   //   meta: [
@@ -70,6 +71,16 @@ export default {
         }
       ]
     }
+  },
+  created() {
+    document.title = 'Accueil | Alenvi';
+    let meta = document.createElement('meta');
+    meta.setAttribute('name', 'description');
+    meta.setAttribute('content', 'Accueil description');
+    document.getElementsByTagName('head')[0].appendChild(meta);
+    // let meta = document.createElement('meta');
+    // meta.setAttribute('name', 'description');
+    // meta.setAttribute('content', 'Accueil description');
   }
 }
 </script>
