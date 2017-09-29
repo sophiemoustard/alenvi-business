@@ -46,14 +46,7 @@ export default new VueRouter({
             breadcrumb: 'Accueil'
           }
         },
-        {
-          path: 'test',
-          component: load('Home/CarouselMedia'),
-          meta: {
-            breadcrumb: 'test',
-            name: 'test'
-          }
-        },
+
         {
           path: 'aide-a-domicile',
           component: load('StaticPages/HomeCare'),
@@ -111,6 +104,14 @@ export default new VueRouter({
           }
         }
       ]
+    },
+    {
+      path: '/test',
+      component: load('Home/LatestArticles'),
+      meta: {
+        breadcrumb: 'test',
+        name: 'test'
+      }
     },
     // Always leave this last one
     { path: '*', component: load('Error404') } // Not found
