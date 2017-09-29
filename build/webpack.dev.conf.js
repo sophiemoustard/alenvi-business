@@ -35,7 +35,7 @@ module.exports = merge(baseWebpackConfig, {
     }),
     new FriendlyErrorsPlugin({
       clearConsole: config.dev.clearConsoleOnRebuild
-    })
+    }),
   ],
   performance: {
     hints: false

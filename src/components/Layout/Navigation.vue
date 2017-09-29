@@ -3,12 +3,12 @@
   <q-layout ref="layout" view="hHh lpr fff">
     <div slot="header">
       <div class="w3-bar w3-white alenvi-nav row items-center justify-start">
-        <router-link :to="'home'" class="w3-bar-item">
+        <router-link :to="'/'" class="w3-bar-item">
           <img class="alenvi-logo" src="statics/alenvi_logo_complet_183x50.png" alt="Logo Alenvi">
         </router-link>
         <div class="row items-center gt-mld">
           <div class="w3-dropdown-hover bg-white">
-            <button id="dropdownHome" class="alenvi-button text-tertiary"><router-link :to="'home'">Accueil <q-icon name="arrow drop down"/></router-link></button>
+            <button id="dropdownHome" class="alenvi-button text-tertiary"><router-link :to="'/'">Accueil <q-icon name="arrow drop down"/></router-link></button>
             <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
               <router-link :to="'aide-a-domicile'" class="w3-bar-item">Aide à domicile</router-link>
               <router-link :to="'compagnie'" class="w3-bar-item">Stimulation et compagnie</router-link>
@@ -37,17 +37,17 @@
     <!-- <q-toolbar color="white" slot="header" class="justify-between items-start">
 
       <div class="col-2">
-        <router-link :to="'home'">
+        <router-link :to="'/'">
           <img src="statics/alenvi_logo_complet_183x50.png" alt="Logo Alenvi">
         </router-link>
       </div> -->
 
       <!-- <nav class="gt-mld col-8 row items-center">
-        <router-link :to="'home'">Accueil</router-link>
+        <router-link :to="'/'">Accueil</router-link>
         <router-link :to="'vision'">Vision</router-link>
         <router-link :to="'equipe'">Equipe</router-link>
         <router-link :to="'recrutement'">Recrutement</router-link>
-        <router-link :to="'home'">
+        <router-link :to="'/'">
           <div :class="[dropdownItemClass, { 'active-link': active }, rowClass, justifyCenterClass]" ref="dropdown" @mouseover="isActive(), getElementLeftPos()">
             Magazine<q-icon name="arrow drop down" />
           </div>
@@ -59,7 +59,7 @@
         <div class="row justify-start">
           <ul class="nav">
             <li>
-              <router-link :to="'home'">Accueil</router-link>
+              <router-link :to="'/'">Accueil</router-link>
             </li>
             <li>
               <router-link :to="'vision'">Vision</router-link>
@@ -71,7 +71,7 @@
               <router-link :to="'recruitement'">Recrutement</router-link>
             </li>
             <li @mouseover="$refs.popover1.open()" @mouseleave="closePopover()">
-              <router-link :to="'home'">
+              <router-link :to="'/'">
                 Magazine<q-icon name="arrow drop down" />
               </router-link>
               <q-popover ref="popover1" style="position: absolute;">
@@ -144,11 +144,11 @@
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
               <ul>
-                <li><router-link :to="'home'" class="footer-links text-white">Accueil</router-link></li>
+                <li><router-link :to="'/'" class="footer-links text-white">Accueil</router-link></li>
                 <li><router-link :to="'vision'" class="footer-links">Vision</router-link></li>
                 <li><router-link :to="'equipe'" class="footer-links">Equipe</router-link></li>
                 <li><router-link :to="'recruitement'" class="footer-links">Recrutement</router-link></li>
-                <li><router-link :to="'home'" class="footer-links">Blog</router-link></li>
+                <li><router-link :to="'/'" class="footer-links">Blog</router-link></li>
               </ul>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">

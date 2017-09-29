@@ -7,6 +7,7 @@ var
   merge = require('webpack-merge'),
   projectRoot = path.resolve(__dirname, '../'),
   ProgressBarPlugin = require('progress-bar-webpack-plugin'),
+  PrerenderSpaPlugin = require('prerender-spa-plugin')
   useCssSourceMap =
     (env.dev && config.dev.cssSourceMap) ||
     (env.prod && config.build.productionSourceMap)
@@ -101,6 +102,84 @@ module.exports = {
     new ProgressBarPlugin({
       format: config.progressFormat
     })
+    // new PrerenderSpaPlugin(
+    //   path.join(__dirname, '../dist'),
+    //   // List of routes to prerender
+    //   ['/', '/home', '/aide-a-domicile', '/compagnie', '/sortie-hopital', '/vision', '/equipe', '/recrutement', '/mentions'],
+    //   {
+    //     postProcessHtml: function(context) {
+    //       var contents = {
+    //         '/': {
+    //           title: 'Accueil',
+    //           meta: {
+    //             name: 'description',
+    //             content: "Les 'auxiliaires d’envie' Alenvi accompagnent à domicile les personnes âgées. Formés en continu sur les troubles cognitifs, ils les aident pour les gestes de la vie quotidienne et leur apportent une compagnie stimulante et humaine."
+    //           }
+    //         },
+    //         '/home': {
+    //           title: 'Accueil',
+    //           meta: {
+    //             name: 'description',
+    //             content: "Les 'auxiliaires d’envie' Alenvi accompagnent à domicile les personnes âgées. Formés en continu sur les troubles cognitifs, ils les aident pour les gestes de la vie quotidienne et leur apportent une compagnie stimulante et humaine."
+    //           }
+    //         },
+    //         '/aide-a-domicile': {
+    //           title: 'Aide à domicile',
+    //           meta: {
+    //             name: 'description',
+    //             content: "Services d’aide à domicile (repas, toilettes, aide au lever…) proposés aux personnes âgées par les 'auxiliaires d’envie' Alenvi."
+    //           }
+    //         },
+    //         '/compagnie': {
+    //           title: 'Compagnie et stimulation',
+    //           meta: {
+    //             name: 'description',
+    //             content: "Les “auxiliaires d’envie” passent du temps de qualité avec les personnes âgées à domicile : promenades, jeux, stimulation etc…"
+    //           }
+    //         },
+    //         '/sortie-hopital': {
+    //           title: "Sortie d'hôpital",
+    //           meta: {
+    //             name: 'description',
+    //             content: "Les 'auxiliaires d’envie' aident votre proche âgé à réussir son retour à domicile à la suite d’une hospitalisation."
+    //           }
+    //         },
+    //         '/vision': {
+    //           title: 'Vision',
+    //           meta: {
+    //             name: 'description',
+    //             content: "Alenvi réinvente l’accompagnement à domicile des personnes âgées grâce à la valorisation des auxiliaires de vie et aux technologies mobiles."
+    //           }
+    //         },
+    //         '/equipe': {
+    //           title: 'Equipe',
+    //           meta: {
+    //             name: 'description',
+    //             content: "Présentations en vidéo des collaborateurs d’Alenvi."
+    //           }
+    //         },
+    //         '/recrutement': {
+    //           title: 'Recrutement',
+    //           meta: {
+    //             name: 'description',
+    //             content: "Rejoignez une équipe engagée pour la valorisation du métier d’auxiliaire de vie."
+    //           }
+    //         },
+    //         '/mentions': {
+    //           title: 'Mentions légales',
+    //           meta: {
+    //             name: 'description',
+    //             content: "Mentions légales de l’organisation Alenvi."
+    //           }
+    //         }
+    //       }
+    //       return context.html.replace(
+    //         /<title>[^<]*<\/title>/i,
+    //         `<title>${contents[context.route].title} | Alenvi</title><meta name="${contents[context.route].meta.name}" content="${contents[context.route].meta.content}">`
+    //       )
+    //     }
+    //   }
+    // )
   ],
   performance: {
     hints: false

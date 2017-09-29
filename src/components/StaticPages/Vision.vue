@@ -32,6 +32,16 @@ export default {
   components: {
     Breadcrumb,
     QIcon
+  },
+  created() {
+    document.title = 'Vision | Alenvi';
+    let meta = document.createElement('meta');
+    meta.setAttribute('name', 'description');
+    meta.setAttribute('content', "Alenvi réinvente l’accompagnement à domicile des personnes âgées grâce à la valorisation des auxiliaires de vie et aux technologies mobiles.");
+    document.getElementsByTagName('head')[0].appendChild(meta);
+    // let meta = document.createElement('meta');
+    // meta.setAttribute('name', 'description');
+    // meta.setAttribute('content', 'Accueil description');
   }
 }
 </script>
