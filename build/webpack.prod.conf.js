@@ -78,24 +78,6 @@ module.exports = merge(baseWebpackConfig, {
     new PrerenderSpaPlugin(
       path.join(__dirname, '../dist'),
       // List of routes to prerender
-<<<<<<< HEAD
-      [ '/' ]
-    //   {
-    //     postProcessHtml: function(context) {
-    //       var contents = {
-    //         '/': {
-    //           title: 'Accueil',
-    //           metaName: 'description',
-    //           content: 'Home Description'
-    //         }
-    //       }
-    //       return context.html.replace(
-    //         /<title>[^<]*<\/title>/i,
-    //         `<title>${contents[context.route].title} | Alenvi</title><meta name="${contents[context.route].metaName}" content="${contents[context.route].content}">`
-    //       )
-    //     }
-    //   }
-=======
       ['/', '/home', '/aide-a-domicile', '/compagnie', '/sortie-hopital', '/vision', '/equipe', '/recrutement', '/mentions'],
       {
         postProcessHtml: function(context) {
@@ -171,7 +153,6 @@ module.exports = merge(baseWebpackConfig, {
           )
         }
       }
->>>>>>> 891543e8c62825904440c0249fe4c410f58fb6b4
     )
   ]
 })
