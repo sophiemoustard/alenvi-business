@@ -80,6 +80,9 @@ module.exports = merge(baseWebpackConfig, {
     //   // List of routes to prerender
     //   ['/', '/home', '/aide-a-domicile', '/compagnie', '/sortie-hopital', '/vision', '/equipe', '/recrutement', '/mentions'],
     //   {
+    //     captureAfterTime: 5000,
+    //     ignoreJSErrors: true,
+    //     navigationLocked: true,
     //     postProcessHtml: function(context) {
     //       var contents = {
     //         '/': {
