@@ -3,10 +3,11 @@ var webpack = require('webpack')
 var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
 var webpackConfig = merge(baseWebpackConfig, {
     target: 'node',
     entry: {
-        app: './src/server.js'
+        app: './src/entry-server.js'
     },
     devtool: false,
     output: {
@@ -26,7 +27,8 @@ var webpackConfig = merge(baseWebpackConfig, {
         }),
         new ExtractTextPlugin({
           filename: '[name].[contenthash].css'
-        })
+        }),
+        new VueSSRServerPlugin()
     ]
 })
 module.exports = webpackConfig
