@@ -32,7 +32,13 @@ export default {
   components: {
     Breadcrumb,
     QIcon
-  }
+  },
+  metaInfo: {
+    title: 'Vision',
+    meta: [
+      { name: 'description', content: 'Vision description' }
+    ]
+  },
   // created() {
   //   document.title = 'Vision | Alenvi';
   //   let meta = document.createElement('meta');

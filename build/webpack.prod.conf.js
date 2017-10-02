@@ -9,6 +9,8 @@ var
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
   // PrerenderSpaPlugin = require('prerender-spa-plugin')
+  // PrerendererWebpackPlugin = require('prerenderer-webpack-plugin'),
+  // BrowserRenderer = PrerendererWebpackPlugin.BrowserRenderer
 
 module.exports = merge(baseWebpackConfig, {
   module: {
@@ -75,6 +77,17 @@ module.exports = merge(baseWebpackConfig, {
       name: 'manifest',
       chunks: ['vendor']
     })
+    // new PrerendererWebpackPlugin({
+    //   staticDir: path.join(__dirname, '../dist'), // The path to the folder where index.html is.
+    //   routes: ['/', '/home', '/aide-a-domicile', '/compagnie', '/sortie-hopital', '/vision', '/equipe', '/recrutement', '/mentions'], // List of routes to prerender.
+    //   renderer: new BrowserRenderer({
+    //     renderAfterTime: 5000,
+    //     renderAfterElementExists: '#alenvi-app',
+    //     inject: {
+    //       nestLocation: 'bayou'
+    //     }
+    //   })
+    // })
     // new PrerenderSpaPlugin(
     //   path.join(__dirname, '../dist'),
     //   // List of routes to prerender
@@ -83,6 +96,9 @@ module.exports = merge(baseWebpackConfig, {
     //     captureAfterTime: 5000,
     //     ignoreJSErrors: true,
     //     navigationLocked: true,
+    //     phantomPageSettings: {
+    //       loadImages: true
+    //     },
     //     postProcessHtml: function(context) {
     //       var contents = {
     //         '/': {

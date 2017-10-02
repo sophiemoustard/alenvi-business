@@ -10,13 +10,13 @@
  * Root component
  */
 export default {
-  // metaInfo: {
-  //   title: 'Alenvi',
-  //   titleTemplate: '%s | Alenvi',
-  //   htmlAttrs: {
-  //     lang: 'fr'
-  //   }
-  // }
+  metaInfo: {
+    title: 'Alenvi',
+    titleTemplate: '%s | Alenvi',
+    htmlAttrs: {
+      lang: 'fr'
+    }
+  }
 }
 </script>
 
