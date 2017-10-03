@@ -4,10 +4,10 @@
     <div class="col-sm-3 auxiliaries-container" v-for="auxiliary in auxiliaries" v-if="auxiliary.youtube" @click="openModal(auxiliary)">
       <img class="auxiliaries-size" :src="auxiliary.picture" alt="splash" />
       <div class="auxiliaries-icon-container">
-        <q-icon class="auxiliaries-icon" name="play circle outline" color="white" size="5rem"/>
+        <q-icon class="auxiliaries-icon" name="play circle outline" color="white" size="500%"/>
       </div>
       <div class="auxiliaries-filter" :style="{ backgroundColor: auxiliary.backgroundColor }">
-        <h4 class="auxiliaries-name">{{auxiliary.firstname}}</h4>
+        <h3 class="auxiliaries-name">{{auxiliary.firstname}}</h3>
       </div>
     </div>
     <q-modal ref="basicModal" @close="closeModal()" :content-css="setVideoContainerSize()">

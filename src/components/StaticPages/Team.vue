@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="">
-    <breadcrumb class="col-12 breadcrumb"/>
+    <breadcrumb v-if="!$q.platform.is.mobile" class="breadcrumb"/>
     <div class="row">
       <h1 class="col-12 text-center title-margin-bottom">Découvrez notre équipe engagée</h1>
     </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <breadcrumb class="col-12 breadcrumb"/>
+    <breadcrumb v-if="!$q.platform.is.mobile" class="col-12 breadcrumb"/>
     <section id="presentation">
       <presentation :presentationContent="presentationContent" />
     </section>

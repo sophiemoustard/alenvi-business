@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="">
-    <breadcrumb class="col-12 breadcrumb"/>
-    <div class="row ">
+    <breadcrumb v-if="!$q.platform.is.mobile" class="col-12 breadcrumb"/>
+    <div class="row">
       <h1 class="col-12 text-center title-margin-bottom">Mentions légales et confidentialité</h1>
       <section id="legal-notices">
         <p>Le site www.alenvi.io est édité par :</p>
