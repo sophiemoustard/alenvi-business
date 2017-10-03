@@ -7,7 +7,8 @@
       </div>
       <p class="feature-text">{{feature.text}}</p>
       <div v-if="feature.link" class="text-center">
-        <router-link :to="feature.link">En savoir plus</router-link>
+        <router-link v-if="feature.link.substring(0, 4) != 'http'" :to="feature.link">En savoir plus</router-link>
+        <a v-else :href="feature.link">En savoir plus</a>
       </div>
     </div>
   </div>
