@@ -196,9 +196,12 @@ import {
   QTab,
   QRouteTab,
   QListHeader,
-  QList } from 'quasar'
+  QList,
+  Alert } from 'quasar'
 
 import Modal from '../Modal.vue'
+import 'quasar-extras/animate/bounceInRight.css'
+import 'quasar-extras/animate/bounceOutRight.css'
 
 
 export default {
@@ -218,6 +221,7 @@ export default {
     QRouteTab,
     QListHeader,
     QList,
+    Alert,
     Modal
   },
   data () {
@@ -235,6 +239,14 @@ export default {
   },
   mounted () {
     this.$refs.layout.hideRight();
+    Alert.create({
+      html: 'Ce site utilise des cookies !',
+      icon: 'thumb up',
+      position: 'bottom-right',
+      enter: 'bounceInRight',
+      leave: 'bounceOutRight',
+      color: '#8D0E56'
+    })
   },
   methods: {
     isActive () {

@@ -51,7 +51,7 @@ export default {
       featuresContent: [
         {
           title: 'Aide à domicile',
-          text: 'Nous assistons votre proche pour les tâches de la vie quotidienne et passons de bons moments ensemble',
+          text: 'Nous assistons votre proche pour les tâches de la vie quotidienne et passons de bons moments avec lui.',
           link: '/aide-a-domicile',
           image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021342/images/business/pictos/aide_domicile.png',
           backgroundColor: '#FFFFFF'
@@ -65,7 +65,7 @@ export default {
         },
         {
           title: `Sortie d'hôpital`,
-          text: 'Nous aidons votre proche à retrouver son autonomie lorsqu’il regagne son domicile après un passage à l’hôpital',
+          text: 'Nous aidons votre proche à retrouver son autonomie lorsqu’il regagne son domicile après un passage à l’hôpital.',
           link: '/sortie-hopital',
           image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021339/images/business/pictos/sortie_hopital.png',
           backgroundColor: '#FFFFFF'
