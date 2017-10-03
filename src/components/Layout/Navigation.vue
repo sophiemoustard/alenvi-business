@@ -141,13 +141,13 @@
     <router-view />
 
     <!-- Footer -->
-    <q-toolbar slot="footer">
+    <q-toolbar class="forced-wrap" slot="footer">
       <div class="col-xs-12 col-md-3">
         <ul>
           <li><router-link :to="'/'" class="footer-links text-white">Accueil</router-link></li>
           <li><router-link :to="'vision'" class="footer-links">Vision</router-link></li>
           <li><router-link :to="'equipe'" class="footer-links">Equipe</router-link></li>
-          <li><router-link :to="'recruitement'" class="footer-links">Recrutement</router-link></li>
+          <li><router-link :to="'recrutement'" class="footer-links">Recrutement</router-link></li>
           <li><router-link :to="'/'" class="footer-links">Blog</router-link></li>
         </ul>
       </div>
@@ -161,7 +161,7 @@
       </div>
           <!-- </div>
         </div> -->
-        <div class="col-xs-12 col-md-3">
+        <div class="col-xs-12 col-md-3 padding-top-footer">
           <div class="row justify-center">
             <a href="https://www.facebook.com/alenviservices/">
               <q-icon name="fa-facebook-official" color="white" size="2.5rem" class="on-left"/>
@@ -171,7 +171,7 @@
             </a>
           </div>
         </div>
-        <div class="col-xs-12 col-md-3">
+        <div class="col-xs-12 col-md-3 padding-top-footer">
           <div class="row justify-center items-center">
             <div><img class="footer-img" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019445/images/business/logo-service-personne.png" alt="logo service personne"></div>
           </div>
@@ -265,6 +265,10 @@ export default {
   @media (min-width: 1025px)
     .lt-lgx
       display: none !important
+
+  @media (max-width: 991px)
+    .padding-top-footer
+      padding-top: 15px
 
   // nav a
   //   color: $tertiary
@@ -380,7 +384,8 @@ export default {
     width: 100px
     height: auto
 
-  i:hover
-    color: $blue
+  .forced-wrap
+    flex-wrap: wrap
+
 
 </style>
