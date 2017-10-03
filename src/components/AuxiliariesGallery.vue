@@ -11,17 +11,23 @@
       </div>
     </div>
     <q-modal ref="basicModal" @close="closeModal()" :content-css="setVideoContainerSize()">
+      <div class="absolute-right">
+        <q-btn color="primary" @click="$refs.basicModal.close()">
+          <q-icon name="close"></q-icon>
+        </q-btn>
+      </div>
       <iframe id="auxiliary-iframe" :src="video_link" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
     </q-modal>
   </div>
 </template>
 
 <script>
-import { QIcon, QModal, QVideo, QWindowResizeObservable } from 'quasar'
+import { QBtn, QIcon, QModal, QVideo, QWindowResizeObservable } from 'quasar'
 import _ from 'lodash'
 
 export default {
   components: {
+    QBtn,
     QIcon,
     QModal,
     QVideo,
@@ -46,7 +52,7 @@ export default {
       location: this.videoLocation
     };
     const payload = _.pickBy(params);
-    const auxiliariesRaw = await this.$http.get('https://536a9a0b.ngrok.io/users/presentation', {
+    const auxiliariesRaw = await this.$http.get('https://alenvi-api.herokuapp.com/users/presentation', {
       params: payload
     });
     this.auxiliariesRaw = auxiliariesRaw.data.data.users;

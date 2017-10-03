@@ -4,11 +4,11 @@
     <div slot="header">
       <div class="w3-bar w3-white alenvi-nav row items-center justify-start">
         <router-link :to="'/'" class="w3-bar-item">
-          <img class="alenvi-logo" src="statics/alenvi_logo_complet_183x50.png" alt="Logo Alenvi">
+          <img class="alenvi-logo" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019444/images/business/alenvi_logo_complet_183x50.png" alt="Logo Alenvi">
         </router-link>
         <div class="row items-center gt-mld">
           <div class="w3-dropdown-hover bg-white">
-            <button id="dropdownHome" class="alenvi-button text-tertiary"><router-link :to="'/'">Accueil <q-icon name="arrow drop down"/></router-link></button>
+            <button id="dropdownHome" class="alenvi-button text-tertiary"><router-link :to="'/'">Services <q-icon name="arrow drop down"/></router-link></button>
             <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
               <router-link :to="'aide-a-domicile'" class="w3-bar-item">Aide à domicile</router-link>
               <router-link :to="'compagnie'" class="w3-bar-item">Stimulation et compagnie</router-link>
@@ -27,7 +27,9 @@
             </div>
           </div>
         </div>
-        <q-btn id="btn-call-header" class="gt-mld" color="primary" big><a class="btn-call text-white" href="tel:+33179755475">Appeler le <b>01 79 75 54 75</b></a></q-btn>
+        <q-btn id="btn-call-header" v-if="this.$route.meta.name != 'recrutement'" class="gt-mld" color="primary" big><a class="btn-call text-white" href="tel:+33179755475">Appeler le <b>01 79 75 54 75</b></a></q-btn>
+        <q-btn id="btn-call-header" v-else class="gt-mld" color="primary" big><a class="btn-call text-white" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/MwEMWk')"><b>Postuler</b></a></q-btn>
+        <modal ref="infoModal"/>
         <q-btn color="tertiary" class="lt-lgx hide-on-drawer-visible absolute-right" @click="$refs.layout.toggleRight()" flat big>
           <q-icon name="menu" />
         </q-btn>
@@ -140,27 +142,26 @@
 
     <!-- Footer -->
     <q-toolbar slot="footer">
-        <div class="col-4 self-baseline">
-          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-              <ul>
-                <li><router-link :to="'/'" class="footer-links text-white">Accueil</router-link></li>
-                <li><router-link :to="'vision'" class="footer-links">Vision</router-link></li>
-                <li><router-link :to="'equipe'" class="footer-links">Equipe</router-link></li>
-                <li><router-link :to="'recruitement'" class="footer-links">Recrutement</router-link></li>
-                <li><router-link :to="'/'" class="footer-links">Blog</router-link></li>
-              </ul>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-              <ul>
-                <li><router-link :to="'aide-a-domicile'" class="footer-links">Aide à domicile</router-link></li>
-                <li><router-link :to="'compagnie'" class="footer-links">Stimulation et compagnie</router-link></li>
-                <li><router-link :to="'sortie-hopital'" class="footer-links">Sortie d'hôpital</router-link></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-4">
+      <div class="col-xs-12 col-md-3">
+        <ul>
+          <li><router-link :to="'/'" class="footer-links text-white">Accueil</router-link></li>
+          <li><router-link :to="'vision'" class="footer-links">Vision</router-link></li>
+          <li><router-link :to="'equipe'" class="footer-links">Equipe</router-link></li>
+          <li><router-link :to="'recruitement'" class="footer-links">Recrutement</router-link></li>
+          <li><router-link :to="'/'" class="footer-links">Blog</router-link></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <ul>
+          <li><router-link :to="'aide-a-domicile'" class="footer-links">Aide à domicile</router-link></li>
+          <li><router-link :to="'compagnie'" class="footer-links">Stimulation et compagnie</router-link></li>
+          <li><router-link :to="'sortie-hopital'" class="footer-links">Sortie d'hôpital</router-link></li>
+          <li><router-link :to="'mentions'" class="footer-links">Mentions légales</router-link></li>
+        </ul>
+      </div>
+          <!-- </div>
+        </div> -->
+        <div class="col-xs-12 col-md-3">
           <div class="row justify-center">
             <a href="https://www.facebook.com/alenviservices/">
               <q-icon name="fa-facebook-official" color="white" size="2.5rem" class="on-left"/>
@@ -170,10 +171,9 @@
             </a>
           </div>
         </div>
-        <div class="col-4">
-          <div class="row justify-end items-center footer-logos">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center"><img class="footer-img" src="statics/logo_charte_qualite.gif" alt="logo charte qualité"></div>
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"><img class="footer-img" src="statics/logo-service-personne.png" alt="logo service personne"></div>
+        <div class="col-xs-12 col-md-3">
+          <div class="row justify-center items-center">
+            <div><img class="footer-img" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019445/images/business/logo-service-personne.png" alt="logo service personne"></div>
           </div>
         </div>
     </q-toolbar>
@@ -198,6 +198,9 @@ import {
   QListHeader,
   QList } from 'quasar'
 
+import Modal from '../Modal.vue'
+
+
 export default {
   components: {
     QLayout,
@@ -215,6 +218,7 @@ export default {
     QRouteTab,
     QListHeader,
     QList,
+    Modal
   },
   data () {
     return {
@@ -364,13 +368,13 @@ export default {
   .footer-links
     color: $white
 
-  .footer-logos
-    background-color: $white
-    border-radius: 15px
-
-    &:hover
-      text-decoration: underline
-      color: $white
+  // .footer-logos
+  //   background-color: $white
+  //   border-radius: 15px
+  //
+  //   &:hover
+  //     text-decoration: underline
+  //     color: $white
 
   .footer-img
     width: 100px

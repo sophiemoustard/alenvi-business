@@ -8,6 +8,7 @@
       <features :featuresContent="featuresContent"/>
     </section>
     <section id="auxiliaries-gallery" class="section-margin">
+      <h1 class="text-center title-margin-bottom">Les auxiliaires d'envie</h1>
       <auxiliaries-gallery :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
     </section>
     <section id="carousel-media">
@@ -52,32 +53,32 @@ export default {
           title: 'Aide à domicile',
           text: 'Nous assistons votre proche pour les tâches de la vie quotidienne et passons de bons moments ensemble',
           link: '/aide-a-domicile',
-          image: 'statics/picto.png',
+          image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021342/images/business/pictos/aide_domicile.png',
           backgroundColor: '#FFFFFF'
         },
         {
           title: 'Compagnie & stimulation',
           text: 'Formés en continu sur les troubles cognitifs, nous sommes là pour aider votre proche à garder des activités : promenades, jeux...',
           link: '/compagnie',
-          image: 'statics/picto.png',
+          image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021332/images/business/pictos/compagnie_stimulation.png',
           backgroundColor: '#FAF9F8'
         },
         {
           title: `Sortie d'hôpital`,
           text: 'Nous aidons votre proche à retrouver son autonomie lorsqu’il regagne son domicile après un passage à l’hôpital',
           link: '/sortie-hopital',
-          image: 'statics/picto.png',
+          image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021339/images/business/pictos/sortie_hopital.png',
           backgroundColor: '#FFFFFF'
         }
       ]
     }
   }
   // created() {
-  //   document.title = 'Accueil | Alenvi';
-  //   let meta = document.createElement('meta');
-  //   meta.setAttribute('name', 'description');
-  //   meta.setAttribute('content', 'Accueil description');
-  //   document.getElementsByTagName('head')[0].appendChild(meta);
+    // document.title = 'Accueil | Alenvi';
+    // let meta = document.createElement('meta');
+    // meta.setAttribute('name', 'description');
+    // meta.setAttribute('content', 'Accueil description');
+    // document.getElementsByTagName('head')[0].appendChild(meta);
     // let meta = document.createElement('meta');
     // meta.setAttribute('name', 'description');
     // meta.setAttribute('content', 'Accueil description');
@@ -88,6 +89,9 @@ export default {
 <style lang="stylus" scoped>
 
 .section-margin
+  margin-bottom: 3%
+
+.title-margin-bottom
   margin-bottom: 3%
 
 </style>
