@@ -23,7 +23,7 @@ export default {
 <style lang="stylus">
 @import '~variables'
 
-body
+body,
   font-family: alenviTextFont
   color: $tertiary
 
@@ -35,7 +35,8 @@ h1
   font-size: 2.8em
   @media (max-width: 400px)
     font-size: 2em
-h2
+
+h2, h4
   font-size: 1.5em
   @media (max-width: 400px)
     font-size: 1.4em

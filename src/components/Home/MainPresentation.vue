@@ -2,7 +2,7 @@
   <div class="row"> <!-- main-pres-background -->
     <div id="main-text-and-call" class="col-lg-6 self-center">
       <h1>Accompagner le quotidien, stimuler les envies.</h1>
-      <h2>Auxiliaires d’envie et professionnels passionnés, nous partageons du temps de qualité au domicile des personnes âgées.</h2>
+      <p class="subtitle-big">Auxiliaires d’envie et professionnels passionnés, nous partageons du temps de qualité au domicile des personnes âgées.</p>
       <q-btn color="primary" big>
         <a class="btn-call" href="tel:+33179755475">Appeler le 01 79 75 54 75</a>
       </q-btn>
@@ -94,13 +94,22 @@ export default {
   display: block
   height: auto
 
-.q-btn
-  font-weight: bold
+// .q-btn
+//   font-weight: bold
 
 .btn-call
   color: $white
 
 .btn-call:hover
   color: $white
+
+.subtitle-big
+  font-size: 1.5em
+  font-family: alenviTextFont
+  color: $tertiary
+  margin-bottom: 3%
+  @media (max-width: 400px)
+    font-size: 1.4em
+
 
 </style>
