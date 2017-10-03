@@ -23,7 +23,7 @@ export default {
 <style lang="stylus">
 @import '~variables'
 
-body,
+body
   font-family: alenviTextFont
   color: $tertiary
 
