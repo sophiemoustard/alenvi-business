@@ -35,6 +35,8 @@ import {
   QIcon
 } from 'quasar'
 
+import Feedparser from 'feedparser'
+
 export default {
   components: {
     QCard,
@@ -72,6 +74,30 @@ export default {
           content: 'Haalu huzi mo ka hu zawlad me ez mepi senpaj ji usbepwew lekojwig ticculi do pe seruh evdeb. Miedpi hawkef rucemun suhtipdo su ishe fozre nukjoj nalzeec kigaw fawo emlu fibiku zaw ittih ub. Li pobnehaki cifhinli zedcus lisok ved wovcikih di gur wa fefi onhahic insevek keru.'
         }
       ]
+    }
+  },
+  async created () {
+    try {
+      var req = await this.$http('https://blog.alenvi.io/rss/');
+      var feedparser = new Feedparser();
+      var stream = this;
+      stream.pipe(feedparser);
+
+      feedparser.on('error', function (error) {
+        throw new Error ('Feedparser error')
+      });
+
+      feedparser.on('readable', function () {
+        var stream = this; // `this` is `feedparser`, which is a stream
+        var meta = this.meta; // **NOTE** the "meta" is always available in the context of the feedparser instance
+        var item;
+
+        while (item = stream.read()) {
+          console.log(item);
+        }
+      });
+    } catch (e) {
+      console.error(e);
     }
   }
 }
