@@ -114,26 +114,38 @@
         </q-btn>
       </q-item-side>
       <q-list-header>Alenvi</q-list-header>
-      <q-side-link item to="/home">
-        <q-item-main label="Accueil" />
-      </q-side-link>
-      <q-side-link item to="/home">
+      <q-collapsible label="Services">
+        <q-side-link item to="/aide-a-domicile">
+          <q-item-main label="Aide à domicile" />
+        </q-side-link>
+        <q-side-link item to="/compagnie">
+          <q-item-main label="Compagnie et stimulation" />
+        </q-side-link>
+        <q-side-link item to="/sortie-hopital">
+          <q-item-main label="Sortie d'hôpital" />
+        </q-side-link>
+      </q-collapsible>
+      <q-side-link item to="/vision">
         <q-item-main label="Vision" />
       </q-side-link>
-      <q-side-link item to="/home">
+      <q-side-link item to="/equipe">
         <q-item-main label="Equipe" />
       </q-side-link>
-      <q-side-link item to="/home">
+      <q-side-link item to="/recrutement">
         <q-item-main label="Recrutement" />
       </q-side-link>
-      <q-collapsible label="Magazine">
-          <q-item-main label="Rubrique 1" />
+      <q-collapsible label="Blog">
+        <q-side-link class="no-bg" item to="">
+          <q-item-main @click="goUrl('https://blog.alenvi.io')" label="Accueil Blog" />
         </q-side-link>
-        <q-side-link item to="/home">
-          <q-item-main label="Rubrique 2" />
+        <q-side-link class="no-bg" item to="">
+          <q-item-main @click="goUrl('https://blog.alenvi.io/tag/aidants-familiaux')" label="Aidants familiaux" />
         </q-side-link>
-        <q-side-link item to="/home">
-          <q-item-main label="Rubrique 3" />
+        <q-side-link class="no-bg" item to="">
+          <q-item-main @click="goUrl('https://blog.alenvi.io/tag/auxiliaires')" label="Auxiliaires" />
+        </q-side-link>
+        <q-side-link class="no-bg" item to="">
+          <q-item-main @click="goUrl('https://blog.alenvi.io/tag/alenvi')" label="Le projet Alenvi" />
         </q-side-link>
       </q-collapsible>
     </div>
@@ -197,7 +209,8 @@ import {
   QRouteTab,
   QListHeader,
   QList,
-  Alert } from 'quasar'
+  Alert,
+  openURL } from 'quasar'
 
 import Modal from '../Modal.vue'
 import 'quasar-extras/animate/bounceInRight.css'
@@ -254,6 +267,9 @@ export default {
     },
     getElementLeftPos() {
       return this.dropdownPos.left = this.$refs.dropdown.getBoundingClientRect().left + 'px';
+    },
+    goUrl(url) {
+      openURL(url);
     }
     // closePopover () {
     //   if (!this.active) {
@@ -281,6 +297,9 @@ export default {
   @media (max-width: 991px)
     .padding-top-footer
       padding-top: 15px
+
+  .no-bg
+    background: none !important
 
   // nav a
   //   color: $tertiary
