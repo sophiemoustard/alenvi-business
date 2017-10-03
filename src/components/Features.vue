@@ -7,7 +7,7 @@
       </div>
       <p class="feature-text">{{feature.text}}</p>
       <div v-if="feature.link" class="text-center">
-        <router-link v-if="feature.link.substring(0, 4) != 'http'" :to="feature.link">En savoir plus</router-link>
+        <router-link class="text-primary alenvi-link" v-if="feature.link.substring(0, 4) != 'http'" :to="feature.link">En savoir plus</router-link>
         <a v-else :href="feature.link">En savoir plus</a>
       </div>
     </div>
@@ -41,5 +41,9 @@ export default {
 .feature-padding
   padding-top: 2%
   padding-bottom: 2%
+
+.alenvi-link
+  &:hover
+    color: #ff1693 !important
 
 </style>
