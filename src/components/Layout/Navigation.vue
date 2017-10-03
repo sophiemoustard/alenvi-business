@@ -4,7 +4,7 @@
     <div slot="header">
       <div class="w3-bar w3-white alenvi-nav row items-center justify-start">
         <router-link :to="'/'" class="w3-bar-item">
-          <img class="alenvi-logo" src="statics/alenvi_logo_complet_183x50.png" alt="Logo Alenvi">
+          <img class="alenvi-logo" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019444/images/business/alenvi_logo_complet_183x50.png" alt="Logo Alenvi">
         </router-link>
         <div class="row items-center gt-mld">
           <div class="w3-dropdown-hover bg-white">
@@ -172,8 +172,8 @@
         </div>
         <div class="col-4">
           <div class="row justify-end items-center footer-logos">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center"><img class="footer-img" src="statics/logo_charte_qualite.gif" alt="logo charte qualité"></div>
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"><img class="footer-img" src="statics/logo-service-personne.png" alt="logo service personne"></div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center"><img class="footer-img" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019444/images/business/logo_charte_qualite.jpg" alt="logo charte qualité"></div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"><img class="footer-img" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019445/images/business/logo-service-personne.png" alt="logo service personne"></div>
           </div>
         </div>
     </q-toolbar>

@@ -8,7 +8,7 @@
     <div v-for="article in lastArticles" class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
       <q-card class="card" flat>
         <q-card-media>
-          <img class="img-articles" src="statics/home_care_1.jpg" alt="photo article">
+          <img class="img-articles" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019475/images/business/home_care_1.jpg" alt="photo article">
         </q-card-media>
         <q-card-title>
           {{ article.title | truncate('30') }}

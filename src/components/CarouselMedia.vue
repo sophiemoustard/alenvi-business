@@ -49,14 +49,14 @@ export default {
         [
           {
             title: 'Le Parisien',
-            img: 'statics/leparisien.png',
+            img: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019444/images/business/leparisien.png',
             imgAlt: 'leparisien logo',
             description: '« A la rencontre des auxiliaires d’envie »',
             link: 'http://www.leparisien.fr/economie/business/a-la-rencontre-des-auxilliaires-d-envie-20-09-2016-6135411.php'
           },
           {
             title: 'CNEWS',
-            img: 'statics/cnews.png',
+            img: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019444/images/business/cnews.png',
             imgAlt: 'CNEWS logo',
             description: '« Interview en plateau de Dorothée, auxiliaire d’envie chez Alenvi »',
             link: 'https://www.youtube.com/watch?v=M30Ia_oV6AI'

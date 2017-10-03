@@ -46,7 +46,7 @@ export default {
       location: this.videoLocation
     };
     const payload = _.pickBy(params);
-    const auxiliariesRaw = await this.$http.get('https://536a9a0b.ngrok.io/users/presentation', {
+    const auxiliariesRaw = await this.$http.get('https://alenvi-api.herokuapp.com/users/presentation', {
       params: payload
     });
     this.auxiliariesRaw = auxiliariesRaw.data.data.users;

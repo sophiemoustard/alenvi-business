@@ -52,21 +52,21 @@ export default {
           title: 'Aide à domicile',
           text: 'Nous assistons votre proche pour les tâches de la vie quotidienne et passons de bons moments ensemble',
           link: '/aide-a-domicile',
-          image: 'statics/picto.png',
+          image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021342/images/business/pictos/aide_domicile.png',
           backgroundColor: '#FFFFFF'
         },
         {
           title: 'Compagnie & stimulation',
           text: 'Formés en continu sur les troubles cognitifs, nous sommes là pour aider votre proche à garder des activités : promenades, jeux...',
           link: '/compagnie',
-          image: 'statics/picto.png',
+          image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021332/images/business/pictos/compagnie_stimulation.png',
           backgroundColor: '#FAF9F8'
         },
         {
           title: `Sortie d'hôpital`,
           text: 'Nous aidons votre proche à retrouver son autonomie lorsqu’il regagne son domicile après un passage à l’hôpital',
           link: '/sortie-hopital',
-          image: 'statics/picto.png',
+          image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021339/images/business/pictos/sortie_hopital.png',
           backgroundColor: '#FFFFFF'
         }
       ]
