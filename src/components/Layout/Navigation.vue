@@ -27,7 +27,7 @@
             </div>
           </div>
         </div>
-        <q-btn id="btn-call-header" v-if="this.$route.meta.name != 'recrutement'" class="gt-mld" color="primary" big><a class="btn-call text-white" href="tel:+33179755475">Appeler le <b>01 79 75 54 75</b></a></q-btn>
+        <q-btn id="btn-call-header" v-if="this.$route.meta.name != 'recrutement'" class="gt-mld" color="primary" big><a class="btn-call text-white" href="tel:+33179755475">Appeler le 01 79 75 54 75</a></q-btn>
         <q-btn id="btn-call-header" v-else class="gt-mld" color="primary" big><a class="btn-call text-white" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/MwEMWk')"><b>Postuler</b></a></q-btn>
         <modal ref="infoModal"/>
         <q-btn color="tertiary" class="lt-lgx hide-on-drawer-visible absolute-right" @click="$refs.layout.toggleRight()" flat big>
@@ -360,7 +360,7 @@ export default {
 
   .btn-call
     color: $white
-    padding: 0 10px 0 10px
+    // padding: 0 10px 0 10px
 
   button a b
     font-weight: bold

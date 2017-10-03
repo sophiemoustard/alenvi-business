@@ -36,26 +36,26 @@ export default {
       presentationContent: {
         title: 'Sortie d’hôpital pour les personnes âgées',
         subtitle: 'Madeleine et Nathalie',
-        text1: `Madeleine est rentrée récemment du service de soins de suite et de réadaptation. Elle a du mal à se déplacer et se fatigue très vite, même en restant chez elle. Nathalie vient la voir deux fois par jour. Ensemble elles peuvent ainsi faire la toilette, les repas et s’occuper un peu de la maison. Elles passent un bon moment. Nathalie est fascinée par toutes les histoires que Madeleine lui raconte au sujet de sa vie passée`,
+        text1: `Madeleine est rentrée récemment du service de soins de suite et de réadaptation. Elle a du mal à se déplacer et se fatigue très vite, même en restant chez elle. Nathalie vient la voir deux fois par jour. Ensemble elles peuvent ainsi faire la toilette, les repas et s’occuper un peu de la maison. Elles passent un bon moment. Nathalie est fascinée par toutes les histoires que Madeleine lui raconte au sujet de sa vie passée. Tous les weekends, Nathalie est relayée par Sophie.`,
         text2: `Les auxiliaires d’envie mobilisent toute leur expérience et leur envie pour aider leurs bénéficiaires à réussir leur retour à domicile. Leur mission est pleinement réussie quand l’autonomie se rétablit au fur et à mesure et qu’on a de moins en moins besoin d’eux.`,
         image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019472/images/business/sortie-hopital.jpg'
       },
       featuresContent: [
         {
           title: 'Mise en place sous 3 jours',
-          text: `Nous vous rendons visite gratuitement pour discuter de votre besoin. L'accompagnement peut démarrer tout de suite`,
+          text: `Nous vous rendons visite gratuitement pour discuter de votre besoin. L'accompagnement peut démarrer tout de suite.`,
           image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021332/images/business/pictos/mise_en_place.png',
           backgroundColor: '#FFFFFF'
         },
         {
           title: 'Un accompagnement sur mesure',
-          text: `Une équipe d'auxiliaires adaptée à vos besoins vous suit et fait évoluer ses prestations si nécessaire`,
+          text: `Une équipe d'auxiliaires adaptée à vos besoins vous suit et fait évoluer ses prestations si nécessaire.`,
           image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021333/images/business/pictos/sur_mesure.png',
           backgroundColor: '#FAF9F8'
         },
         {
           title: 'Entre 23 et 26€ / heure',
-          text: `50% remboursé en crédit d'impôt. Prise en charge APA possible`,
+          text: `50% remboursé en crédit d'impôt. Prise en charge APA possible.`,
           image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021333/images/business/pictos/tarif_horaire.png',
           link: 'https://blog.alenvi.io',
           backgroundColor: '#FFFFFF'

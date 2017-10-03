@@ -44,25 +44,25 @@ export default {
         subtitle: 'Thierry et Dorothée',
         text1: `Chaque après-midi, Dorothée se rend chez Thierry. Selon l’humeur du jour, ils décident d’aller se promener, de faire un jeu, ou de simplement lire un livre ensemble. C’est souvent dur de se quitter, mais Dorothée s’en va avec un sentiment de fierté car elle sent Thierry plus apaisé qu’à son arrivée.`,
         text2: `Ce sont ces moments humains, de partage, qui aident les personnes touchées par des troubles cognitifs à se sentir mieux. Ils peuvent également freiner l’évolution de la maladie.`,
-        text3: `Les auxiliaires d’envie sont là pour offrir ces moments d’apaisement à votre proche âgé.`,
+        text3: `Spécialement formés en continu, les auxiliaires d’envie sont là pour offrir ces moments d’apaisement à votre proche âgé.`,
         image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019447/images/business/compagnie.jpg'
       },
       featuresContent: [
         {
           title: 'Mise en place sous 3 jours',
-          text: `Nous vous rendons visite gratuitement pour discuter de votre besoin. L'accompagnement peut démarrer tout de suite`,
+          text: `Nous vous rendons visite gratuitement pour discuter de votre besoin. L'accompagnement peut démarrer tout de suite.`,
           image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021332/images/business/pictos/mise_en_place.png',
           backgroundColor: '#FFFFFF'
         },
         {
           title: 'Un accompagnement sur mesure',
-          text: `Une équipe d'auxiliaires adaptée à vos besoins vous suit et fait évoluer ses prestations si nécessaire`,
+          text: `Une équipe d'auxiliaires adaptée à vos besoins vous suit et fait évoluer ses prestations si nécessaire.`,
           image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021333/images/business/pictos/sur_mesure.png',
           backgroundColor: '#FAF9F8'
         },
         {
           title: 'Entre 23 et 26€ / heure',
-          text: `50% remboursé en crédit d'impôt. Prise en charge APA possible`,
+          text: `50% remboursé en crédit d'impôt. Prise en charge APA possible.`,
           image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021333/images/business/pictos/tarif_horaire.png',
           link: 'https://blog.alenvi.io',
           backgroundColor: '#FFFFFF'
