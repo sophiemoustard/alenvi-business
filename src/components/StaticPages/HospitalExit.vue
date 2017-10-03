@@ -38,7 +38,7 @@ export default {
         subtitle: 'Madeleine et Nathalie',
         text1: `Madeleine est rentrée récemment du service de soins de suite et de réadaptation. Elle a du mal à se déplacer et se fatigue très vite, même en restant chez elle. Nathalie vient la voir deux fois par jour. Ensemble elles peuvent ainsi faire la toilette, les repas et s’occuper un peu de la maison. Elles passent un bon moment. Nathalie est fascinée par toutes les histoires que Madeleine lui raconte au sujet de sa vie passée. Tous les weekends, Nathalie est relayée par Sophie.`,
         text2: `Les auxiliaires d’envie mobilisent toute leur expérience et leur envie pour aider leurs bénéficiaires à réussir leur retour à domicile. Leur mission est pleinement réussie quand l’autonomie se rétablit au fur et à mesure et qu’on a de moins en moins besoin d’eux.`,
-        image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019472/images/business/sortie-hopital.jpg'
+        image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507047952/images/business/sortie_hopital_16_10.jpg'
       },
       featuresContent: [
         {

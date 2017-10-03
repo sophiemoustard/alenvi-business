@@ -239,14 +239,17 @@ export default {
   },
   mounted () {
     this.$refs.layout.hideRight();
-    Alert.create({
-      html: 'Ce site utilise des cookies !',
-      icon: 'thumb up',
-      position: 'bottom-right',
-      enter: 'bounceInRight',
-      leave: 'bounceOutRight',
-      color: '#8D0E56'
-    })
+    // if (localStorage.getItem("popupWasShown") == null) {
+    //   Alert.create({
+    //     html: 'Ce site utilise des cookies !',
+    //     icon: 'thumb up',
+    //     position: 'bottom-right',
+    //     enter: 'bounceInRight',
+    //     leave: 'bounceOutRight',
+    //     color: '#8D0E56'
+    //   })
+    // }
+    // localStorage.setItem("popupWasShown", 1);
   },
   methods: {
     isActive () {
