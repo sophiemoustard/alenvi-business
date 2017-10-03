@@ -15,8 +15,8 @@
         </q-card-title>
         <q-card-main class="card-content">
           {{ article.content | truncate('100') }}
-          <q-card-actions align="end">
-            <q-btn color="primary" small flat><q-icon name="add"></q-icon></q-btn>
+          <q-card-actions align="center">
+            <a class="text-primary" :href="article.link">En savoir plus</a>
           </q-card-actions>
         </q-card-main>
       </q-card>
@@ -109,5 +109,7 @@ export default {
 .img-articles
   width: 100%
   height: auto
-
+  
+.q-card-actions a:hover
+  color: #ff1693 !important
 </style>
