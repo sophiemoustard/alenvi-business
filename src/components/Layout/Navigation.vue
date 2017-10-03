@@ -371,6 +371,8 @@ export default {
 
   .footer-links
     color: $white
+    &:hover
+      color: $grey-4 !important
 
   // .footer-logos
   //   background-color: $white
