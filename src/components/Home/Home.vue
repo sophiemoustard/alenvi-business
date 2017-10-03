@@ -8,6 +8,7 @@
       <features :featuresContent="featuresContent"/>
     </section>
     <section id="auxiliaries-gallery" class="section-margin">
+      <h1 class="text-center title-margin-bottom">Les auxiliaires d'envie</h1>
       <auxiliaries-gallery :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
     </section>
     <section id="carousel-media">
@@ -73,11 +74,11 @@ export default {
     }
   }
   // created() {
-  //   document.title = 'Accueil | Alenvi';
-  //   let meta = document.createElement('meta');
-  //   meta.setAttribute('name', 'description');
-  //   meta.setAttribute('content', 'Accueil description');
-  //   document.getElementsByTagName('head')[0].appendChild(meta);
+    // document.title = 'Accueil | Alenvi';
+    // let meta = document.createElement('meta');
+    // meta.setAttribute('name', 'description');
+    // meta.setAttribute('content', 'Accueil description');
+    // document.getElementsByTagName('head')[0].appendChild(meta);
     // let meta = document.createElement('meta');
     // meta.setAttribute('name', 'description');
     // meta.setAttribute('content', 'Accueil description');
@@ -88,6 +89,9 @@ export default {
 <style lang="stylus" scoped>
 
 .section-margin
+  margin-bottom: 3%
+
+.title-margin-bottom
   margin-bottom: 3%
 
 </style>
