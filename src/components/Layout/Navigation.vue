@@ -3,8 +3,8 @@
   <q-layout ref="layout" view="hHh lpr fff">
     <div slot="header">
       <div class="w3-bar w3-white alenvi-nav row items-center justify-start">
-        <router-link :to="'/'" class="w3-bar-item">
-          <img class="alenvi-logo" src="https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019444/images/business/alenvi_logo_complet_183x50.png" alt="Logo Alenvi">
+        <router-link :to="'/'" class="w3-bar-item" style="width: 180px">
+          <img class="alenvi-logo" src="http://res.cloudinary.com/alenvi/image/upload/c_fit,q_auto,w_500/v1507124345/images/business/alenvi_logo_complet_full.png" alt="Logo Alenvi">
         </router-link>
         <div class="row items-center gt-mld">
           <div class="w3-dropdown-hover bg-white">
@@ -378,7 +378,7 @@ export default {
     color: $primary
 
   .alenvi-logo
-    width: 80%
+    width: 100%
 
   .btn-call
     color: $white
