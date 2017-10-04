@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <q-window-resize-observable @resize="onResize" />
-    <q-modal ref="basicModal" :content-css="setVideoContainerSize()">
+    <q-modal ref="basicModal" :content-css="setVideoContainerSize()" class="scroll overflow-hidden">
       <div class="absolute-right">
         <q-btn color="primary" @click="$refs.basicModal.close()">
           <q-icon name="close"></q-icon>

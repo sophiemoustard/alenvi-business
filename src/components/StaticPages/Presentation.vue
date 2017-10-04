@@ -2,6 +2,7 @@
   <div class="row"> <!-- pres-background -->
     <h1 class="col-12 text-center title-margin-bottom">{{presentationContent.title}}</h1>
     <div id="pres-text" class="col-lg-6 self-center">
+      <!-- <h1 class="col-12 text-center title-margin-bottom">{{presentationContent.title}}</h1> -->
       <h2>{{presentationContent.subtitle}}</h2>
       <p v-if="presentationContent.text1">{{presentationContent.text1}}</p>
       <p v-if="presentationContent.text2">{{presentationContent.text2}}</p>
@@ -44,6 +45,12 @@ export default {
 .pres-background
   background: linear-gradient(to right, #FAF9F8, white)
 
+h1
+  padding-left: 5%
+  padding-right: 5%
+  @media (max-width: 991px)
+    padding-bottom: 5%
+
 #pres-text
   padding-left: 5%
   padding-right: 5%
@@ -52,7 +59,7 @@ export default {
 
 #online-asking
   padding-top: 1%
-  padding-left: 65px
+  padding-left: 57px
   cursor: pointer
   color: $primary
 
@@ -60,8 +67,8 @@ export default {
   margin-bottom: 3%
 
 .img-size
-  width: 75%
-  max-width: 600px
+  width: 78%
+  max-width: 780px
   height: auto;
   @media (max-width: 1024px)
     width: 100%

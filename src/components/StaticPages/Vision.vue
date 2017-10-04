@@ -2,8 +2,8 @@
   <div class="">
     <breadcrumb v-if="!$q.platform.is.mobile" class="col-12 breadcrumb"/>
     <div class="row">
-      <h1 class="col-12 text-center title-margin-bottom">Valorisons le métier d'auxiliaire pour mieux accompagner les personnes âgées</h1>
       <section id="vision">
+        <h1 class="col-12 text-center title-margin-bottom">Valorisons le métier d'auxiliaire pour mieux accompagner les personnes âgées</h1>
         <p>Il y a en France 1 million de personnes touchées par la maladie d’Alzheimer et les troubles apparentés. Ces personnes seront 2 millions dans 20 ans. Pour la plupart, elles souhaiteront vieillir chez elles et auront besoin de l’aide de professionnels formés et profondément empathiques pour continuer au maximum leurs activités et passer de bons moments.</p>
         <p>Chez Alenvi, nous pensons qu’être en vie, c’est aussi avoir envie. Nous réinventons l’accompagnement à domicile des personnes âgées autour du concept d’&nbsp;«&nbsp;auxiliaire d’envie&nbsp;». Nous avons créé un cadre de travail épanouissant et responsabilisant pour les auxiliaires. C’est en effet en valorisant le métier d’auxiliaire qu’on peut garantir un accompagnement stimulant et de qualité à toutes les personnes âgées.</p>
         <p>Les auxiliaires d’envie travaillent en communautés autonomes d’une dizaine de personnes, dans un cadre unique :<br>
