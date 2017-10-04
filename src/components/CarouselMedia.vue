@@ -14,7 +14,7 @@
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-8 content">
                     <div class="row justify-center">
-                      <div class="text-italic text-truncate">
+                      <div class="text-italic text-center">
                         {{ content.description }}
                       </div>
                     </div>
