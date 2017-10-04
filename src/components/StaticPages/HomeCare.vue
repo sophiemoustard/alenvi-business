@@ -42,7 +42,7 @@ export default {
       presentationContent: {
         title: 'Aide à domicile pour les personnes âgées',
         subtitle: 'Françoise et Sabine',
-        text1: `Tous les matins, Sabine retrouve Françoise à son domicile. Après un petit café, Sabine aide Françoise à faire un brin de toilette. La préparation du repas est ensuite l’occasion de passer un bon moment ensemble. Sabine est contente de voir que Françoise apprécie le plat cuisiné ensemble. Elle la laisse ensuite prendre un peu de repos en attendant la visite de sa fille dans l’après-midi.`,
+        text1: `Tous les matins, Sabine retrouve Françoise à son domicile. Après un petit café, Sabine aide Françoise à faire un brin de toilette. La préparation du repas est ensuite l’occasion de passer un bon moment toutes les deux. Sabine est contente de voir que Françoise apprécie le plat cuisiné ensemble. Elle la laisse ensuite prendre un peu de repos en attendant la visite de sa fille dans l’après-midi.`,
         text2: `C’est pour vivre et faire vivre ce type de moments que les auxiliaires d’envie se lèvent tous les matins.`,
         text3: `Nous sommes à la disposition de votre proche âgé pour l’aider dans ses gestes de la vie quotidienne et passer du temps de qualité avec lui.`,
         image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507049555/images/business/aide_domicile_16_10.jpg'

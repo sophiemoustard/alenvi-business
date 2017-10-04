@@ -3,18 +3,18 @@
     <breadcrumb class="col-12 breadcrumb"/>
     <section id="presentation" class="section-margin">
       <div class="row"> <!-- pres-background -->
-        <h1 class="col-12 text-center title-margin-bottom">Rejoignez une équipe engagée pour la valorisation du métier d’auxiliaire de vie</h1>
+        <h1 class="col-12 text-center title-margin-bottom">Rejoignez une équipe mobilisée pour la valorisation du métier d’auxiliaire de vie</h1>
         <div id="pres-text" class="col-lg-7">
           <p>Chez Alenvi, nous pensons qu’il n’est possible de bien accompagner les personnes âgées à domicile qu’en valorisant le métier d’auxiliaire de vie.</p>
           <p>Les auxiliaires d’envie travaillent ainsi au sein de communautés autonomes dans un cadre de travail unique :</p>
           <ul>
-            <li>CDI 35H, SMIC + 20%</li>
-            <li>Interventions de 2H minimum</li>
+            <li>CDI 35h, SMIC +20%</li>
+            <li>Interventions de 2h minimum</li>
             <li>Autonomie dans la gestion du planning et la relation avec les bénéficiaires</li>
             <li>Formation continue</li>
             <li>Coopération entre collègues (réunions d’équipe toutes les 2 semaines) & formation continue</li>
           </ul>
-          <p>Nous recrutons actuellement pour des interventions à Paris et dans les Hauts de Seine.</p>
+          <p>Nous recrutons actuellement pour des interventions à Paris et dans les Hauts-de-Seine.</p>
           <q-btn color="primary" big>
             <a class="btn-call" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/MwEMWk')">Postuler</a>
           </q-btn>

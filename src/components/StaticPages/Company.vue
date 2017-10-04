@@ -44,7 +44,7 @@ export default {
         title: 'Compagnie et stimulation pour les personnes âgées',
         subtitle: 'Thierry et Dorothée',
         text1: `Chaque après-midi, Dorothée se rend chez Thierry. Selon l’humeur du jour, ils décident d’aller se promener, de faire un jeu, ou de simplement lire un livre ensemble. C’est souvent dur de se quitter, mais Dorothée s’en va avec un sentiment de fierté car elle sent Thierry plus apaisé qu’à son arrivée.`,
-        text2: `Ce sont ces moments humains, de partage, qui aident les personnes touchées par des troubles cognitifs à se sentir mieux. Ils peuvent également freiner l’évolution de la maladie.`,
+        text2: `Ce sont ces moments humains, de partage, qui aident les personnes touchées par des troubles cognitifs à se sentir mieux. Ils peuvent également ralentir l’évolution de la maladie.`,
         text3: `Spécialement formés en continu, les auxiliaires d’envie sont là pour offrir ces moments d’apaisement à votre proche âgé.`,
         image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507049556/images/business/compagnie_16_10.jpg'
       },

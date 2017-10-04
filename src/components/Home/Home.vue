@@ -59,7 +59,7 @@ export default {
         },
         {
           title: 'Compagnie & stimulation',
-          text: 'Formés en continu sur les troubles cognitifs, nous sommes là pour aider votre proche à garder des activités : promenades, jeux...',
+          text: 'Formés en continu sur les troubles cognitifs, nous sommes là pour aider votre proche à conserver des activités : promenades, jeux...',
           link: '/compagnie',
           image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021332/images/business/pictos/compagnie_stimulation.png',
           backgroundColor: '#FAF9F8'
