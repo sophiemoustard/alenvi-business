@@ -176,10 +176,10 @@
         <div class="col-xs-12 col-md-3 padding-top-footer">
           <div class="row justify-center">
             <a href="https://www.facebook.com/alenviservices/">
-              <q-icon name="fa-facebook-official" color="white" size="2.5rem" class="on-left"/>
+              <q-icon name="fa-facebook-official" color="white" size="2.5rem" class="hover-icon on-left"/>
             </a>
             <a href="https://www.youtube.com/channel/UCY31qIuLKsPY6zFUh_pR-pw">
-              <q-icon name="fa-youtube" color="white" size="2.5rem"/>
+              <q-icon name="fa-youtube" color="white" size="2.5rem" class="hover-icon"/>
             </a>
           </div>
         </div>
@@ -422,6 +422,9 @@ export default {
 
   .forced-wrap
     flex-wrap: wrap
+
+  .hover-icon:hover
+    color: $grey-4 !important
 
 
 </style>
