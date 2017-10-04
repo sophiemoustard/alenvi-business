@@ -34,7 +34,7 @@ import 'quasar-extras/fontawesome'
 Quasar.start(() => {
   /* eslint-disable no-new */
   new Vue({
-    el: '#alenvi-app',
+    el: '#q-app',
     router,
     render: h => h(require('./App'))
   })

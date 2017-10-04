@@ -7,11 +7,12 @@
     <section id="features">
       <features :featuresContent="featuresContent"/>
     </section>
-    <section id="auxiliaries-gallery" class="section-margin">
+    <section id="auxiliaries-gallery">
       <h1 class="text-center title-margin-bottom">Les auxiliaires d'envie</h1>
       <auxiliaries-gallery :videoNumber="videoNumber" :videoLocation="videoLocation" :videoRoles="videoRoles"/>
     </section>
     <section id="carousel-media">
+      <h1 id="about-us" class="text-center">Ils parlent de nous</h1>
       <carousel-media />
     </section>
     <section id="latest-articles">
@@ -88,10 +89,19 @@ export default {
 
 <style lang="stylus" scoped>
 
+#carousel-media
+  background: #FAF9F8
+
+#about-us
+  margin-top: 0
+  padding-top: 6%
+
 .section-margin
   margin-bottom: 3%
 
 .title-margin-bottom
   margin-bottom: 3%
 
+.section-margin-big
+  margin-bottom: 6%
 </style>
