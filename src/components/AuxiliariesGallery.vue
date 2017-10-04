@@ -4,11 +4,10 @@
     <!-- On Mobile -->
     <div class="col-sm-3 auxiliaries-container" v-for="auxiliary in auxiliaries" v-if="$q.platform.is.mobile && auxiliary.youtube">
       <img class="auxiliaries-size" :src="auxiliary.picture" alt="splash" />
-      <!-- <div class="auxiliaries-icon-container"> -->
-        <!-- <q-icon class="auxiliaries-icon" name="play circle outline" color="white" size="5rem"/> -->
-      <q-video :src="auxiliary.youtube.link" style="width: 100%; height: 100%" />
+      <div class="auxiliaries-icon-container">
+        <q-video :src="auxiliary.youtube.link" style="width: 100%; height: 100%; z-index: 100"/>
         <!-- <iframe id="auxiliary-iframe" :src="auxiliary.youtube.link" width="100%" height="100%" frameborder="0" allowfullscreen></iframe> -->
-      <!-- </div> -->
+      </div>
       <div class="auxiliaries-filter" :style="{ backgroundColor: auxiliary.backgroundColor }"></div>
       <div class="auxiliaries-name-container row justify-center"><p class="auxiliaries-name self-center">{{auxiliary.firstname}}</p></div>
     </div>
@@ -161,6 +160,12 @@ export default {
 
 .auxiliaries-container:hover > .auxiliaries-filter
   opacity: 0
+
+// .auxiliaries-container:visited > .auxiliaries-name-container
+//   opacity: 0
+//
+// .auxiliaries-container:visited > .auxiliaries-filter
+//   opacity: 0
 
 .auxiliaries-icon-container
   position: absolute
