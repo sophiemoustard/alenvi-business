@@ -16,7 +16,7 @@
         <q-card-main class="card-content">
           {{ article.content | truncate('100') }}
           <q-card-actions align="end">
-            <a class="text-primary" :href="article.link">En savoir plus</a>
+            <a class="text-primary" :href="article.link">Lire la suite</a>
           </q-card-actions>
         </q-card-main>
       </q-card>
@@ -120,4 +120,7 @@ export default {
 
 .q-card-title
   font-family: alenviTitleFont
+
+.q-card-container
+  padding: 16px 0px 0px 16px
 </style>
