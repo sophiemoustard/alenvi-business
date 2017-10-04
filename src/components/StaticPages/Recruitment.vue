@@ -82,4 +82,7 @@ export default {
     @media (max-width: 1200px)
       margin-bottom: 3%
 
+  .btn-call:hover
+    color: $white
+
 </style>
