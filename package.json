@@ -8,14 +8,15 @@
     "clean": "node build/script.clean.js",
     "dev": "node build/script.dev.js",
     "build": "node build/script.build.js",
-    "build-server": "cross-env NODE_ENV=production webpack --config build/webpack.server.config.js --progress --hide-modules",
     "lint": "eslint --ext .js,.vue src",
     "start": "node server.js"
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.25.0",
     "connect-history-api-fallback": "^1.1.0",
+    "es6-promise": "^4.1.1",
     "express": "^4.15.4",
     "feedparser": "^2.2.1",
     "lodash": "^4.17.4",

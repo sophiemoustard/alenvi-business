@@ -194,7 +194,7 @@ export default {
 .auxiliaries-icon
   display: table-cell
   text-align: center
-  vertical-align: middle
+  // vertical-align: middle
   color: rgba(255, 255, 255, .5)
 
 .auxiliaries-container:hover:before
@@ -211,7 +211,7 @@ export default {
 
 .auxiliaries-filter
   position: absolute
-  display: table;
+  display: table
   width: 100%
   height: 100%
   top: 0
