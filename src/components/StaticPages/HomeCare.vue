@@ -24,6 +24,12 @@ import Auxiliaries from '../AuxiliariesGallery.vue'
 import CarouselMedia from '../CarouselMedia.vue'
 
 export default {
+  metaInfo: {
+    title: 'Aide à domicile',
+    meta: [
+      { name: 'description', content: "Services d’aide à domicile (repas, toilettes, aide au lever…) proposés aux personnes âgées par les 'auxiliaires d’envie' Alenvi." }
+    ]
+  },
   components: {
     Breadcrumb,
     Presentation,

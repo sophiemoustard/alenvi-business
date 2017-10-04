@@ -12,7 +12,7 @@
 export default {
   metaInfo: {
     title: 'Alenvi',
-    titleTemplate: '%s | Alenvi',
+    // titleTemplate: '%s | Alenvi',
     htmlAttrs: {
       lang: 'fr'
     }

@@ -24,12 +24,13 @@ import Auxiliaries from '../AuxiliariesGallery.vue'
 import CarouselMedia from '../CarouselMedia.vue'
 
 export default {
-  // metaInfo: {
-  //   title: 'Compagnie',
-  //   meta: [
-  //     { name: 'description', content: 'Compagnie description' }
-  //   ]
-  // },
+
+  metaInfo: {
+    title: 'Compagnie',
+    meta: [
+      { name: 'description', content: "Les 'auxiliaires d’envie' passent du temps de qualité avec les personnes âgées à domicile : promenades, jeux, stimulation etc…" }
+    ]
+  },
   components: {
     Breadcrumb,
     Presentation,

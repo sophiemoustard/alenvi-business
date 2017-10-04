@@ -112,6 +112,8 @@ export default {
 .img-articles
   width: 100%
   height: 275px
+  @media (min-width: 1600px)
+    height: 325px
 
 .q-card-actions a:hover
   color: #ff1693 !important
