@@ -28,9 +28,9 @@
           </div>
         </div>
         <q-btn id="btn-call-header" v-if="this.$route.meta.name != 'recrutement'" class="gt-mld" color="primary" big><a class="btn-call text-white" href="tel:+33179755475">Appeler le 01 79 75 54 75</a></q-btn>
-        <q-btn id="btn-call-header" v-else class="gt-mld" color="primary" big><a class="btn-call text-white" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/MwEMWk')"><b>Postuler</b></a></q-btn>
+        <q-btn id="btn-call-header" v-else class="gt-mld" color="primary" big><a class="btn-call text-white" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/MwEMWk')">Postuler</a></q-btn>
         <modal ref="infoModal"/>
-        <q-btn color="tertiary" class="lt-lgx hide-on-drawer-visible absolute-right" @click="$refs.layout.toggleRight()" flat big>
+        <q-btn color="primary" class="lt-lgx hide-on-drawer-visible absolute-right" @click="$refs.layout.toggleRight()" flat big>
           <q-icon name="menu" />
         </q-btn>
       </div>
@@ -176,10 +176,10 @@
         <div class="col-xs-12 col-md-3 padding-top-footer">
           <div class="row justify-center">
             <a href="https://www.facebook.com/alenviservices/">
-              <q-icon name="fa-facebook-official" color="white" size="2.5rem" class="on-left"/>
+              <q-icon name="fa-facebook-official" color="white" size="2.5rem" class="hover-icon on-left"/>
             </a>
             <a href="https://www.youtube.com/channel/UCY31qIuLKsPY6zFUh_pR-pw">
-              <q-icon name="fa-youtube" color="white" size="2.5rem"/>
+              <q-icon name="fa-youtube" color="white" size="2.5rem" class="hover-icon"/>
             </a>
           </div>
         </div>
@@ -422,6 +422,9 @@ export default {
 
   .forced-wrap
     flex-wrap: wrap
+
+  .hover-icon:hover
+    color: $grey-4 !important
 
 
 </style>

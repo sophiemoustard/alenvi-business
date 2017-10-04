@@ -63,4 +63,7 @@ export default {
   width: 75%
   max-width: 600px
   height: auto;
+  @media (max-width: 1024px)
+    width: 100%
+    max-width: 100%
 </style>
