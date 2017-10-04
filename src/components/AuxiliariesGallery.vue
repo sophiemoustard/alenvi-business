@@ -2,18 +2,20 @@
   <div class="row">
     <q-window-resize-observable @resize="onResize" />
     <!-- On Mobile -->
-    <div class="col-sm-3 auxiliaries-container" v-for="auxiliary in auxiliaries" v-if="!$q.platform.is.mobile && auxiliary.youtube">
-      <img class="auxiliaries-size" :src="auxiliary.picture" alt="splash" />
-      <div class="auxiliaries-icon-container">
-        <q-video :src="auxiliary.youtube.link" style="width: 100%; height: 100%; z-index: 100"/>
+    <div class="col-sm-3 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" v-if="$q.platform.is.mobile && auxiliary.youtube" @click="getVideo($event)" :id="'container-' + (index + 1)">
+      <img :src="auxiliary.picture" alt="splash" />
+      <div class="auxiliaries-icon-container-mobile" :ref="'video' + (index + 1)">
+        <q-video :src="auxiliary.youtube.link" style="width: 100%; height: 100%"/>
 
         <!-- <iframe id="auxiliary-iframe" :src="auxiliary.youtube.link" width="100%" height="100%" frameborder="0" allowfullscreen></iframe> -->
       </div>
-      <div class="auxiliaries-filter" :style="{ backgroundColor: auxiliary.backgroundColor }"></div>
-      <div class="auxiliaries-name-container row justify-center"><p class="auxiliaries-name self-center">{{auxiliary.firstname}}</p></div>
+      <div class="auxiliaries-filter-mobile" :style="{ backgroundColor: auxiliary.backgroundColor }"></div>
+      <div class="auxiliaries-name-container-mobile row justify-center">
+        <p class="auxiliaries-name self-center">{{auxiliary.firstname}}</p>
+      </div>
     </div>
     <!-- On Desktop -->
-    <div class="col-sm-3 auxiliaries-container" v-for="auxiliary in auxiliaries" v-if="$q.platform.is.mobile && auxiliary.youtube" @click="openModal(auxiliary)">
+    <div class="col-sm-3 auxiliaries-container" v-for="auxiliary in auxiliaries" v-if="!$q.platform.is.mobile && auxiliary.youtube" @click="openModal(auxiliary)">
       <img class="auxiliaries-size" :src="auxiliary.picture" alt="splash" />
       <div class="auxiliaries-icon-container">
         <q-icon class="auxiliaries-icon" name="play circle outline" color="white" size="5rem"/>
@@ -55,7 +57,9 @@ export default {
       windowSize: {},
       video_link: '',
       auxiliaries: [],
-      auxiliariesRaw: []
+      auxiliariesRaw: [],
+      clicked: false,
+      isProut: false
     }
   },
   async created() {
@@ -77,7 +81,7 @@ export default {
       this.auxiliaries.push(first[0]);
     }
     if (this.videoNumber) {
-      if (this.windowSize.width < 600 && this.videoNumber > 4) {
+      if (this.windowSize.width < 1024) {
         this.auxiliaries.splice(this.videoNumber / 2);
       } else {
         this.auxiliaries.splice(this.videoNumber);
@@ -134,6 +138,13 @@ export default {
         let j = Math.floor(Math.random() * i);
         [a[i - 1], a[j]] = [a[j], a[i - 1]];
       }
+    },
+    getVideo(e) {
+      const targetId = e.currentTarget.id;
+      const num = targetId.replace(/^\D+/, '');
+      const videoNum = `video${num}`;
+      console.log(this.$refs[videoNum]);
+      this.$refs[videoNum][0].style.zIndex = 4;
     }
   }
 }
@@ -179,6 +190,15 @@ export default {
   opacity: 0
   text-align: center
 
+.auxiliaries-icon-container-mobile
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  text-align: center
+  z-index: -1
+
 .auxiliaries-icon
   height: 100%
   color: rgba(255, 255, 255, .5)
@@ -190,6 +210,15 @@ export default {
   top: 0
   left: 0
   text-align: center
+
+.auxiliaries-name-container-mobile
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  text-align: center
+  z-index: 2
 
 .auxiliaries-name
   position: relative
@@ -205,5 +234,14 @@ export default {
   top: 0
   left: 0
   opacity: 0.7
+
+.auxiliaries-filter-mobile
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  opacity: 0.7
+  z-index: 1
 
 </style>
