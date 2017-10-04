@@ -41,6 +41,9 @@ h2, h4
   @media (max-width: 400px)
     font-size: 1.4em
 
+p
+  font-size: 16px
+
 .btn-call
   color: $white
 </style>
