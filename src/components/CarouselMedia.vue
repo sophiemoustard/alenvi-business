@@ -5,7 +5,7 @@
         <div class="row">
           <div v-for="content in slide" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
             <a :href="content.link">
-              <q-card color="white" class="shadow-1">
+              <q-card color="white" class="shadow-1" flat>
                 <div :class="carouselCardClassesObj">
                   <div class="col-xs-12 col-sm-12 col-md-4 img-carousel">
                     <div class="row justify-center">
@@ -14,7 +14,7 @@
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-8 content">
                     <div class="row justify-center">
-                      <div class="text-italic">
+                      <div class="text-italic text-truncate">
                         {{ content.description }}
                       </div>
                     </div>
@@ -108,14 +108,14 @@ export default {
       margin: 10px 0px 10px 0px
 
   .bg-carousel-gradient
-    background: linear-gradient(to right, #FAF9F8, white)
+    background: #FAF9F8
     // background: linear-gradient(135deg, $grey-carousel 0%, $grey-carousel-fade-1 20%, $grey-carousel-fade-2 40%, $white 50%)
 
   .bg-carousel-transparent
     background: rgba(0, 0, 0, 0)
 
-  .q-card
-    border-radius: 15px
+  // .q-card
+  //   border-radius: 15px
 
   .q-card-title
     color: $tertiary
