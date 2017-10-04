@@ -10,7 +10,7 @@
         <!-- <iframe id="auxiliary-iframe" :src="auxiliary.youtube.link" width="100%" height="100%" frameborder="0" allowfullscreen></iframe> -->
       <!-- </div> -->
       <div class="auxiliaries-filter" :style="{ backgroundColor: auxiliary.backgroundColor }"></div>
-      <div class="auxiliaries-name-container"><p class="auxiliaries-name">{{auxiliary.firstname}}</p></div>
+      <div class="auxiliaries-name-container row justify-center"><p class="auxiliaries-name self-center">{{auxiliary.firstname}}</p></div>
     </div>
     <!-- On Desktop -->
     <div class="col-sm-3 auxiliaries-container" v-for="auxiliary in auxiliaries" v-if="!$q.platform.is.mobile && auxiliary.youtube" @click="openModal(auxiliary)">
@@ -19,7 +19,8 @@
         <q-icon class="auxiliaries-icon" name="play circle outline" color="white" size="5rem"/>
       </div>
       <div class="auxiliaries-filter" :style="{ backgroundColor: auxiliary.backgroundColor }"></div>
-      <div class="auxiliaries-name-container"><p class="auxiliaries-name">{{auxiliary.firstname}}</p></div>
+      <div class="auxiliaries-name-container row justify-center"><p class="auxiliaries-name self-center">{{auxiliary.firstname}}</p>
+      </div>
     </div>
     <q-modal ref="basicModal" @close="closeModal()" :content-css="setVideoContainerSize()">
       <div class="absolute-right">
@@ -189,8 +190,8 @@ export default {
 
 .auxiliaries-name
   position: relative
-  width: 100%
-  height: 100%
+  // width: 100%
+  // height: 100%
   font-size: 40px
   color: white
 
