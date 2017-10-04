@@ -1,14 +1,23 @@
 <template lang="html">
   <div class="row">
     <q-window-resize-observable @resize="onResize" />
-    <div class="col-sm-3 auxiliaries-container" v-for="auxiliary in auxiliaries" v-if="auxiliary.youtube" @click="openModal(auxiliary)">
+    <!-- On Mobile -->
+    <div class="col-sm-3 auxiliaries-container" v-for="auxiliary in auxiliaries" v-if="$q.platform.is.mobile && auxiliary.youtube">
       <img class="auxiliaries-size" :src="auxiliary.picture" alt="splash" />
       <div class="auxiliaries-icon-container">
-        <q-icon class="auxiliaries-icon" name="play circle outline" color="white" size="500%"/>
+        <q-icon class="auxiliaries-icon" name="play circle outline" color="white" size="5rem"/>
       </div>
-      <div class="auxiliaries-filter" :style="{ backgroundColor: auxiliary.backgroundColor }">
-        <h3 class="auxiliaries-name">{{auxiliary.firstname}}</h3>
+      <div class="auxiliaries-filter" :style="{ backgroundColor: auxiliary.backgroundColor }"></div>
+      <div class="auxiliaries-name-container"><p class="auxiliaries-name">{{auxiliary.firstname}}</p></div>
+    </div>
+    <!-- On Desktop -->
+    <div class="col-sm-3 auxiliaries-container" v-for="auxiliary in auxiliaries" v-if="!$q.platform.is.mobile && auxiliary.youtube" @click="openModal(auxiliary)">
+      <img class="auxiliaries-size" :src="auxiliary.picture" alt="splash" />
+      <div class="auxiliaries-icon-container">
+        <q-icon class="auxiliaries-icon" name="play circle outline" color="white" size="5rem"/>
       </div>
+      <div class="auxiliaries-filter" :style="{ backgroundColor: auxiliary.backgroundColor }"></div>
+      <div class="auxiliaries-name-container"><p class="auxiliaries-name">{{auxiliary.firstname}}</p></div>
     </div>
     <q-modal ref="basicModal" @close="closeModal()" :content-css="setVideoContainerSize()">
       <div class="absolute-right">
@@ -126,44 +135,6 @@ export default {
   }
 }
 
-// auxiliaries: [
-//   {
-//     firstname: 'Maud',
-//     lastname: 'Desnoës',
-//     youtube: {
-//       link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-//       location: 'accueil'
-//     },
-//     picture: 'statics/Maud.jpg',
-//   },
-//   {
-//     firstname: 'Maud',
-//     lastname: 'Desnoës',
-//     youtube: {
-//       link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-//       location: 'accueil'
-//     },
-//     picture: 'statics/Maud.jpg',
-//   },
-//   {
-//     firstname: 'Maud',
-//     lastname: 'Desnoës',
-//     youtube: {
-//       link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-//       location: 'accueil'
-//     },
-//     picture: 'statics/Maud.jpg',
-//   },
-//   {
-//     firstname: 'Maud',
-//     lastname: 'Desnoës',
-//     youtube: {
-//       link: 'https://www.youtube.com/embed/5KmBe0Ux6G4',
-//       location: 'accueil'
-//     },
-//     picture: 'statics/Maud.jpg',
-//   }
-// ]
 </script>
 
 <style lang="stylus" scoped>
@@ -182,53 +153,48 @@ export default {
 .auxiliaries-container:hover > .auxiliaries-icon-container
   opacity: 1
 
+.auxiliaries-container:hover > .auxiliaries-name-container
+  opacity: 0
+
+.auxiliaries-container:hover > .auxiliaries-filter
+  opacity: 0
+
 .auxiliaries-icon-container
   position: absolute
-  display: table
+  // display: inline-block
+  // vertical-align: middle
   width: 100%
   height: 100%
   top: 0
   left: 0
   opacity: 0
+  text-align: center
 
 .auxiliaries-icon
-  display: table-cell
-  text-align: center
-  // vertical-align: middle
+  height: 100%
   color: rgba(255, 255, 255, .5)
 
-.auxiliaries-container:hover:before
-  // content: ''
-  // position: absolute
-  // top: 42%
-  // left:48%
-  // display: inline-block
-  // width: 0
-  // height: 0
-  // border-top: 35px solid transparent
-  // border-left: 40px solid rgba(255, 255, 255, .5)
-  // border-bottom: 35px solid transparent
+.auxiliaries-name-container
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  text-align: center
+
+.auxiliaries-name
+  position: relative
+  width: 100%
+  height: 100%
+  font-size: 40px
+  color: white
 
 .auxiliaries-filter
   position: absolute
-  display: table
   width: 100%
   height: 100%
   top: 0
   left: 0
   opacity: 0.7
-
-.auxiliaries-filter:hover
-  opacity: 0
-
-.auxiliaries-name
-  display: table-cell
-  text-align: center
-  vertical-align: middle
-  color: white
-  font-weight: bold
-
-// .auxiliaries-name:hover
-//   opacity: 0
 
 </style>
