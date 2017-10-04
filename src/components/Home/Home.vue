@@ -33,7 +33,7 @@ export default {
   metaInfo: {
     title: 'Accueil',
     meta: [
-      { name: 'description', content: 'Home description' }
+      { name: 'description', content: "Les 'auxiliaires d’envie' Alenvi accompagnent à domicile les personnes âgées. Formés en continu sur les troubles cognitifs, ils les aident pour les gestes de la vie quotidienne et leur apportent une compagnie stimulante et humaine." }
     ]
   },
   components: {

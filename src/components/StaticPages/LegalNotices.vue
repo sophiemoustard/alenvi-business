@@ -36,6 +36,12 @@ import { QIcon } from 'quasar'
 import Breadcrumb from '../Breadcrumbs.vue'
 
 export default {
+  metaInfo: {
+    title: 'Mention légales',
+    meta: [
+      { name: 'description', content: "Mentions légales de l’organisation Alenvi." }
+    ]
+  },
   components: {
     Breadcrumb,
     QIcon

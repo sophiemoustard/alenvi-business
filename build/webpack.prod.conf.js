@@ -126,7 +126,7 @@ module.exports = merge(baseWebpackConfig, {
     //           title: 'Compagnie et stimulation',
     //           meta: {
     //             name: 'description',
-    //             content: "Les “auxiliaires d’envie” passent du temps de qualité avec les personnes âgées à domicile : promenades, jeux, stimulation etc…"
+    //             content: "Les 'auxiliaires d’envie' passent du temps de qualité avec les personnes âgées à domicile : promenades, jeux, stimulation etc…"
     //           }
     //         },
     //         '/sortie-hopital': {
