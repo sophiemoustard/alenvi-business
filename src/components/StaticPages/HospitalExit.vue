@@ -63,7 +63,7 @@ export default {
           title: 'Entre 23 et 26€ / heure',
           text: `50% remboursé en crédit d'impôt. Prise en charge APA possible.`,
           image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021333/images/business/pictos/tarif_horaire.png',
-          link: 'https://blog.alenvi.io',
+          link: 'http://blog.alenvi.io/financement-aide-domicile',
           backgroundColor: '#FFFFFF'
         }
       ],

@@ -76,7 +76,7 @@ export default {
       this.auxiliaries.push(first[0]);
     }
     if (this.videoNumber) {
-      if (this.windowSize.width < 1024) {
+      if (this.windowSize.width < 600 && this.videoNumber > 4) {
         this.auxiliaries.splice(this.videoNumber / 2);
       } else {
         this.auxiliaries.splice(this.videoNumber);

@@ -64,7 +64,7 @@ export default {
 
 #online-asking
   padding-top: 1%
-  padding-left: 65px
+  padding-left: 57px
   cursor: pointer
   color: $primary
 

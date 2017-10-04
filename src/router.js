@@ -103,16 +103,34 @@ export default new VueRouter({
             breadcrumb: 'Mentions Légales',
             name: 'mentions'
           }
+        },
+        {
+          path: 'contrat',
+          component: load('StaticPages/Recruitment'),
+          meta: {
+            breadcrumb: 'Accueil'
+          }
+        },
+        {
+          path: 'envie',
+          component: load('StaticPages/Recruitment'),
+          meta: {
+            breadcrumb: 'Accueil'
+          }
+        },
+        {
+          path: 'charte-beneficiaire',
+          beforeEnter: (to, from, next) => {
+            window.location = 'https://blog.alenvi.io/charte-envie';
+          }
+        },
+        {
+          path: '/charte-envie',
+          beforeEnter: (to, from, next) => {
+            window.location = 'http://blog.alenvi.io/charte-envie';
+          }
         }
       ]
-    },
-    {
-      path: '/test',
-      component: load('Home/LatestArticles'),
-      meta: {
-        breadcrumb: 'test',
-        name: 'test'
-      }
     },
     // Always leave this last one
     { path: '*', component: load('Error404') } // Not found
