@@ -11,11 +11,11 @@
           <img class="img-articles" :src="article.image.link" alt="photo article">
         </q-card-media>
         <q-card-title>
-          {{ article.title | truncate('50') }}
+          {{ article.title | truncate('40') }}
         </q-card-title>
         <q-card-main class="card-content">
           {{ article.content | truncate('100') }}
-          <q-card-actions align="center">
+          <q-card-actions align="end">
             <a class="text-primary" :href="article.link">En savoir plus</a>
           </q-card-actions>
         </q-card-main>
@@ -115,4 +115,7 @@ export default {
 
 .q-card-actions a:hover
   color: #ff1693 !important
+
+.q-card-title
+  font-family: alenviTitleFont
 </style>
