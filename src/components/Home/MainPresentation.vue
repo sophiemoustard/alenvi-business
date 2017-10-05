@@ -39,10 +39,10 @@ export default {
   data() {
     return {
       gallery: [
-        'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019475/images/business/home_care_1.jpg',
-        'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019472/images/business/home_care_2.jpg',
-        'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019465/images/business/home_care_3.jpg',
-        'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019472/images/business/home_care_4.jpg'
+        'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507193477/images/business/Home_1_2000.jpg',
+        'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507193477/images/business/Home_2_2000.jpg',
+        'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507193477/images/business/home_3_2000.jpg',
+        'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507193477/images/business/home_4_2000.jpg'
       ]
     }
   }
