@@ -11,7 +11,8 @@
       </div>
       <div class="auxiliaries-filter-mobile" :style="{ backgroundColor: auxiliary.backgroundColor }"></div>
       <div class="auxiliaries-name-container-mobile row justify-center">
-        <p class="auxiliaries-name self-center">{{auxiliary.firstname}}</p>
+        <div class="auxiliaries-name-mobile col-12 self-center">{{auxiliary.firstname}}</div>
+        <div class="auxiliaries-name-mobile col-12"><q-icon name="play circle outline" size="5rem"/></div>
       </div>
     </div>
     <!-- On Desktop -->
@@ -162,14 +163,14 @@ export default {
   width: 100%
   height: 100%
 
-// .auxiliaries-container:hover > .auxiliaries-icon-container
-//   opacity: 1
-//
-// .auxiliaries-container:hover > .auxiliaries-name-container
-//   opacity: 0
-//
-// .auxiliaries-container:hover > .auxiliaries-filter
-//   opacity: 0
+.auxiliaries-container:hover > .auxiliaries-icon-container
+  opacity: 1
+
+.auxiliaries-container:hover > .auxiliaries-name-container
+  opacity: 0
+
+.auxiliaries-container:hover > .auxiliaries-filter
+  opacity: 0
 
 // .auxiliaries-container:visited > .auxiliaries-name-container
 //   opacity: 0
@@ -222,6 +223,13 @@ export default {
   position: relative
   // width: 100%
   // height: 100%
+  font-size: 40px
+  color: white
+
+.auxiliaries-name-mobile
+  position: relative
+  // width: 100%
+  height: 10%
   font-size: 40px
   color: white
 
