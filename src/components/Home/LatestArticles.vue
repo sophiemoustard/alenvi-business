@@ -61,7 +61,7 @@ export default {
     }
   },
   async created () {
-    const feeds = await this.$http.get('https://93f62618.ngrok.io/blog/rssFeeds', {
+    const feeds = await this.$http.get('https://alenvi-api.herokuapp.com/blog/rssFeeds', {
       params: {
         feed_url: 'https://blog.alenvi.io/rss/'
       }
