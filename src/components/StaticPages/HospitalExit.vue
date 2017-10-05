@@ -50,19 +50,19 @@ export default {
         {
           title: 'Mise en place sous 3 jours',
           text: `Nous vous rendons visite gratuitement pour discuter de votre besoin. L'accompagnement peut démarrer tout de suite.`,
-          image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021332/images/business/pictos/mise_en_place.png',
+          image: 'https://res.cloudinary.com/alenvi/image/upload/v1507194145/images/business/pictos/mise_en_place.png',
           backgroundColor: '#FFFFFF'
         },
         {
           title: 'Un accompagnement sur mesure',
           text: `Une équipe d'auxiliaires adaptée à vos besoins vous suit et fait évoluer ses prestations si nécessaire.`,
-          image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021333/images/business/pictos/sur_mesure.png',
+          image: 'https://res.cloudinary.com/alenvi/image/upload/v1507194145/images/business/pictos/sur_mesure.png',
           backgroundColor: '#FAF9F8'
         },
         {
           title: 'Entre 23 et 26€ / heure',
           text: `50% remboursé en crédit d'impôt. Prise en charge APA possible.`,
-          image: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507021333/images/business/pictos/tarif_horaire.png',
+          image: 'https://res.cloudinary.com/alenvi/image/upload/v1507194145/images/business/pictos/tarif_horaire.png',
           link: 'http://blog.alenvi.io/financement-aide-domicile',
           backgroundColor: '#FFFFFF'
         }
