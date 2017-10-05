@@ -63,7 +63,7 @@ export default {
   async created () {
     const feeds = await this.$http.get('https://alenvi-api.herokuapp.com/blog/rssFeeds', {
       params: {
-        feed_url: 'https://blog.alenvi.io/rss/'
+        feed_url: 'http://blog.alenvi.io/rss/'
       }
     });
     const orderedFeeds = _.sortBy(feeds.data.data, ['pubDate']).reverse().slice(0,3);

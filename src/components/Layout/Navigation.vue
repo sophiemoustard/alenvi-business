@@ -19,11 +19,11 @@
           <router-link :to="'equipe'" class="w3-bar-item">Equipe</router-link>
           <router-link :to="'recrutement'" class="w3-bar-item">Recrutement</router-link>
           <div class="w3-dropdown-hover bg-white">
-            <button id="dropdownMag" class="alenvi-button text-tertiary"><a href="https://blog.alenvi.io/">Blog <q-icon name="arrow drop down"/></a></button>
+            <button id="dropdownMag" class="alenvi-button text-tertiary"><a href="http://blog.alenvi.io/">Blog <q-icon name="arrow drop down"/></a></button>
             <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
-              <a href="https://blog.alenvi.io/tag/aidants-familiaux" class="w3-bar-item">Aidants familiaux</a>
-              <a href="https://blog.alenvi.io/tag/auxiliaires" class="w3-bar-item">Auxiliaires</a>
-              <a href="https://blog.alenvi.io/tag/alenvi" class="w3-bar-item">Le projet Alenvi</a>
+              <a href="http://blog.alenvi.io/tag/aidants-familiaux" class="w3-bar-item">Aidants familiaux</a>
+              <a href="http://blog.alenvi.io/tag/auxiliaires" class="w3-bar-item">Auxiliaires</a>
+              <a href="http://blog.alenvi.io/tag/alenvi" class="w3-bar-item">Le projet Alenvi</a>
             </div>
           </div>
         </div>
@@ -136,16 +136,16 @@
       </q-side-link>
       <q-collapsible label="Blog">
         <q-side-link class="no-bg" item to="">
-          <q-item-main @click="goUrl('https://blog.alenvi.io')" label="Accueil Blog" />
+          <q-item-main @click="goUrl('http://blog.alenvi.io')" label="Accueil Blog" />
         </q-side-link>
         <q-side-link class="no-bg" item to="">
-          <q-item-main @click="goUrl('https://blog.alenvi.io/tag/aidants-familiaux')" label="Aidants familiaux" />
+          <q-item-main @click="goUrl('http://blog.alenvi.io/tag/aidants-familiaux')" label="Aidants familiaux" />
         </q-side-link>
         <q-side-link class="no-bg" item to="">
-          <q-item-main @click="goUrl('https://blog.alenvi.io/tag/auxiliaires')" label="Auxiliaires" />
+          <q-item-main @click="goUrl('http://blog.alenvi.io/tag/auxiliaires')" label="Auxiliaires" />
         </q-side-link>
         <q-side-link class="no-bg" item to="">
-          <q-item-main @click="goUrl('https://blog.alenvi.io/tag/alenvi')" label="Le projet Alenvi" />
+          <q-item-main @click="goUrl('http://blog.alenvi.io/tag/alenvi')" label="Le projet Alenvi" />
         </q-side-link>
       </q-collapsible>
     </div>

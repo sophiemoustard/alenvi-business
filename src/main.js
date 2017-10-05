@@ -10,8 +10,8 @@ require(`./themes/app.${__THEME}.styl`)
 require(`quasar/dist/quasar.ie`)
 require(`quasar/dist/quasar.ie.${__THEME}.css`)
 
-import es6Promise from 'es6-promise'
-es6Promise.polyfill()
+// import es6Promise from 'es6-promise'
+// es6Promise.polyfill()
 import 'babel-polyfill'
 
 import Vue from 'vue'
