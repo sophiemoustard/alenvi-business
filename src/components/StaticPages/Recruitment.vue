@@ -3,9 +3,9 @@
     <breadcrumb class="col-12 breadcrumb"/>
     <section id="presentation" class="section-margin">
       <div class="row"> <!-- pres-background -->
+        <h1 class="col-12 text-center title-margin-bottom">Rejoignez une équipe mobilisée pour la valorisation du métier d’auxiliaire de vie</h1>
         <div id="pres-text" class="col-lg-7">
-          <h1 class="col-12 text-center title-margin-bottom">Rejoignez une équipe mobilisée pour la valorisation du métier d’auxiliaire de vie</h1>
-
+          <!-- <h1 class="col-12 text-center title-margin-bottom">Rejoignez une équipe mobilisée pour la valorisation du métier d’auxiliaire de vie</h1> -->
           <p>Chez Alenvi, nous pensons qu’il n’est possible de bien accompagner les personnes âgées à domicile qu’en valorisant le métier d’auxiliaire de vie.</p>
           <p>Les auxiliaires d’envie travaillent ainsi au sein de communautés autonomes dans un cadre de travail unique :</p>
           <ul>
@@ -79,7 +79,7 @@ export default {
     width: 100%
     height: auto
     min-height: 325px
-    // max-width: 520px
+    max-width: 520px
     @media (max-width: 1200px)
       max-width: 100%
 

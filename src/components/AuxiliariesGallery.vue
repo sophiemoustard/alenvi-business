@@ -58,8 +58,7 @@ export default {
       video_link: '',
       auxiliaries: [],
       auxiliariesRaw: [],
-      clicked: false,
-      isProut: false
+      clicked: false
     }
   },
   async created() {
@@ -81,7 +80,7 @@ export default {
       this.auxiliaries.push(first[0]);
     }
     if (this.videoNumber) {
-      if (this.windowSize.width < 1024) {
+      if (this.windowSize.width < 600 && this.videoNumber > 4) {
         this.auxiliaries.splice(this.videoNumber / 2);
       } else {
         this.auxiliaries.splice(this.videoNumber);
@@ -143,7 +142,6 @@ export default {
       const targetId = e.currentTarget.id;
       const num = targetId.replace(/^\D+/, '');
       const videoNum = `video${num}`;
-      console.log(this.$refs[videoNum]);
       this.$refs[videoNum][0].style.zIndex = 4;
     }
   }
