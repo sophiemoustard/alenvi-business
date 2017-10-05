@@ -18,8 +18,10 @@
     <!-- On Desktop -->
     <div class="col-sm-3 auxiliaries-container" v-for="auxiliary in auxiliaries" v-if="!$q.platform.is.mobile && auxiliary.youtube" @click="openModal(auxiliary)">
       <img class="auxiliaries-size" :src="auxiliary.picture" alt="splash" />
-      <div class="auxiliaries-icon-container">
-        <q-icon class="auxiliaries-icon" name="play circle outline" color="white" size="5rem"/>
+      <div class="auxiliaries-icon-container row justify-center">
+        <!-- isProd because when building site icons are not displaying properly so we have to change its display property -->
+        <q-icon v-if="isProd" class="auxiliaries-icon self-center" name="play circle outline" color="white" size="5rem" style="display: inherit"/>
+        <q-icon v-else class="auxiliaries-icon self-center" name="play circle outline" color="white" size="5rem"/>
       </div>
       <div class="auxiliaries-filter" :style="{ backgroundColor: auxiliary.backgroundColor }"></div>
       <div class="auxiliaries-name-container row justify-center"><p class="auxiliaries-name self-center">{{auxiliary.firstname}}</p>
@@ -59,10 +61,14 @@ export default {
       video_link: '',
       auxiliaries: [],
       auxiliariesRaw: [],
-      clicked: false
+      clicked: false,
+      isProd: false
     }
   },
   async created() {
+    if (PROD) {
+      this.isProd = true;
+    }
     const params = {
       role: this.videoRoles || '',
       location: this.videoLocation
