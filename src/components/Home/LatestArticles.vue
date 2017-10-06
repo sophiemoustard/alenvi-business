@@ -1,7 +1,7 @@
 <template>
   <div class="row md-gutter layout-padding">
     <div class="col-12">
-      <div class="row justify-center">
+      <div class="row text-center justify-center">
         <h1>Blog : les derniers articles</h1>
       </div>
     </div>
