@@ -113,7 +113,9 @@
           <q-icon name="close" />
         </q-btn>
       </q-item-side>
-      <q-list-header>Alenvi</q-list-header>
+      <q-side-link class="no-bg" item to="/">
+        <q-item-main label="Accueil" />
+      </q-side-link>
       <q-collapsible label="Services">
         <q-side-link item to="/aide-a-domicile">
           <q-item-main label="Aide à domicile" />
