@@ -11,7 +11,7 @@
             <button id="dropdownHome" class="alenvi-button text-tertiary"><router-link :to="'/'">Services <q-icon name="arrow drop down"/></router-link></button>
             <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
               <router-link :to="'aide-a-domicile'" class="w3-bar-item">Aide à domicile</router-link>
-              <router-link :to="'compagnie'" class="w3-bar-item">Stimulation et compagnie</router-link>
+              <router-link :to="'compagnie'" class="w3-bar-item">Compagnie et stimulation</router-link>
               <router-link :to="'sortie-hopital'" class="w3-bar-item">Sortie d'hôpital</router-link>
             </div>
           </div>
@@ -168,7 +168,7 @@
       <div class="col-xs-12 col-md-3">
         <ul>
           <li><router-link :to="'aide-a-domicile'" class="footer-links">Aide à domicile</router-link></li>
-          <li><router-link :to="'compagnie'" class="footer-links">Stimulation et compagnie</router-link></li>
+          <li><router-link :to="'compagnie'" class="footer-links">Compagnie et stimulation</router-link></li>
           <li><router-link :to="'sortie-hopital'" class="footer-links">Sortie d'hôpital</router-link></li>
           <li><router-link :to="'mentions'" class="footer-links">Mentions légales</router-link></li>
         </ul>
