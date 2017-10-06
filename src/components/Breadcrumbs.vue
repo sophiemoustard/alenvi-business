@@ -1,6 +1,7 @@
 <template>
   <div class="row">
     <ul class="breadcrumbs">
+      <!-- If index is last, then apply "current" css class -->
       <li v-for="(breadcrumb, index) in $breadcrumbs" :class="{ current: index === $breadcrumbs.length - 1 }">
         <router-link :to="{ path: breadcrumb.meta.name }">
           {{ breadcrumb.meta.breadcrumb }}
@@ -18,10 +19,12 @@ export default {
 <style lang="stylus" scoped>
   @import "~variables"
 
+// well it works
   .breadcrumbs:after
     clear: both
     content: ''
 
+// put in list in line, add arrow after each <li> element
   .breadcrumbs
     list-style: none
     li
@@ -33,6 +36,7 @@ export default {
         margin: 0 .6em
         color: $tertiary
 
+// take off arrows for last <li> element
   .breadcrumbs li:last-of-type:after
     display: none
 

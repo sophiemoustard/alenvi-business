@@ -3,19 +3,23 @@
     <q-carousel infinite autoplay class="text-tertiary">
       <div v-for="slide in slides" slot="slide" class="bg-carousel-transparent">
         <div class="row">
-          <div v-for="content in slide" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+          <div v-for="content in slide" class="col-xs-12 col-xl-6">
             <a :href="content.link">
               <q-card color="white" class="shadow-1" flat>
-                <div :class="carouselCardClassesObj">
-                  <div class="col-xs-12 col-sm-12 col-md-4 img-carousel">
+                <div class="carousel-card row items-center" :class="isMozillaContentBetweenFalse">
+                  <!-- Image -->
+                  <div class="col-xs-12 col-md-4 img-carousel">
                     <div class="row justify-center">
                       <img :src="content.img" :alt="content.imgAlt">
                     </div>
                   </div>
-                  <div class="col-xs-12 col-sm-12 col-md-8 content">
+                  <!-- Description -->
+                  <div class="col-xs-12 col-md-8 description">
                     <div class="row justify-center">
                       <div class="text-italic text-center">
+                      <!-- <blockquote class="no-margin" :cite="content.link"> -->
                         {{ content.description }}
+                      <!-- </blockquote> -->
                       </div>
                     </div>
                   </div>
@@ -79,22 +83,22 @@ export default {
         //   }
         // ]
       ],
-      carouselCardClasses: {
-        'carousel-card': true,
-        row: true,
-        'items-center': true,
+      isNotMozilla: {
+        // 'carousel-card': true,
+        // row: true,
+        // 'items-center': true,
         'content-between': true
       }
     }
   },
   computed: {
-    carouselCardClassesObj() {
+    isMozillaContentBetweenFalse() {
       if (this.$q.platform.is.mozilla) {
         return {
           'content-between': false
         }
       }
-      return this.carouselCardClasses;
+      return this.isNotMozilla;
     }
   }
 }
@@ -123,10 +127,10 @@ export default {
   .carousel-card
     min-height: 100px
 
-  .content
+  .description
     color: $primary
     font-weight: 100
-    padding: 0px 15px
+    // padding: 0px 15px
 
     @media (max-width: 768px)
       padding: 0px 0px 10px 15px
