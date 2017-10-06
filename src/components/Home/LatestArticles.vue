@@ -5,7 +5,7 @@
         <h1>Blog : les derniers articles</h1>
       </div>
     </div>
-    <div v-for="article in lastArticles" class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+    <div v-for="article in lastArticles" class="col-xs-12 col-sm-4">
       <q-card class="card" flat>
         <q-card-media>
           <img class="img-articles" :src="article.image.link" alt="photo article">
@@ -111,9 +111,11 @@ export default {
 
 .img-articles
   width: 100%
-  height: 275px
+  height: 325px
+  @media (max-width: 400px)
+    height: 220px
   @media (min-width: 1600px)
-    height: 325px
+    height: 400px
 
 .q-card-actions a:hover
   color: #ff1693 !important
