@@ -162,7 +162,7 @@
           <li><router-link :to="'vision'" class="footer-links">Vision</router-link></li>
           <li><router-link :to="'equipe'" class="footer-links">Equipe</router-link></li>
           <li><router-link :to="'recrutement'" class="footer-links">Recrutement</router-link></li>
-          <li><router-link :to="'/'" class="footer-links">Blog</router-link></li>
+          <li><a href="http://blog.alenvi.io" class="footer-links">Blog</a></li>
         </ul>
       </div>
       <div class="col-xs-12 col-md-3">
