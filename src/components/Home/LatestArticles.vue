@@ -5,7 +5,7 @@
         <h1>Blog : les derniers articles</h1>
       </div>
     </div>
-    <div v-for="(article) in lastArticles" class="col-xs-12 col-sm-4">
+    <div v-for="article in lastArticles" class="col-xs-12 col-sm-4">
       <q-card class="card" flat>
         <q-card-media>
           <img class="img-articles" :src="article.image.link" alt="photo article">
