@@ -139,5 +139,5 @@ export default {
   font-family: alenviTitleFont
 
 .q-card-container
-  padding: 6px 0px 0px 16px
+  padding: 16px 0px 0px 16px
 </style>
