@@ -154,6 +154,12 @@
 
     <router-view />
 
+    <div v-if="isCookiePopup" @click="setCookieWasShown()">
+      <q-alert id="cookie-popup" color="#8D0E56" v-model="isCookiePopup" icon="thumb up" enter="bounceInRight" leave="bounceOutRight" position="bottom-right" dismissible>
+        Ce site utilises des cookies.
+      </q-alert>
+    </div>
+
     <!-- Footer -->
     <q-toolbar class="forced-wrap" slot="footer">
       <div class="col-xs-12 col-md-3">
@@ -211,6 +217,8 @@ import {
   QRouteTab,
   QListHeader,
   QList,
+  Cookies,
+  QAlert,
   Alert,
   openURL } from 'quasar'
 
@@ -236,7 +244,7 @@ export default {
     QRouteTab,
     QListHeader,
     QList,
-    Alert,
+    QAlert,
     Modal
   },
   data () {
@@ -249,22 +257,16 @@ export default {
       dropdownPos: {
         position: 'absolute',
         left: ''
-      }
+      },
+      isCookiePopup: true
     }
   },
   mounted () {
     this.$refs.layout.hideRight();
-    // if (localStorage.getItem("popupWasShown") == null) {
-    //   Alert.create({
-    //     html: 'Ce site utilise des cookies !',
-    //     icon: 'thumb up',
-    //     position: 'bottom-right',
-    //     enter: 'bounceInRight',
-    //     leave: 'bounceOutRight',
-    //     color: '#8D0E56'
-    //   })
-    // }
-    // localStorage.setItem("popupWasShown", 1);
+    if (Cookies.has('popupWasShown')) {
+      console.log('Cookie was set !');
+      this.isCookiePopup = false;
+    }
   },
   methods: {
     isActive () {
@@ -275,6 +277,9 @@ export default {
     },
     goUrl(url) {
       openURL(url);
+    },
+    setCookieWasShown() {
+      Cookies.set('popupWasShown', true, { expires: 10, path: '/' });
     }
     // closePopover () {
     //   if (!this.active) {
@@ -427,6 +432,10 @@ export default {
 
   .hover-icon:hover
     color: $grey-4 !important
+
+  #cookie-popup
+    padding-right: 1%
+    padding-bottom: 1%
 
 
 </style>
