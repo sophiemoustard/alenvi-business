@@ -35,7 +35,7 @@
         </q-btn>
       </div>
     </div>
-    
+
     <div slot="right">
       <q-item-side right>
         <q-btn @click="$refs.layout.hideCurrentSide()" class="justify-end" color="tertiary" flat big>
@@ -84,7 +84,7 @@
     <router-view />
 
     <div v-if="isCookiePopup" @click="setCookieWasShown()">
-      <q-alert id="cookie-popup" color="#8D0E56" v-model="isCookiePopup" icon="thumb up" enter="bounceInRight" leave="bounceOutRight" position="bottom-right" dismissible>
+      <q-alert id="cookie-popup" color="tertiary" v-model="isCookiePopup" icon="thumb up" enter="bounceInRight" leave="bounceOutRight" position="bottom-right" dismissible>
         Ce site utilises des cookies.
       </q-alert>
     </div>
