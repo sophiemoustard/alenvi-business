@@ -1,15 +1,15 @@
 <template>
-  <div class="row md-gutter layout-padding">
+  <div class="row md-gutter layout-padding items-start">
     <div class="col-12">
       <div class="row text-center justify-center">
         <h1>Blog : les derniers articles</h1>
       </div>
     </div>
     <div v-for="article in lastArticles" class="col-xs-12 col-sm-4">
-      <q-card class="card" flat>
-        <q-card-media>
-          <img class="img-articles" :src="article.image.link" alt="photo article">
-        </q-card-media>
+      <q-card class="card no-margin" flat>
+        <!-- <q-card-media> -->
+          <a class="img-articles" :style="{'background-image': 'url(' + article.image.link + ')'}" :href="article.link" alt="photo article"></a>
+        <!-- </q-card-media> -->
         <q-card-title>
           {{ article.title | truncate('40') }}
         </q-card-title>
@@ -115,22 +115,29 @@ export default {
 @import '~variables'
 
 .img-articles
-  width: 100%
-  height: 250px
-  @media (min-width: 320px) and (max-width: 400px)
-    height: 199px
-  @media (min-width: 401px) and (max-width: 600px)
-    height: 370px
-  @media (min-width: 601px) and (max-width: 800px)
-    height: 108px
-  @media (min-width: 801px) and (max-width: 1000px)
-    height: 140px
-  @media (min-width: 1201px) and (max-width: 1400px)
-    height: 215px
-  @media (min-width: 1401px) and (max-width: 1600px)
-    height: 260px
-  @media (min-width: 1601px)
-    height: 375px
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &:before
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    content: '';
+
+  &:after
+    display: block;
+    content: '';
+    width: 100%;
+    padding-bottom: 75%;
+
+.q-card
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
 
 .q-card-actions a:hover
   color: #ff1693 !important
