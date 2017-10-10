@@ -55,14 +55,14 @@ export default {
             title: 'Le Parisien',
             img: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019444/images/business/leparisien.png',
             imgAlt: 'leparisien logo',
-            description: '« A la rencontre des auxiliaires d’envie »',
+            description: '« A la rencontre des auxiliaires d’envie\xa0»',
             link: 'http://www.leparisien.fr/economie/business/a-la-rencontre-des-auxilliaires-d-envie-20-09-2016-6135411.php'
           },
           {
             title: 'CNEWS',
             img: 'https://res.cloudinary.com/alenvi/image/upload/q_auto/v1507019444/images/business/cnews.png',
             imgAlt: 'CNEWS logo',
-            description: '« Interview en plateau de Dorothée, auxiliaire d’envie chez Alenvi »',
+            description: '« Interview en plateau de Dorothée, auxiliaire d’envie chez Alenvi\xa0»',
             link: 'https://www.youtube.com/watch?v=M30Ia_oV6AI'
           }
         ]
@@ -130,6 +130,7 @@ export default {
   .description
     color: $primary
     font-weight: 100
+    padding: 1%
     // padding: 0px 15px
 
     @media (max-width: 768px)
