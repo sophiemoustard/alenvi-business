@@ -35,78 +35,7 @@
         </q-btn>
       </div>
     </div>
-  </div>
-    <!-- <q-toolbar color="white" slot="header" class="justify-between items-start">
-
-      <div class="col-2">
-        <router-link :to="'/'">
-          <img src="statics/alenvi_logo_complet_183x50.png" alt="Logo Alenvi">
-        </router-link>
-      </div> -->
-
-      <!-- <nav class="gt-mld col-8 row items-center">
-        <router-link :to="'/'">Accueil</router-link>
-        <router-link :to="'vision'">Vision</router-link>
-        <router-link :to="'equipe'">Equipe</router-link>
-        <router-link :to="'recrutement'">Recrutement</router-link>
-        <router-link :to="'/'">
-          <div :class="[dropdownItemClass, { 'active-link': active }, rowClass, justifyCenterClass]" ref="dropdown" @mouseover="isActive(), getElementLeftPos()">
-            Magazine<q-icon name="arrow drop down" />
-          </div>
-        </router-link>
-      </nav> -->
-
-
-      <!-- <nav class="gt-mld mobile-hide col-8">
-        <div class="row justify-start">
-          <ul class="nav">
-            <li>
-              <router-link :to="'/'">Accueil</router-link>
-            </li>
-            <li>
-              <router-link :to="'vision'">Vision</router-link>
-            </li>
-            <li>
-              <router-link :to="'equipe'">Equipe</router-link>
-            </li>
-            <li>
-              <router-link :to="'recruitement'">Recrutement</router-link>
-            </li>
-            <li @mouseover="$refs.popover1.open()" @mouseleave="closePopover()">
-              <router-link :to="'/'">
-                Magazine<q-icon name="arrow drop down" />
-              </router-link>
-              <q-popover ref="popover1" style="position: absolute;">
-                <q-list @mouseover="isActive()" link separator>
-                  <q-item @click.native="$refs.popover1.close()" :to="'test'">Rubrique 1</q-item>
-                  <q-item @click.native="$refs.popover1.close()":to="'test'">Rubrique 2</q-item>
-                  <q-item @click.native="$refs.popover1.close()":to="'test'">Rubrique 3</q-item>
-                </q-list>
-              </q-popover>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-      <q-btn id="btn-call-header" class="gt-mld col-auto" color="primary"><a class="btn-call" href="tel:+33179755475">Appeler le <b>01 79 75 54 75</b></a></q-btn>
-
-      <q-btn color="tertiary" class="lt-lgx hide-on-drawer-visible" @click="$refs.layout.toggleRight()" flat big>
-        <q-icon name="menu" />
-      </q-btn>
-
-    </q-toolbar> -->
-
-    <!-- <div v-if="active" class="row justify-center" slot="navigation">
-      <div @mouseleave="isActive" :style="dropdownPos">
-      <q-tabs id="tabs-nav" color="white" class="shadow-2" align="center">
-        <q-route-tab @click="active = false" to="home" slot="title" label="Rubrique 1" />
-        <q-route-tab @click="active = false" to="home" slot="title" label="Rubrique 2" />
-        <q-route-tab @click="active = false" to="home" slot="title" label="Rubrique 3" />
-      </q-tabs>
-      </div>
-    </div> -->
-
-
+    
     <div slot="right">
       <q-item-side right>
         <q-btn @click="$refs.layout.hideCurrentSide()" class="justify-end" color="tertiary" flat big>
@@ -264,7 +193,6 @@ export default {
   mounted () {
     this.$refs.layout.hideRight();
     if (Cookies.has('popupWasShown')) {
-      console.log('Cookie was set !');
       this.isCookiePopup = false;
     }
   },
@@ -310,46 +238,6 @@ export default {
 
   .no-bg
     background: none !important
-
-  // nav a
-  //   color: $tertiary
-  //   font-weight: bold
-  //   padding: 0px 20px
-  //   line-height: 20px
-
-  // nav a div
-  //   display: inline-block;
-  // .q-tabs-scroller
-  //   flex-wrap: wrap;
-
-  // .nav
-  //   list-style: none
-  //
-  // .nav li
-  //   float: left
-  //   padding-right: 30px
-  //
-  // .nav li a
-  //   color: $tertiary
-  //   font-weight: bold
-  //
-  // .active-link
-  //   color: $primary
-  //
-  // .dropdown-item
-  //   display: inline-block
-  //   height: 60px
-  //   padding-top: 20px
-  //
-  //
-  // .q-toolbar
-  //   min-height: 70px
-  //
-  // .q-tab-label
-  //   color: $tertiary
-  //
-  // .q-tab-label:hover
-  //   color: $primary
 
   .alenvi-button
     border: none;
