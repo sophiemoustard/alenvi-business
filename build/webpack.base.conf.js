@@ -7,7 +7,7 @@ var
   merge = require('webpack-merge'),
   projectRoot = path.resolve(__dirname, '../'),
   ProgressBarPlugin = require('progress-bar-webpack-plugin'),
-  PrerenderSpaPlugin = require('prerender-spa-plugin')
+  // PrerenderSpaPlugin = require('prerender-spa-plugin')
   useCssSourceMap =
     (env.dev && config.dev.cssSourceMap) ||
     (env.prod && config.build.productionSourceMap)
