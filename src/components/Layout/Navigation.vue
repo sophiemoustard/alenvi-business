@@ -85,7 +85,7 @@
 
     <div v-if="isCookiePopup" @click="setCookieWasShown()">
       <q-alert id="cookie-popup" color="tertiary" v-model="isCookiePopup" icon="thumb up" enter="bounceInRight" leave="bounceOutRight" position="bottom-right" dismissible>
-        Ce site utilises des cookies.
+        En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour vous proposer des publicités ciblées adaptés à vos centres d’intérêts et réaliser des statistiques de visites.
       </q-alert>
     </div>
 
