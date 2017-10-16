@@ -253,7 +253,7 @@ export default {
     white-space: nowrap;
 
   .alenvi-dropdown-list
-    margin-top: 0.4px
+    margin-top: -0.4px
 
   .alenvi-nav
     font-weight: bold
