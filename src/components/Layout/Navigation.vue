@@ -8,7 +8,7 @@
         </router-link>
         <div class="row items-center gt-mld">
           <div class="w3-dropdown-hover bg-white">
-            <button id="dropdownHome" class="alenvi-button text-tertiary"><router-link :to="'/'">Services <q-icon name="arrow drop down"/></router-link></button>
+            <button id="dropdownHome" class="alenvi-button text-tertiary"><router-link :to="'/'" exact>Services <q-icon name="arrow drop down"/></router-link></button>
             <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
               <router-link :to="'aide-a-domicile'" class="w3-bar-item">Aide à domicile</router-link>
               <router-link :to="'compagnie'" class="w3-bar-item">Compagnie et stimulation</router-link>
@@ -42,7 +42,7 @@
           <q-icon name="close" />
         </q-btn>
       </q-item-side>
-      <q-side-link class="no-bg" item to="/">
+      <q-side-link item to="/" exact>
         <q-item-main label="Accueil" />
       </q-side-link>
       <q-collapsible label="Services">
