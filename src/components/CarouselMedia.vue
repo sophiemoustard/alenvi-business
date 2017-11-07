@@ -79,7 +79,7 @@ export default {
             img: 'https://res.cloudinary.com/alenvi/image/upload/v1507019444/images/business/leparisien.png',
             imgAlt: 'leparisien logo',
             description: "« A la rencontre des auxiliaires d'envie\xa0»",
-            link: 'https://www.leparisien.fr'
+            link: 'http://www.leparisien.fr/economie/business/a-la-rencontre-des-auxilliaires-d-envie-20-09-2016-6135411.php'
           }
         ]
       ],
