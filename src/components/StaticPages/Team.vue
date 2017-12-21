@@ -29,7 +29,7 @@ export default {
     return {
       videoNumber: '',
       videoLocation: ['accueil', 'team'],
-      videoRoles: ['auxiliary', 'tech', 'coach']
+      videoRoles: ['Auxiliaire', 'Tech', 'Coach']
     }
   }// https://puu.sh/xJhc9/d5777c1bc9.png
 }// https://puu.sh/xJhcG/24789e1731.png

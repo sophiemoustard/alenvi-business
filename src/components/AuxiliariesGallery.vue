@@ -77,12 +77,13 @@ export default {
     const auxiliariesRaw = await this.$http.get('https://alenvi-api.herokuapp.com/users/presentation', {
       params: payload
     });
+    console.log('AUXILIARIES ROLES', auxiliariesRaw.data.data.users);
     this.auxiliariesRaw = auxiliariesRaw.data.data.users;
     this.auxiliaries = this.auxiliariesRaw;
     this.shuffle(this.auxiliaries);
-    if (this.auxiliaries[0].role == 'admin'
-    || this.auxiliaries[0].role == 'coach'
-    || this.auxiliaries[0].role == 'tech') {
+    if (this.auxiliaries[0].role.name == 'Admin'
+    || this.auxiliaries[0].role.name == 'Coach'
+    || this.auxiliaries[0].role.name == 'Tech') {
       const first = this.auxiliaries.splice(0,1);
       this.auxiliaries.push(first[0]);
     }
@@ -94,7 +95,7 @@ export default {
       }
     }
     for (let i = 0, j = 4, test = false; i < this.auxiliaries.length; i++) {
-      if (this.auxiliaries[i].role == 'auxiliary') {
+      if (this.auxiliaries[i].role.name == 'Auxiliaire') {
         if (i < j) {
           if (test) {
             this.auxiliaries[i].backgroundColor = i % 2 == 1 ? '#F070AA' : '#B61A6D';

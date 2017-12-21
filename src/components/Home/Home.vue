@@ -48,7 +48,7 @@ export default {
     return {
       videoNumber: 8,
       videoLocation: ['accueil'],
-      videoRoles: ['auxiliary'],
+      videoRoles: ['Auxiliaire'],
       featuresContent: [
         {
           title: 'Aide à domicile',
