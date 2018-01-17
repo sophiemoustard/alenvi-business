@@ -16,8 +16,8 @@
             <li><q-icon name="keyboard arrow right" /> Coopération entre collègues (réunions d’équipe toutes les 2 semaines) & formation continue</li>
           </ul>
           <p>Nous recrutons actuellement pour des interventions à Paris et dans les Hauts-de-Seine.</p>
-          <q-btn color="primary" big>
-            <a class="btn-call" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/MwEMWk')">Postuler</a>
+          <q-btn color="primary" @click="$refs.infoModal.openModal('https://alenvi.typeform.com/to/MwEMWk')" big>
+            <a class="btn-call">Postuler</a>
           </q-btn>
           <modal ref="infoModal"/>
         </div>
