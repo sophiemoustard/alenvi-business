@@ -3,7 +3,7 @@
     <q-window-resize-observable @resize="onResize" />
     <!-- On Mobile -->
     <div class="col-sm-3 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" v-if="$q.platform.is.mobile && auxiliary.youtube" @click="getVideo($event)" :id="'container-' + (index + 1)">
-      <img :src="auxiliary.picture" alt="splash" />
+      <img :src="auxiliary.picture.link" alt="splash" />
       <div class="auxiliaries-icon-container-mobile" :ref="'video' + (index + 1)">
         <q-video :src="auxiliary.youtube.link" style="width: 100%; height: 100%"/>
 
