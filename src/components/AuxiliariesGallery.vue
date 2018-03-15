@@ -17,7 +17,7 @@
     </div>
     <!-- On Desktop -->
     <div class="col-sm-3 auxiliaries-container" v-for="auxiliary in auxiliaries" v-if="!$q.platform.is.mobile && auxiliary.youtube" @click="openModal(auxiliary)">
-      <img class="auxiliaries-size" :src="auxiliary.picture" alt="splash" />
+      <img class="auxiliaries-size" :src="auxiliary.picture.link" alt="splash" />
       <div class="auxiliaries-icon-container row justify-center">
         <!-- isProd because when building site icons are not displaying properly so we have to change its display property -->
         <q-icon v-if="isProd" class="auxiliaries-icon self-center" name="play circle outline" color="white" size="5rem" style="display: inherit"/>
