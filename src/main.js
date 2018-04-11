@@ -19,12 +19,17 @@ import Quasar from 'quasar'
 import router from './router'
 import axios from 'axios'
 import VueBreadcrumbs from 'vue-breadcrumbs'
+import VueGtm from 'vue-gtm'
 
 Vue.prototype.$http = axios;
 
 Vue.config.productionTip = false
 Vue.use(Quasar) // Install Quasar Framework
 Vue.use(VueBreadcrumbs)
+Vue.use(VueGtm, {
+  debug: true,
+  vueRouter: router
+})
 
 if (__THEME === 'mat') {
   require('quasar-extras/roboto-font')
