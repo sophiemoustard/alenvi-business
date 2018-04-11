@@ -92,7 +92,6 @@ module.exports = merge(baseWebpackConfig, {
             /<script>[^<]*<\/script>/i,
             `<script>
             (function (w, d, s, l, i) {
-              if (window._hasGTM) return;
               w[l] = w[l] || [];
               w[l].push({
                 'gtm.start': new Date().getTime(),
@@ -105,7 +104,6 @@ module.exports = merge(baseWebpackConfig, {
               j.src =
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
               f.parentNode.insertBefore(j, f);
-              window._hasGTM = true;
             })(window, document, 'script', 'dataLayer', 'GTM-5MT8HT');
             </script>`
           )
