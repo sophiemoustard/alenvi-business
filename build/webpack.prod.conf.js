@@ -105,6 +105,11 @@ module.exports = merge(baseWebpackConfig, {
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
               f.parentNode.insertBefore(j, f);
             })(window, document, 'script', 'dataLayer', 'GTM-5MT8HT');
+            </script>
+            <script>
+              window.addEventListener('load', function() {
+                WSDidDyn.track();
+              });
             </script>`
           )
         }
