@@ -2,7 +2,7 @@
   <div class="row">
     <q-window-resize-observable @resize="onResize" />
     <!-- On Mobile -->
-    <!-- <div class="col-sm-3 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" :key="index" v-if="$q.platform.is.mobile && auxiliary.youtube" @click="getVideo($event)" :id="'container-' + (index + 1)">
+    <div class="col-sm-3 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" :key="index" v-if="$q.platform.is.mobile && auxiliary.youtube" @click="getVideo($event)" :id="'container-' + (index + 1)">
       <img :src="auxiliary.picture.link" alt="splash" />
       <div class="auxiliaries-icon-container-mobile" :ref="'video' + (index + 1)">
         <q-video :src="auxiliary.youtube.link" style="width: 100%; height: 100%"/>
@@ -12,9 +12,9 @@
         <div class="auxiliaries-name-mobile col-12 self-center">{{auxiliary.firstname}}</div>
         <div class="auxiliaries-name-mobile col-12"><q-icon name="play circle outline" size="2rem"/></div>
       </div>
-    </div> -->
+    </div>
     <!-- On Desktop -->
-    <div class="col-sm-2 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" :key="index" v-if="auxiliary.youtube" @click="openModal(auxiliary)">
+    <div class="col-sm-2 auxiliaries-container" v-for="(auxiliary, index) in auxiliaries" :key="index" v-if="!$q.platform.is.mobile && auxiliary.youtube" @click="openModal(auxiliary)">
       <img class="auxiliaries-size" :src="auxiliary.picture.link" alt="splash" />
       <div class="auxiliaries-icon-container row justify-center">
         <q-icon class="auxiliaries-icon self-center" name="play circle outline" color="white" size="5rem" style="display: inherit"/>
@@ -46,16 +46,13 @@ export default {
   data () {
     return {
       opened: false,
-      windowSize: {
-        width: window.innerWidth,
-        height: window.innerHeight
-      },
+      windowSize: {},
       video_link: '',
       auxiliaries: [],
       auxiliariesRaw: []
     }
   },
-  async mounted () {
+  async created () {
     // if (PROD) {
     //   this.isProd = true;
     // }
@@ -68,21 +65,40 @@ export default {
       params: payload
     });
     // console.log('AUXILIARIES ROLES', auxiliariesRaw.data.data.users);
-    // this.auxiliariesRaw = auxiliariesRaw.data.data.users;
-    // this.auxiliaries = this.auxiliariesRaw;
-    this.auxiliaries = this.auxiliariesRaw = auxiliariesRaw.data.data.users;
+    this.auxiliariesRaw = auxiliariesRaw.data.data.users;
+    this.auxiliaries = this.auxiliariesRaw;
     this.shuffle(this.auxiliaries);
     if (this.auxiliaries[0].role.name === 'Admin' ||
-        this.auxiliaries[0].role.name === 'Coach' ||
-        this.auxiliaries[0].role.name === 'Tech') {
+    this.auxiliaries[0].role.name === 'Coach' ||
+    this.auxiliaries[0].role.name === 'Tech') {
       const first = this.auxiliaries.splice(0, 1);
       this.auxiliaries.push(first[0]);
     }
     if (this.videoNumber) {
-      this.auxiliaries = this.auxiliariesMobile;
-      // this.auxiliaries.splice(this.videoNumber);
+      if (this.windowSize.width < 600 && this.videoNumber > 4) {
+        this.auxiliaries.splice(this.videoNumber / 2);
+      } else {
+        this.auxiliaries.splice(this.videoNumber);
+      }
     }
-    this.generateMosaic(this.auxiliaries);
+    for (let i = 0, j = 6, test = false; i < this.auxiliaries.length; i++) {
+      if (this.auxiliaries[i].role.name === 'Auxiliaire') {
+        if (i < j) {
+          if (test) {
+            this.auxiliaries[i].backgroundColor = i % 2 === 1 ? '#F070AA' : '#B61A6D';
+          } else {
+            this.auxiliaries[i].backgroundColor = i % 2 === 0 ? '#F070AA' : '#B61A6D';
+          }
+        } else {
+          j += 6;
+          test = !test;
+          this.auxiliaries[i].backgroundColor = this.auxiliaries[i - 6].backgroundColor === '#F070AA' ? '#B61A6D' : '#F070AA';
+          // this.auxiliaries[i].backgroundColor = i % 2 == 0 ? '#F070AA' : '#B61A6D';
+        }
+      } else {
+        this.auxiliaries[i].backgroundColor = '#F29400';
+      }
+    }
   },
   computed: {
     setVideoContainerSize () {
@@ -99,34 +115,14 @@ export default {
         height
       }
     },
-    auxiliariesMobile () {
-      if (this.windowSize.width < 600 && this.videoNumber > 4) {
-        return this.auxiliariesRaw.slice(0, this.videoNumber / 2);
-      } else {
-        return this.auxiliariesRaw.slice(0, this.videoNumber);
-      }
-    }
   },
   methods: {
     openModal (auxiliary) {
-      this.video_link = `${auxiliary.youtube.link}?autoplay=1?rel=0&enablejsapi=1`;
+      this.video_link = `${auxiliary.youtube.link}?autoplay=1&enablejsapi=1`;
       this.opened = true;
     },
     onResize (size) {
       this.windowSize = size;
-      if (this.videoNumber) {
-        this.auxiliaries = this.auxiliariesMobile;
-      }
-      this.generateMosaic(this.auxiliaries);
-      // if (this.videoNumber) {
-      //   if (size.width < 600 && this.videoNumber > 4) {
-      //     // console.log(this.auxiliaries.slice(this.videoNumber / 2));
-      //     // console.log(this.auxiliariesMobile);
-      //     // this.auxiliariesMobile;
-      //   } else {
-      //     this.auxiliaries.splice(this.videoNumber);
-      //   }
-      // }
     },
     closeModal () {
       const iframe = document.getElementById('auxiliary-iframe').contentWindow;
@@ -144,26 +140,6 @@ export default {
       const num = targetId.replace(/^\D+/, '');
       const videoNum = `video${num}`;
       this.$refs[videoNum][0].style.zIndex = 4;
-    },
-    generateMosaic (auxiliaries) {
-      for (let i = 0, j = 6, test = false; i < auxiliaries.length; i++) {
-        if (auxiliaries[i].role.name === 'Auxiliaire') {
-          if (i < j) {
-            if (test) {
-              auxiliaries[i].backgroundColor = i % 2 === 1 ? '#F070AA' : '#B61A6D';
-            } else {
-              auxiliaries[i].backgroundColor = i % 2 === 0 ? '#F070AA' : '#B61A6D';
-            }
-          } else {
-            j += 6;
-            test = !test;
-            auxiliaries[i].backgroundColor = auxiliaries[i - 6].backgroundColor === '#F070AA' ? '#B61A6D' : '#F070AA';
-            // this.auxiliaries[i].backgroundColor = i % 2 == 0 ? '#F070AA' : '#B61A6D';
-          }
-        } else {
-          auxiliaries[i].backgroundColor = '#F29400';
-        }
-      }
     }
   }
 }
