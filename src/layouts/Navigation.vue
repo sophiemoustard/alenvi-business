@@ -13,7 +13,7 @@
             <router-link exact to="aide-a-domicile" class="w3-bar-item">Aide à domicile</router-link>
             <router-link exact to="compagnie" class="w3-bar-item">Compagnie et stimulation</router-link>
             <router-link exact to="sortie-hopital" class="w3-bar-item">Sortie d'hôpital</router-link>
-            <a href="http://blog.alenvi.io/tag/aidants-familiaux" class="w3-bar-item">Conseils</a>
+            <a href="https://blog.alenvi.io/tag/aidants-familiaux" class="w3-bar-item">Conseils</a>
             <a href="https://app.alenvi.io/login" class="w3-bar-item">Se connecter</a>
           </div>
         </div>
@@ -21,7 +21,7 @@
           <button id="dropdownAuxiliary" class="alenvi-button text-tertiary">Auxiliaires <q-icon name="arrow drop down"/></button>
           <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
             <router-link to="recrutement" class="w3-bar-item">Recrutement</router-link>
-            <a href="http://blog.alenvi.io/tag/auxiliaires" class="w3-bar-item">Partage d'expériences</a>
+            <a href="https://blog.alenvi.io/tag/auxiliaires" class="w3-bar-item">Partage d'expériences</a>
           </div>
         </div>
         <div class="w3-bar-item self-center">
@@ -31,7 +31,7 @@
           <button id="dropdownVision" class="alenvi-button text-tertiary">A propos <q-icon name="arrow drop down"/></button>
           <div class="alenvi-dropdown-list w3-dropdown-content w3-bar-block w3-card-4">
             <router-link exact to="vision" class="w3-bar-item">Vision</router-link>
-            <a href="http://blog.alenvi.io/tag/alenvi" class="w3-bar-item">Le projet Alenvi</a>
+            <a href="https://blog.alenvi.io/tag/alenvi" class="w3-bar-item">Le projet Alenvi</a>
           </div>
         </div>
       </div>
@@ -102,19 +102,25 @@
         <q-item to="/sortie-hopital">
           <q-item-main label="Sortie d'hôpital" />
         </q-item>
-        <q-item class="no-bg" to="">
-          <q-item-main @click.native="goUrl('http://blog.alenvi.io/tag/aidants-familiaux')" label="Conseils" />
+        <q-item class="no-bg">
+          <a class="full-width" href="https://blog.alenvi.io/tag/aidants-familiaux">
+            <q-item-main label="Conseils" />
+          </a>
         </q-item>
-        <q-item class="no-bg" to="">
-          <q-item-main @click.native="goUrl('https://app.alenvi.io/login')" label="Se connecter" />
+        <q-item class="no-bg">
+          <a class="full-width" href="https://app.alenvi.io/login">
+            <q-item-main label="Se connecter" />
+          </a>
         </q-item>
       </q-collapsible>
       <q-collapsible label="Auxiliaires">
         <q-item to="/recrutement">
           <q-item-main label="Recrutement" />
         </q-item>
-        <q-item class="no-bg" to="">
-          <q-item-main @click.native="goUrl('http://blog.alenvi.io/tag/auxiliaires')" label="Partage d'expériences" />
+        <q-item class="no-bg">
+          <a href="https://blog.alenvi.io/tag/auxiliaires" class="full-width">
+            <q-item-main label="Partage d'expériences" />
+          </a>
         </q-item>
       </q-collapsible>
       <q-item to="/equipe">
@@ -124,8 +130,10 @@
         <q-item to="/vision">
           <q-item-main label="Vision" />
         </q-item>
-        <q-item class="no-bg" to="">
-          <q-item-main @click.native="goUrl('http://blog.alenvi.io/tag/alenvi')" label="Le projet Alenvi" />
+        <q-item class="no-bg">
+          <a href="https://blog.alenvi.io/tag/alenvi" class="full-width">
+            <q-item-main label="Le projet Alenvi" />
+          </a>
         </q-item>
       </q-collapsible>
     </q-list>
@@ -158,7 +166,7 @@
       <ul>
         <li class="footer-links" @click="goTo('/vision')">Vision</li>
         <li class="footer-links" @click="goTo('/equipe')">Equipe</li>
-        <li class="footer-links"><a href="http://blog.alenvi.io">Blog</a></li>
+        <li class="footer-links"><a href="https://blog.alenvi.io">Blog</a></li>
         <li class="footer-links" @click="goTo('/mentions')">Mentions Légales</li>
       </ul>
     </div>
