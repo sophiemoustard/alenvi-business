@@ -25,7 +25,7 @@
         <br>
         <p>L’autonomie des communautés est possible grâce à Pigi, l’assistant virtuel mobile que nous avons développé pour elles. Il met à la portée de tous les informations concernant les plannings, les bénéficiaires, les formations, les indicateurs de l’entreprise. Chaque auxiliaire peut ainsi être acteur de son métier, sans dépendre d’une personne qui centralise l’information.</p>
         <p>Actuellement présents en Île-de-France, nous avons pour ambition de créer un acteur national de référence pour le cadre de travail des auxiliaires de vie et la qualité de l’accompagnement des personnes âgées. Nous évaluons le succès d’Alenvi à l’aune d’indicateurs d’impact (bien-être au travail des auxiliaires, qualité ressentie des services) que nous mettons sur le même plan que les indicateurs financiers.</p>
-        <p>Le vieillissement de la population doit être l’occasion de créer des dizaines de milliers d’emplois valorisants et qualifiés, grâce à la technologie et à un modèle d’organisation innovant. C’est l’ambition qui nous anime chez Alenvi. Si vous la partagez, <router-link to="/recrutement" class="secondary">rejoignez-nous</router-link> ou <router-link to="/accueil#formulaire-contact" class="secondary">faites le nous savoir !</router-link></p>
+        <p>Le vieillissement de la population doit être l’occasion de créer des dizaines de milliers d’emplois valorisants et qualifiés, grâce à la technologie et à un modèle d’organisation innovant. C’est l’ambition qui nous anime chez Alenvi. Si vous la partagez, <router-link to="/recrutement" class="secondary">rejoignez-nous</router-link> !</p>
       </section>
     </div>
   </q-page>
