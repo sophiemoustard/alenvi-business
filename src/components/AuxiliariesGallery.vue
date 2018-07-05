@@ -67,7 +67,7 @@ export default {
     const payload = _.pickBy(params);
     let auxiliariesRaw
     try {
-      auxiliariesRaw = await this.$axios.get(`http://localhost:3000/users/presentation`, { // 'https://alenvi-api.herokuapp.com/users/presentation'
+      auxiliariesRaw = await this.$axios.get(`https://alenvi-api.herokuapp.com/users/presentation`, { // 'https://alenvi-api.herokuapp.com/users/presentation'
         params: payload,
         paramsSerializer (params) { // to send query array as key: [] and not 'key[]': []
           return qs.stringify(params, { indices: false })
