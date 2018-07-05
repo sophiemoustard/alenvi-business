@@ -36,6 +36,7 @@
 
 <script>
 import _ from 'lodash'
+import qs from 'qs'
 
 export default {
   props: [
@@ -64,9 +65,17 @@ export default {
       location: this.videoLocation
     };
     const payload = _.pickBy(params);
-    const auxiliariesRaw = await this.$axios.get(`https://alenvi-api.herokuapp.com/users/presentation`, { // 'https://alenvi-api.herokuapp.com/users/presentation'
-      params: payload
-    });
+    let auxiliariesRaw
+    try {
+      auxiliariesRaw = await this.$axios.get(`http://localhost:3000/users/presentation`, { // 'https://alenvi-api.herokuapp.com/users/presentation'
+        params: payload,
+        paramsSerializer (params) { // to send query array as key: [] and not 'key[]': []
+          return qs.stringify(params, { indices: false })
+        }
+      });
+    } catch (e) {
+      console.error(e.response);
+    }
     // console.log('AUXILIARIES ROLES', auxiliariesRaw.data.data.users);
     // this.auxiliariesRaw = auxiliariesRaw.data.data.users;
     // this.auxiliaries = this.auxiliariesRaw;
