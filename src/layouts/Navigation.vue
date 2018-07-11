@@ -49,21 +49,23 @@
         <div class="column">
           <div class="location-modal-text-blocks">
             <h2 class="location-modal-text-alenvi"><span>Alenvi</span> <span class="location-modal-text-bold">Paris</span></h2>
-            <!-- <h4>Centre, Sud et Est</h4> -->
+            <h4>01 79 75 54 75</h4>
           </div>
           <div class="location-modal-text-blocks">
             <h2><span class="location-modal-text-alenvi">Alenvi</span> <span class="location-modal-text-bold">Hauts-de-Seine</span></h2>
-            <!-- <h4>Et Hauts-de-Seine</h4> -->
+            <h4>01 79 75 54 75</h4>
           </div>
           <div class="location-modal-text-blocks">
             <h2><span class="location-modal-text-alenvi">Alenvi</span> <span class="location-modal-text-bold">Versailles</span></h2>
-            <!-- <h4>Et alentours</h4> -->
+            <h4>01 79 75 54 75</h4>
           </div>
           <div class="location-modal-text-blocks">
             <h2><span class="location-modal-text-alenvi">Alenvi</span> <span class="location-modal-text-bold">Val-de-Marne</span></h2>
+            <h4>01 79 75 54 75</h4>
           </div>
           <div class="location-modal-text-blocks">
             <h2 style="margin-bottom: 0px"><span class="location-modal-text-alenvi">Alenvi</span> <span class="location-modal-text-bold">Lyon</span></h2>
+            <h4>04 82 79 65 62</h4>
           </div>
         </div>
       </q-modal>
@@ -275,8 +277,8 @@ export default {
   .location-modal-text-blocks
     text-align: left
 
-  // .location-modal-text-blocks h2
-  //   margin-bottom: 0px !important
+  .location-modal-text-blocks h2
+    margin-bottom: 0px !important
 
   .location-modal-text-blocks h2
      margin-top: 0px !important
