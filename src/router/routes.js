@@ -115,6 +115,11 @@ export default [
         beforeEnter: (to, from, next) => {
           window.location = 'https://blog.alenvi.io/charte-envie';
         }
+      },
+      {
+        path: 'formation',
+        name: 'formation',
+        component: () => import('pages/Formation')
       }
     ]
   },
