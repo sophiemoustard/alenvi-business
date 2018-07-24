@@ -3,7 +3,7 @@
     <!-- <breadcrumb class="col-12 breadcrumb"/> -->
     <section id="presentation" class="section-margin">
       <div class="row"> <!-- pres-background -->
-        <h1 class="col-12 text-center title-margin-bottom">Par son offre de formation, Alenvi permet aux intervenants du secteur médico-social pour exercer leur métier plus sereinement</h1>
+        <h1 class="col-12 text-center title-margin-bottom">Par son offre de formation, Alenvi permet aux intervenants du secteur médico-social d'exercer leur métier plus sereinement</h1>
         <div id="pres-text" class="col-lg-6 self-center">
           <!-- <h1 class="col-12 text-center title-margin-bottom">Rejoignez une équipe mobilisée pour la valorisation du métier d’auxiliaire de vie</h1> -->
           <p>Alenvi Formation est né du constat que les formations actuelles étaient axées principalement sur le savoir-faire, et peu sur le savoir-être et la prise d’initiative, pourtant essentiels.</p>
