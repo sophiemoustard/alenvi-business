@@ -10,7 +10,7 @@
         <div class="row items-center">
           <div class="col-lg-7">
             <ul>
-              <li><q-icon name="keyboard arrow right"/> CDI 35h garanti et rémunération SMIC +20%</li>
+              <li><q-icon name="keyboard arrow right"/> CDI 35h garanti et rémunération revalorisée par rapport au secteur</li>
               <li><q-icon name="keyboard arrow right" /> Autonomie dans la gestion du planning et des bénéficiaires</li>
               <li><q-icon name="keyboard arrow right" /> Formation continue effectuée par un réseau de neurologues</li>
               <li><q-icon name="keyboard arrow right" /> Coopération entre collègues et réunions de communauté toutes les 2 semaines</li>

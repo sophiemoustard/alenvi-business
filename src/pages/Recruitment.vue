@@ -9,8 +9,7 @@
           <p>Chez Alenvi, nous pensons qu’il n’est possible de bien accompagner les personnes âgées à domicile qu’en valorisant le métier d’auxiliaire de vie.</p>
           <p>Les auxiliaires d’envie travaillent ainsi au sein de communautés autonomes dans un cadre de travail unique :</p>
           <ul>
-            <li><q-icon name="keyboard arrow right" /> CDI 35h, SMIC +20%</li>
-            <li><q-icon name="keyboard arrow right" /> Interventions de 2h minimum</li>
+            <li><q-icon name="keyboard arrow right" /> CDI 35h, rémunération revalorisée par rapport au secteur</li>
             <li><q-icon name="keyboard arrow right" /> Autonomie dans la gestion du planning et la relation avec les bénéficiaires</li>
             <li><q-icon name="keyboard arrow right" /> Formation continue</li>
             <li><q-icon name="keyboard arrow right" /> Coopération entre collègues (réunions d’équipe toutes les 2 semaines) & formation continue</li>
