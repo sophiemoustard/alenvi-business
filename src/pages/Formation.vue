@@ -4,13 +4,12 @@
     <section id="presentation" class="section-margin">
       <div class="row"> <!-- pres-background -->
         <h1 class="col-12 text-center title-margin-bottom">Par son offre de formation, Alenvi permet aux intervenants du secteur médico-social d'exercer leur métier plus sereinement</h1>
-        <div id="pres-text" class="col-lg-6 self-center">
+        <div id="pres-text">
           <!-- <h1 class="col-12 text-center title-margin-bottom">Rejoignez une équipe mobilisée pour la valorisation du métier d’auxiliaire de vie</h1> -->
           <p>Alenvi Formation est né du constat que les formations actuelles étaient axées principalement sur le savoir-faire, et peu sur le savoir-être et la prise d’initiative, pourtant essentiels.</p>
           <p>L'ensemble de notre programme découle du référentiel de compétences co-construit en collaboration avec notre partenaire, le <a style="color: blue" href="https://reseau-memoire-alois.fr">Réseau Mémoire Aloïs</a>, et les différentes parties prenantes de l'écosystème de l'aide à domicile.</p>
           <p>Ce programme permet aux professionnels de prendre du recul par rapport à leur métier, d’acquérir la bonne posture qui leur permettra de gérer du mieux possible la relation humaine avec en situation d'accompagnement des personnes en perte d'autonomie.</p>
-          <p>Notre programme est en cours de certification à la Commission Nationale de la Certification Professionnelle (CNCP)</p>
-          <q-btn color="primary" big>
+          <q-btn class="self-center" color="primary" big>
             <a href="https://res.cloudinary.com/alenvi/image/upload/v1532440977/images/business/Alenvi_Formation_Catalogue_2018.pdf">Notre offre de formation</a>
           </q-btn>
         </div>
