@@ -1,9 +1,9 @@
 <template>
   <div>
-    <q-window-resize-observable @resize="onResize" />
-    <q-modal v-model="toggleModal" :content-css="setVideoContainerSize()" class="scroll overflow-hidden">
+    <!-- <q-window-resize-observable @resize="onResize" /> -->
+    <q-modal :value="value" @input="toggleModal" :content-css="setVideoContainerSize" class="scroll overflow-hidden">
       <div class="absolute-right">
-        <q-btn color="primary" @click="closeModal">
+        <q-btn color="primary" @click.native="closeModal">
           <q-icon name="close"></q-icon>
         </q-btn>
       </div>
@@ -15,40 +15,44 @@
 <script>
 
 export default {
-  model: {
-    prop: 'toggleModal',
-    event: 'change'
-  },
+  // model: {
+  //   prop: 'toggleModal',
+  //   event: 'change'
+  // },
   props: {
-    toggleModal: Boolean,
+    value: Boolean,
     info: String,
   },
   data () {
     return {
       windowSize: {},
       typeform_link: this.info,
-      showModal: this.toggleModal,
+      // showModal: this.toggleModal,
     }
   },
-  methods: {
+  computed: {
     setVideoContainerSize () {
-      let width = '75%'
-      let height = '75%'
-      if (this.windowSize.width < 800) {
-        width = '100%'
-        height = '100%'
-      }
+      // let width = '75%'
+      // let height = '75%'
+      // if (this.windowSize.width < 800) {
+      //   width = '100%'
+      //   height = '100%'
+      // }
       return {
-        width,
-        height
+        width: '90vw',
+        height: '90vh'
       }
     },
-    onResize (size) {
-      this.windowSize = size
+  },
+  methods: {
+    toggleModal (value) {
+      this.$emit('input', value);
     },
+    // onresize (size) {
+    //   this.windowsize = size
+    // },
     closeModal () {
-      this.showModal = false
-      this.$emit('closeModal')
+      this.$emit('closeModal');
     }
   }
 }
