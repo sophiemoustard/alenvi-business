@@ -14,7 +14,7 @@
             <router-link exact to="compagnie" class="w3-bar-item">Compagnie et stimulation</router-link>
             <router-link exact to="sortie-hopital" class="w3-bar-item">Sortie d'hôpital</router-link>
             <a href="https://blog.alenvi.io/tag/aidants-familiaux" class="w3-bar-item">Conseils</a>
-            <a href="https://app.alenvi.io/login" class="w3-bar-item">Se connecter</a>
+            <a href="https://app.compani.fr/login" class="w3-bar-item">Se connecter</a>
           </div>
         </div>
         <div class="w3-dropdown-hover bg-white">
@@ -124,7 +124,7 @@
           </a>
         </q-item>
         <q-item class="no-bg">
-          <a class="full-width" href="https://app.alenvi.io/login">
+          <a class="full-width" href="https://app.compani.fr/login">
             <q-item-main label="Se connecter" />
           </a>
         </q-item>
@@ -177,7 +177,7 @@
         <li class="footer-links" @click="goTo('/compagnie')">Compagnie et stimulation</li>
         <li class="footer-links" @click="goTo('/sortie-hopital')">Sortie d'hôpital</li>
         <li class="footer-links" @click="locationModal = true">Nous trouver</li>
-        <li class="footer-links"><a href="https://app.alenvi.io/login">Se connecter</a></li>
+        <li class="footer-links"><a href="https://app.compani.fr/login">Se connecter</a></li>
       </ul>
     </div>
     <div class="col-xs-5 col-md-6 col-lg-3">
