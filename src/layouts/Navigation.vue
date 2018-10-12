@@ -34,10 +34,18 @@
             <a href="https://blog.alenvi.io/tag/alenvi" class="w3-bar-item">Le projet Alenvi</a>
           </div>
         </div>
+        <div class="w3-bar-item self-center">
+          <a href="#" @click.prevent="contactModal = true">Nous écrire</a>
+        </div>
       </div>
       <div class="gt-mld btn-call-header">
-        <q-btn class="q-mr-md cursor-pointer" size="md" color="secondary" @click="contactModal = true" round flat>
+        <!-- <q-btn class="q-mr-md cursor-pointer" size="md" color="secondary" @click="contactModal = true" round flat>
           <q-icon name="mail" size="2.3rem" />
+        </q-btn> -->
+        <q-btn class="q-mr-md cursor-pointer" size="md" color="secondary" round flat>
+          <a href="https://app.compani.fr">
+            <q-icon name="person" size="2.3rem" color="secondary" />
+          </a>
         </q-btn>
         <q-btn class="q-mr-md cursor-pointer" size="md" color="secondary" @click="locationModal = true" round flat>
           <q-icon name="location on" size="2.3rem" />
@@ -72,9 +80,14 @@
       <typeform-modal v-model="contactModal" info="https://alenvi.typeform.com/to/Hq6cm5" @closeModal="contactModal = false"/>
       <typeform-modal v-model="showModal" info="https://alenvi.typeform.com/to/MwEMWk" @closeModal="showModal = false"/>
       <div class="row absolute-right lt-lgx items-center">
-        <q-btn size="md" color="secondary" @click="contactModal = true" round flat>
-          <q-icon name="mail" size="2rem" />
+        <q-btn size="md" color="secondary" round flat>
+          <a href="https://app.compani.fr">
+            <q-icon name="person" size="2rem" color="secondary" />
+          </a>
         </q-btn>
+        <!-- <q-btn size="md" color="secondary" @click="contactModal = true" round flat>
+          <q-icon name="mail" size="2rem" />
+        </q-btn> -->
         <q-btn size="md" color="secondary" @click="locationModal = true" round flat>
           <q-icon name="location on" size="2rem" />
         </q-btn>
@@ -139,6 +152,9 @@
           </a>
         </q-item>
       </q-collapsible>
+      <q-item @click.native="contactModal = true">
+        <q-item-main label="Nous écrire" />
+      </q-item>
     </q-list>
   </q-layout-drawer>
 
