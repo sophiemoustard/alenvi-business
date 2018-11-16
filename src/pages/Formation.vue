@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <div style="width: 100vw; height: 100vh">
-      <object data="statics/Catalogue-de-formations-managers-Alenvi_2019.pdf#zoom=100" type="application/pdf" width="100%" height="100%" />
+      <object data="https://res.cloudinary.com/alenvi/image/upload/v1542383441/images/business/Catalogue_de_formations_managers_Alenvi_2019.pdf#zoom=100" type="application/pdf" width="100%" height="100%" />
     </div>
     <!-- <embed src="statics/formation-managers.pdf" type="application/pdf" width="100%" height="100%"> -->
 <!-- <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="http://www.example.com/document.pdf">Download PDF</a>.</p> -->
