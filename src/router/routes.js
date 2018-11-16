@@ -117,7 +117,7 @@ export default [
         }
       },
       {
-        path: 'formation',
+        path: 'formations-managers',
         name: 'formation',
         component: () => import('pages/Formation')
       }
