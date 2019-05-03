@@ -89,11 +89,6 @@ module.exports = function (ctx) {
                          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
                        f.parentNode.insertBefore(j, f);
                      })(window, document, 'script', 'dataLayer', 'GTM-5MT8HT');
-                     </script>
-                     <script>
-                       window.addEventListener('load', function() {
-                          WSDidDyn.track();
-                       });
                      </script>`);
                 // renderedRoute.html = renderedRoute.html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/i, '');
 
