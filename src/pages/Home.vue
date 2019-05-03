@@ -15,15 +15,15 @@
         <div v-if="show" key="fade4" class="main-text"><h1>{{selectedQuote.middleQuote}}</h1></div>
         <div v-if="show" key="fade5" class="main-subtext">{{selectedQuote.author}}</div>
       </transition-group>
-      <!-- <q-btn v-if="this.$route.meta.name != 'recrutement'" color="primary" big><a class="btn-call text-white" href="tel:+33179755475">Appeler le 01 79 75 54 75</a></q-btn> -->
-      <q-btn v-if="$q.platform.is.desktop" class="main-button-call-to-action gt-md" icon="call" color="primary" size="lg"><a href="tel:+33179755475">Appeler au 01 79 75 54 75</a></q-btn>
+      <!-- <q-btn v-if="this.$route.meta.name != 'recrutement'" color="primary" big><a class="btn-call text-white" href="tel:+33176284028">Appeler le 01 76 28 40 28</a></q-btn> -->
+      <q-btn v-if="$q.platform.is.desktop" class="main-button-call-to-action gt-md" icon="call" color="primary" size="lg"><a href="tel:+33176284028">Appeler au 01 76 28 40 28</a></q-btn>
       <!-- <q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px" /> -->
     </section>
     <section v-if="!$q.platform.is.mobile" id="call-button" class="lt-lg a-pa-xl q-mb-xl row justify-center items-center">
-      <q-btn icon="call" color="primary" size="lg"><a href="tel:+33179755475">Appeler au 01 79 75 54 75</a></q-btn>
+      <q-btn icon="call" color="primary" size="lg"><a href="tel:+33176284028">Appeler au 01 76 28 40 28</a></q-btn>
     </section>
     <section v-if="$q.platform.is.mobile" id="call-button" class="a-pa-xl q-mb-xl row justify-center items-center">
-      <q-btn icon="call" color="primary" size="lg"><a href="tel:+33179755475">Appeler au 01 79 75 54 75</a></q-btn>
+      <q-btn icon="call" color="primary" size="lg"><a href="tel:+33176284028">Appeler au 01 76 28 40 28</a></q-btn>
     </section>
     <section id="presentation-writing" class="a-pa-xl q-mb-xl row justify-center items-center"> <!-- v-scroll="fadeInPresWriting" -->
       <!-- <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut"> -->
