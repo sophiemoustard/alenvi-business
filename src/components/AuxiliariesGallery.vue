@@ -20,7 +20,7 @@
         <q-icon class="auxiliaries-icon self-center" name="play circle outline" color="white" size="5rem" style="display: inherit"/>
       </div>
       <div class="auxiliaries-filter" :style="{ backgroundColor: auxiliary.backgroundColor }"></div>
-      <div class="auxiliaries-name-container row justify-center"><p class="auxiliaries-name self-center">{{auxiliary.firstname}}</p>
+      <div class="auxiliaries-name-container row justify-center"><p class="auxiliaries-name self-center">{{auxiliary.identity.firstname}}</p>
       </div>
     </div>
     <q-modal v-model="opened" @hide="closeModal()" :content-css="setVideoContainerSize">
