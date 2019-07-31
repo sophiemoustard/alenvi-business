@@ -81,9 +81,8 @@ export default {
     // this.auxiliaries = this.auxiliariesRaw;
     this.auxiliaries = this.auxiliariesRaw = auxiliariesRaw.data.data.users;
     this.shuffle(this.auxiliaries);
-    if (this.auxiliaries[0].role.name === 'Admin' ||
-        this.auxiliaries[0].role.name === 'Coach' ||
-        this.auxiliaries[0].role.name === 'Tech') {
+    if (this.auxiliaries[0].role.name === 'admin' ||
+        this.auxiliaries[0].role.name === 'coach') {
       const first = this.auxiliaries.splice(0, 1);
       this.auxiliaries.push(first[0]);
     }
@@ -156,7 +155,7 @@ export default {
     },
     generateMosaic (auxiliaries) {
       for (let i = 0, j = 6, test = false; i < auxiliaries.length; i++) {
-        if (auxiliaries[i].role.name === 'Auxiliaire') {
+        if (auxiliaries[i].role.name === 'auxiliary') {
           if (i < j) {
             if (test) {
               auxiliaries[i].backgroundColor = i % 2 === 1 ? '#F070AA' : '#B61A6D';
