@@ -32,7 +32,7 @@ export default {
     return {
       videoNumber: '',
       videoLocation: ['accueil', 'team'],
-      videoRoles: ['Auxiliaire', 'Tech', 'Coach']
+      videoRoles: ['auxiliary', 'coach', 'admin']
     }
   }
 }
