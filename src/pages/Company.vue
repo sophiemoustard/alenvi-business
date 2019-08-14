@@ -76,7 +76,7 @@ export default {
       ],
       videoNumber: 6,
       videoLocation: ['accueil'],
-      videoRoles: ['Auxiliaire']
+      videoRoles: ['auxiliary']
     }
   }
 }

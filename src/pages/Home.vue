@@ -133,7 +133,7 @@ export default {
       // videoNumber: this.$q.platform.is.mobile ? 8 : 6,
       videoNumber: 6,
       videoLocation: ['accueil'],
-      videoRoles: ['Auxiliaire']
+      videoRoles: ['auxiliary']
     }
   },
   created () {
