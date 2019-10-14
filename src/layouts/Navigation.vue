@@ -50,26 +50,26 @@
         <q-btn class="q-mr-md cursor-pointer" size="md" color="secondary" @click="locationModal = true" round flat>
           <q-icon name="location on" size="2.3rem" />
         </q-btn>
-        <q-btn v-if="this.$route.meta.name != 'recrutement'" color="primary" big><a class="btn-call text-white" href="tel:+33176284028">Appeler le 01 76 28 40 28</a></q-btn>
+        <q-btn v-if="this.$route.meta.name != 'recrutement'" color="primary" big><a class="btn-call text-white" href="tel:+33183761607">Appeler le 01 83 76 16 07</a></q-btn>
         <q-btn v-else color="primary" @click.native="showModal = true" big><a class="btn-call text-white">Postuler</a></q-btn>
       </div>
       <q-modal id="location-modal" v-model="locationModal" :content-css="{ padding: '2%'}" minimized>
         <div class="column">
           <div class="location-modal-text-blocks">
             <h2 class="location-modal-text-alenvi"><span>Alenvi</span> <span class="location-modal-text-bold">Paris</span></h2>
-            <h4>01 76 28 40 28</h4>
+            <h4>01 83 76 16 07</h4>
           </div>
           <div class="location-modal-text-blocks">
             <h2><span class="location-modal-text-alenvi">Alenvi</span> <span class="location-modal-text-bold">Hauts-de-Seine</span></h2>
-            <h4>01 76 28 40 28</h4>
+            <h4>01 83 76 16 07</h4>
           </div>
           <div class="location-modal-text-blocks">
             <h2><span class="location-modal-text-alenvi">Alenvi</span> <span class="location-modal-text-bold">Versailles</span></h2>
-            <h4>01 76 28 40 28</h4>
+            <h4>01 83 76 16 07</h4>
           </div>
           <div class="location-modal-text-blocks">
             <h2><span class="location-modal-text-alenvi">Alenvi</span> <span class="location-modal-text-bold">Val-de-Marne</span></h2>
-            <h4>01 76 28 40 28</h4>
+            <h4>01 83 76 16 07</h4>
           </div>
           <div class="location-modal-text-blocks">
             <h2 style="margin-bottom: 0px"><span class="location-modal-text-alenvi">Alenvi</span> <span class="location-modal-text-bold">Lyon</span></h2>
@@ -164,7 +164,7 @@
 
   <!-- Footer -->
   <q-layout-footer class="row justify-between q-px-xl">
-    <a href="tel:+33176284028"><q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px"></q-btn></a>
+    <a href="tel:+33183761607"><q-btn v-if="$q.platform.is.mobile || $q.platform.is.ipad" round color="primary" size="lg" class="fixed z-top" icon="call" style="right: 18px; bottom: 18px"></q-btn></a>
     <cookie-law buttonText="OK" buttonClass="cookie-button">
       <div slot="message">
         Ce site utilise des cookies pour améliorer votre expérience de navigation.
