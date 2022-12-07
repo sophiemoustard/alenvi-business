@@ -19,7 +19,7 @@
     "express": "^4.16.3",
     "lodash": "^4.17.5",
     "prerender-spa-plugin": "^3.1.0",
-    "qs": "^6.5.2",
+    "qs": "^6.5.3",
     "vue-breadcrumbs": "^1.1.2",
     "vue-cookie-law": "^1.5.0",
     "vue-gtm": "^1.0.2",
